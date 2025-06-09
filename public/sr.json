@@ -1,0 +1,115 @@
+
+{
+  "navigation": {
+    "home": "Početna",
+    "purpose": "Namena i Benefiti",
+    "experiences": "Iskustva Klubova",
+    "faq": "Česta Pitanja",
+    "contact": "Kontakt i Cene",
+    "tryFree": "Probaj Besplatno",
+    "learnMore": "Saznaj Više"
+  },
+  "hero": {
+    "title": "Upravljaj Sportskim Klubom",
+    "subtitle": "Bez Prepreka",
+    "description": "4sports je kompletno rešenje za upravljanje sportskim klubovima. Optimizuj operacije, prati prisustvo i usreći roditelje.",
+    "cta1": "Probaj Besplatno",
+    "cta2": "Saznaj Više"
+  },
+  "about": {
+    "title": "Šta je 4sports?",
+    "description": "Sveobuhvatna platforma dizajnirana posebno za sportske klubove za upravljanje članovima, praćenje prisustva, rukovanje plaćanjima i komunikaciju sa roditeljima - sve na jednom mestu."
+  },
+  "features": {
+    "title": "Ključne Funkcionalnosti",
+    "calendar": {
+      "title": "Pametni Kalendar",
+      "description": "Zakaži treninge i utakmice sa lakoćom"
+    },
+    "members": {
+      "title": "Upravljanje Članovima",
+      "description": "Prati sve članove kluba i njihov napredak"
+    },
+    "attendance": {
+      "title": "Praćenje Prisustva",
+      "description": "Kontroliši ko je prisutan na svakom treningu"
+    },
+    "payments": {
+      "title": "Upravljanje Plaćanjima",
+      "description": "Rukuj članarinama i plaćanjima bez problema"
+    }
+  },
+  "benefits": {
+    "title": "Zašto Izabrati 4sports?",
+    "efficiency": {
+      "title": "Povećana Efikasnost",
+      "description": "Uštedi sate administrativnog posla svake nedelje"
+    },
+    "organization": {
+      "title": "Bolja Organizacija",
+      "description": "Drži sve organizovano na jednom centralnom mestu"
+    },
+    "parents": {
+      "title": "Zadovoljni Roditelji",
+      "description": "Roditelji su obavešteni sa ažuriranjima u realnom vremenu"
+    }
+  },
+  "testimonials": {
+    "title": "Šta Klubovi Kažu o Nama",
+    "testimonial1": {
+      "quote": "4sports je transformisao način kako upravljamo našim fudbalskim klubom. Sve je sada mnogo lakše!",
+      "author": "Milan Jovanović",
+      "club": "FK Partizan Omladinci"
+    },
+    "testimonial2": {
+      "quote": "Samo funkcija praćenja prisustva nam je uštedela nebrojeno sati svakog meseca.",
+      "author": "Ana Petrović",
+      "club": "Tenis Klub Novak"
+    }
+  },
+  "faq": {
+    "title": "Često Postavljena Pitanja",
+    "questions": [
+      {
+        "question": "Koliko košta 4sports?",
+        "answer": "Cena zavisi od broja članova u vašem klubu. Koristite naš kalkulator ispod da dobijete procenu, ili nas kontaktirajte za prilagođenu ponudu."
+      },
+      {
+        "question": "Da li postoji besplatan probni period?",
+        "answer": "Da! Nudimo 30-dnevni besplatan probni period sa punim pristupom svim funkcionalnostima."
+      },
+      {
+        "question": "Koliko dugo traje podešavanje?",
+        "answer": "Većina klubova je spremna za rad u roku od 24 sata. Naš tim pruža potpunu podršku pri uvođenju."
+      },
+      {
+        "question": "Da li su moji podaci bezbedni?",
+        "answer": "Apsolutno. Koristimo enterprise-level bezbednost i poštujemo sve regulacije o zaštiti podataka."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Počni Danas",
+    "subtitle": "Kontaktiraj nas ili izračunaj cenu",
+    "form": {
+      "name": "Ime i Prezime",
+      "email": "Email Adresa",
+      "phone": "Broj Telefona",
+      "message": "Poruka",
+      "submit": "Pošalji Poruku"
+    },
+    "calculator": {
+      "title": "Kalkulator Cena",
+      "members": "Broj Članova",
+      "estimate": "Mesečna Procena",
+      "currency": "EUR",
+      "contactSales": "Kontaktiraj Prodajni Tim"
+    }
+  },
+  "footer": {
+    "contact": "Kontaktiraj Nas",
+    "email": "info@4sports.com",
+    "phone": "+381 11 123 4567",
+    "copyright": "© 2024 4sports. Sva prava zadržana."
+  }
+}

@@ -1,0 +1,115 @@
+
+{
+  "navigation": {
+    "home": "Home",
+    "purpose": "Purpose & Benefits",
+    "experiences": "Club Experiences",
+    "faq": "FAQ",
+    "contact": "Contact & Pricing",
+    "tryFree": "Try Free",
+    "learnMore": "Learn More"
+  },
+  "hero": {
+    "title": "Manage Your Sports Club",
+    "subtitle": "Without Obstacles",
+    "description": "4sports is the complete solution for managing sports clubs. Streamline operations, track attendance, and keep parents happy.",
+    "cta1": "Try Free",
+    "cta2": "Learn More"
+  },
+  "about": {
+    "title": "What is 4sports?",
+    "description": "A comprehensive platform designed specifically for sports clubs to manage members, track attendance, handle payments, and communicate with parents - all in one place."
+  },
+  "features": {
+    "title": "Key Features",
+    "calendar": {
+      "title": "Smart Calendar",
+      "description": "Schedule training sessions and matches with ease"
+    },
+    "members": {
+      "title": "Member Management",
+      "description": "Track all club members and their progress"
+    },
+    "attendance": {
+      "title": "Attendance Tracking",
+      "description": "Monitor who's present at each session"
+    },
+    "payments": {
+      "title": "Payment Management",
+      "description": "Handle membership fees and payments seamlessly"
+    }
+  },
+  "benefits": {
+    "title": "Why Choose 4sports?",
+    "efficiency": {
+      "title": "Increased Efficiency",
+      "description": "Save hours of administrative work every week"
+    },
+    "organization": {
+      "title": "Better Organization",
+      "description": "Keep everything organized in one central place"
+    },
+    "parents": {
+      "title": "Happy Parents",
+      "description": "Parents stay informed with real-time updates"
+    }
+  },
+  "testimonials": {
+    "title": "What Clubs Say About Us",
+    "testimonial1": {
+      "quote": "4sports transformed how we manage our football club. Everything is so much easier now!",
+      "author": "Milan Jovanović",
+      "club": "FK Partizan Youth"
+    },
+    "testimonial2": {
+      "quote": "The attendance tracking feature alone saved us countless hours every month.",
+      "author": "Ana Petrović",
+      "club": "Tennis Club Novak"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "How much does 4sports cost?",
+        "answer": "Pricing depends on the number of members in your club. Use our calculator below to get an estimate, or contact us for a custom quote."
+      },
+      {
+        "question": "Is there a free trial?",
+        "answer": "Yes! We offer a 30-day free trial with full access to all features."
+      },
+      {
+        "question": "How long does setup take?",
+        "answer": "Most clubs are up and running within 24 hours. Our team provides full onboarding support."
+      },
+      {
+        "question": "Is my data secure?",
+        "answer": "Absolutely. We use enterprise-grade security and comply with all data protection regulations."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get Started Today",
+    "subtitle": "Contact us or calculate your pricing",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send Message"
+    },
+    "calculator": {
+      "title": "Price Calculator",
+      "members": "Number of Members",
+      "estimate": "Monthly Estimate",
+      "currency": "EUR",
+      "contactSales": "Contact Sales Team"
+    }
+  },
+  "footer": {
+    "contact": "Contact Us",
+    "email": "info@4sports.com",
+    "phone": "+381 11 123 4567",
+    "copyright": "© 2024 4sports. All rights reserved."
+  }
+}

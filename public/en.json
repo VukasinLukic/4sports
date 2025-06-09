@@ -14,7 +14,49 @@
     "subtitle": "Without Obstacles",
     "description": "4sports is the complete solution for managing sports clubs. Streamline operations, track attendance, and keep parents happy.",
     "cta1": "Try Free",
-    "cta2": "Learn More"
+    "cta2": "Learn More",
+    "stats": {
+      "clubs": {
+        "value": "500+",
+        "label": "Active Clubs"
+      },
+      "members": {
+        "value": "10k+",
+        "label": "Members"
+      },
+      "satisfaction": {
+        "value": "99%",
+        "label": "Satisfaction"
+      }
+    }
+  },
+  "mockup": {
+    "title": "See How Our",
+    "titleHighlight": "Application Looks",
+    "description": "Modern design adapted to all devices for the best user experience",
+    "phone1": {
+      "title": "Home Page",
+      "description": "Intuitive navigation and quick access to all functions"
+    },
+    "phone2": {
+      "title": "Profile",
+      "description": "Personalized experience tailored to your needs"
+    },
+    "phone3": {
+      "title": "Chat & Notifications",
+      "description": "Fast communication and always current information"
+    },
+    "desktop": {
+      "title": "Owner Panel",
+      "description": "Complete control over the application with detailed analytics, user management and advanced functionalities",
+      "feature1": "Analytics",
+      "feature2": "Management",
+      "feature3": "Optimization"
+    },
+    "summary": {
+      "title": "Complete Solution",
+      "description": "Mobile application for users and advanced desktop panel for owners - everything you need in one place"
+    }
   },
   "about": {
     "title": "What is 4sports?",
@@ -37,6 +79,14 @@
     "payments": {
       "title": "Payment Management",
       "description": "Handle membership fees and payments seamlessly"
+    },
+    "analytics": {
+      "title": "Analytics & Reports",
+      "description": "Insight into club performance through detailed reports"
+    },
+    "scheduling": {
+      "title": "Appointment Scheduling",
+      "description": "Efficiently organize training sessions and events"
     }
   },
   "benefits": {
@@ -92,18 +142,26 @@
     "title": "Get Started Today",
     "subtitle": "Contact us or calculate your pricing",
     "form": {
+      "title": "Contact Us",
       "name": "Full Name",
       "email": "Email Address",
       "phone": "Phone Number",
       "message": "Message",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "successMessage": "Thank you for your message! We will contact you soon."
     },
     "calculator": {
       "title": "Price Calculator",
       "members": "Number of Members",
       "estimate": "Monthly Estimate",
-      "currency": "EUR",
-      "contactSales": "Contact Sales Team"
+      "currency": "€",
+      "perMonth": "per month",
+      "contactSales": "Contact Sales Team",
+      "features": {
+        "trial": "30-day free trial",
+        "noFees": "No setup fees",
+        "cancel": "Cancel anytime"
+      }
     }
   },
   "footer": {

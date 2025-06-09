@@ -43,31 +43,31 @@ const Navigation = () => {
               onClick={() => scrollToSection('home')}
               className="nav-link text-lg"
             >
-              Početna
+              {t('navigation.home')}
             </button>
             <button 
               onClick={() => scrollToSection('purpose')}
               className="nav-link text-lg"
             >
-              Svrha i Prednosti
+              {t('navigation.purpose')}
             </button>
             <button 
               onClick={() => scrollToSection('experiences')}
               className="nav-link text-lg"
             >
-              Iskustva Klubova
+              {t('navigation.experiences')}
             </button>
             <button 
               onClick={() => scrollToSection('faq')}
               className="nav-link text-lg"
             >
-              Česta Pitanja
+              {t('navigation.faq')}
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="nav-link text-lg"
             >
-              Kontakt i Cene
+              {t('navigation.contact')}
             </button>
           </div>
 
@@ -76,7 +76,7 @@ const Navigation = () => {
             <SimpleButton
               variant="language"
               onClick={toggleLanguage}
-              className="!min-w-0"
+              className="!min-w-0 border-2 border-white/20"
             >
               <Globe className="w-4 h-4 mr-2" />
               {language.toUpperCase()}
@@ -85,8 +85,9 @@ const Navigation = () => {
               variant="primary"
               onClick={() => scrollToSection('contact')}
               animated={true}
+              className="border-2 border-primary"
             >
-              Probaj Besplatno
+              {t('navigation.tryFree')}
             </AnimatedButton>
           </div>
 
@@ -140,7 +141,7 @@ const Navigation = () => {
                 <SimpleButton
                   variant="language"
                   onClick={toggleLanguage}
-                  className="flex-1"
+                  className="flex-1 border-2 border-white/20"
                 >
                   <Globe className="w-4 h-4 mr-2" />
                   {language.toUpperCase()}
@@ -148,10 +149,10 @@ const Navigation = () => {
                 <AnimatedButton 
                   variant="primary"
                   onClick={() => scrollToSection('contact')}
-                  className="flex-1"
+                  className="flex-1 border-2 border-primary"
                   animated={true}
                 >
-                  Probaj Besplatno
+                  {t('navigation.tryFree')}
                 </AnimatedButton>
               </div>
             </div>

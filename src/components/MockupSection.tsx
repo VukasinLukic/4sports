@@ -1,23 +1,21 @@
 
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Iphone16Pro } from '@/components/ui/iphone-16-pro';
 import { Smartphone, Monitor, Zap, Users, MessageCircle } from 'lucide-react';
 
 const MockupSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="section-padding organic-bg relative overflow-hidden">
       <div className="container-custom">
         <div className="text-center mb-20 fade-in">
-          <div className="badge-modern mb-12 mx-auto w-fit">
-            <Smartphone className="w-5 h-5 text-primary mr-3" />
-            <span className="text-gray-300">Pogledaj</span>
-            <span className="ml-2 text-primary font-bold">Aplikaciju</span>
-          </div>
           <h2 className="text-balance mb-8 text-white">
-            Vidi Kako Izgleda <span className="text-gradient">Naša Aplikacija</span>
+            {t('mockup.title')} <span className="text-gradient">{t('mockup.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Moderni dizajn prilagođen svim uređajima za najbolje korisničko iskustvo
+            {t('mockup.description')}
           </p>
         </div>
 
@@ -37,8 +35,8 @@ const MockupSection = () => {
               </div>
               <div className="glass-card p-6 rounded-2xl max-w-xs">
                 <Zap className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="text-lg font-bold text-white mb-2">Početna Strana</h4>
-                <p className="text-gray-300 text-sm">Intuitivna navigacija i brz pristup svim funkcijama</p>
+                <h4 className="text-lg font-bold text-white mb-2">{t('mockup.phone1.title')}</h4>
+                <p className="text-gray-300 text-sm">{t('mockup.phone1.description')}</p>
               </div>
             </div>
 
@@ -55,8 +53,8 @@ const MockupSection = () => {
               </div>
               <div className="glass-card p-6 rounded-2xl max-w-xs border-2 border-primary/30">
                 <Users className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="text-lg font-bold text-white mb-2">Profil</h4>
-                <p className="text-gray-300 text-sm">Personalizovano iskustvo prilagođeno vašim potrebama</p>
+                <h4 className="text-lg font-bold text-white mb-2">{t('mockup.phone2.title')}</h4>
+                <p className="text-gray-300 text-sm">{t('mockup.phone2.description')}</p>
               </div>
             </div>
 
@@ -73,8 +71,8 @@ const MockupSection = () => {
               </div>
               <div className="glass-card p-6 rounded-2xl max-w-xs">
                 <MessageCircle className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="text-lg font-bold text-white mb-2">Chat & Notifikacije</h4>
-                <p className="text-gray-300 text-sm">Brza komunikacija i uvek aktuelne informacije</p>
+                <h4 className="text-lg font-bold text-white mb-2">{t('mockup.phone3.title')}</h4>
+                <p className="text-gray-300 text-sm">{t('mockup.phone3.description')}</p>
               </div>
             </div>
           </div>
@@ -120,10 +118,9 @@ const MockupSection = () => {
           {/* Desktop description */}
           <div className="glass-card p-8 rounded-3xl max-w-2xl mx-auto border border-primary/20">
             <Monitor className="w-12 h-12 text-primary mx-auto mb-6" />
-            <h3 className="text-3xl font-bold text-white mb-6">Panel za Vlasnike</h3>
+            <h3 className="text-3xl font-bold text-white mb-6">{t('mockup.desktop.title')}</h3>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Kompletna kontrola nad aplikacijom sa detaljnim analytics, 
-              upravljanjem korisnicima i naprednim funkcionalnostima
+              {t('mockup.desktop.description')}
             </p>
             
             {/* Feature highlights */}
@@ -132,19 +129,19 @@ const MockupSection = () => {
                 <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">📊</span>
                 </div>
-                <p className="text-sm text-gray-400">Analytics</p>
+                <p className="text-sm text-gray-400">{t('mockup.desktop.feature1')}</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">⚙️</span>
                 </div>
-                <p className="text-sm text-gray-400">Upravljanje</p>
+                <p className="text-sm text-gray-400">{t('mockup.desktop.feature2')}</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🚀</span>
                 </div>
-                <p className="text-sm text-gray-400">Optimizacija</p>
+                <p className="text-sm text-gray-400">{t('mockup.desktop.feature3')}</p>
               </div>
             </div>
           </div>
@@ -158,10 +155,9 @@ const MockupSection = () => {
               <div className="w-12 h-px bg-primary"></div>
               <Monitor className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">Kompletno Rešenje</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">{t('mockup.summary.title')}</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              Mobilna aplikacija za korisnike i napredni desktop panel za vlasnike - 
-              sve što vam je potrebno na jednom mestu
+              {t('mockup.summary.description')}
             </p>
           </div>
         </div>

@@ -48,10 +48,6 @@ const FeaturesSection = () => {
       <div className="container-custom relative z-10">
         {/* About Section */}
         <div className="text-center mb-20 fade-in">
-          <div className="badge-modern mb-12 mx-auto w-fit">
-            <span className="text-gray-300">About</span>
-            <span className="ml-2 text-primary font-bold">4sports</span>
-          </div>
           <h2 className="text-balance mb-12 text-white">
             {t('about.title')}
           </h2>
@@ -80,12 +76,6 @@ const FeaturesSection = () => {
           })}
         </div>
       </div>
-
-      {/* Additional decorative elements */}
-      <div className="absolute top-1/3 left-20 w-4 h-4 rounded-full opacity-60 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #22c55e, #16a34a)'}}></div>
-      <div className="absolute bottom-1/4 right-1/4 w-3 h-3 rounded-full opacity-80 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #16a34a, #15803d)', animationDelay: '1s'}}></div>
     </section>
   );
 };

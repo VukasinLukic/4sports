@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Calculator, Send, Sparkles } from 'lucide-react';
+import { Calculator, Send } from 'lucide-react';
 import AnimatedButton from '@/components/ui/animated-button';
 
 const ContactSection = () => {
@@ -26,7 +26,7 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will contact you soon.');
+    alert(t('contact.form.successMessage'));
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -40,16 +40,11 @@ const ContactSection = () => {
     <section id="contact" className="section-padding organic-bg hero-pattern relative overflow-hidden">
       <div className="container-custom relative z-10">
         <div className="text-center mb-20 fade-in">
-          <div className="badge-modern mb-12 mx-auto w-fit">
-            <Sparkles className="w-5 h-5 text-primary mr-3" />
-            <span className="text-gray-300">Počni</span>
-            <span className="ml-2 text-primary font-bold">Danas</span>
-          </div>
           <h2 className="text-balance mb-12 text-white">
-            Počni Danas
+            {t('contact.title')}
           </h2>
           <p className="text-2xl lg:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
-            Kontaktiraj nas ili izračunaj cenu
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -61,13 +56,13 @@ const ContactSection = () => {
                 <Send className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-white">
-                Kontaktiraj Nas
+                {t('contact.form.title')}
               </h3>
             </div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-white text-lg font-medium mb-3 block">
-                  Ime i Prezime
+                  {t('contact.form.name')}
                 </Label>
                 <Input
                   id="name"
@@ -80,7 +75,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <Label htmlFor="email" className="text-white text-lg font-medium mb-3 block">
-                  Email Adresa
+                  {t('contact.form.email')}
                 </Label>
                 <Input
                   id="email"
@@ -93,7 +88,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <Label htmlFor="phone" className="text-white text-lg font-medium mb-3 block">
-                  Broj Telefona
+                  {t('contact.form.phone')}
                 </Label>
                 <Input
                   id="phone"
@@ -105,7 +100,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <Label htmlFor="message" className="text-white text-lg font-medium mb-3 block">
-                  Poruka
+                  {t('contact.form.message')}
                 </Label>
                 <Textarea
                   id="message"
@@ -115,8 +110,8 @@ const ContactSection = () => {
                   required
                 />
               </div>
-              <AnimatedButton type="submit" variant="primary" className="w-full">
-                Pošalji Poruku
+              <AnimatedButton type="submit" variant="primary" className="w-full border-2 border-primary">
+                {t('contact.form.submit')}
                 <Send className="ml-3 w-5 h-5" />
               </AnimatedButton>
             </form>
@@ -129,13 +124,13 @@ const ContactSection = () => {
                 <Calculator className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-white">
-                Kalkulator Cena
+                {t('contact.calculator.title')}
               </h3>
             </div>
             <div className="space-y-8">
               <div>
                 <Label htmlFor="members" className="text-white text-lg font-medium mb-3 block">
-                  Broj Članova
+                  {t('contact.calculator.members')}
                 </Label>
                 <Input
                   id="members"
@@ -150,24 +145,24 @@ const ContactSection = () => {
               
               <div className="glass-card p-8 text-center rounded-3xl">
                 <div className="text-sm text-gray-400 mb-3 uppercase tracking-wider">
-                  Estimated Monthly Cost
+                  {t('contact.calculator.estimate')}
                 </div>
                 <div className="text-6xl font-black text-gradient mb-6">
-                  €{calculatePrice(members)}
+                  {t('contact.calculator.currency')}{calculatePrice(members)}
                 </div>
                 <div className="text-lg text-gray-400">
-                  per month
+                  {t('contact.calculator.perMonth')}
                 </div>
               </div>
 
-              <AnimatedButton variant="primary" className="w-full">
-                Kontaktiraj Prodajni Tim
+              <AnimatedButton variant="primary" className="w-full border-2 border-primary">
+                {t('contact.calculator.contactSales')}
               </AnimatedButton>
 
               <div className="text-center space-y-3">
-                <div className="text-lg text-gray-300">✓ 30-day free trial</div>
-                <div className="text-lg text-gray-300">✓ No setup fees</div>
-                <div className="text-lg text-gray-300">✓ Cancel anytime</div>
+                <div className="text-lg text-gray-300">✓ {t('contact.calculator.features.trial')}</div>
+                <div className="text-lg text-gray-300">✓ {t('contact.calculator.features.noFees')}</div>
+                <div className="text-lg text-gray-300">✓ {t('contact.calculator.features.cancel')}</div>
               </div>
             </div>
           </div>

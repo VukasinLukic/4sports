@@ -39,7 +39,7 @@ const HeroSection = () => {
               onClick={() => scrollToSection('contact')}
               className="min-w-[240px]"
             >
-              Probaj Besplatno
+              {t('hero.cta1')}
               <ArrowRight className="ml-3 h-6 w-6" />
             </SimpleButton>
             <SimpleButton 
@@ -48,15 +48,15 @@ const HeroSection = () => {
               className="min-w-[240px]"
             >
               <Play className="mr-3 h-6 w-6" />
-              Saznaj Više
+              {t('hero.cta2')}
             </SimpleButton>
           </div>
 
           {/* Stats with animated design */}
           <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <AnimatedStat value="500+" label="Aktivnih Klubova" />
-            <AnimatedStat value="10k+" label="Članova" />
-            <AnimatedStat value="99%" label="Zadovoljstvo" />
+            <AnimatedStat value={t('hero.stats.clubs.value')} label={t('hero.stats.clubs.label')} />
+            <AnimatedStat value={t('hero.stats.members.value')} label={t('hero.stats.members.label')} />
+            <AnimatedStat value={t('hero.stats.satisfaction.value')} label={t('hero.stats.satisfaction.label')} />
           </div>
         </div>
       </div>

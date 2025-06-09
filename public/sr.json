@@ -14,7 +14,49 @@
     "subtitle": "Bez Prepreka",
     "description": "4sports je kompletno rešenje za upravljanje sportskim klubovima. Pojednostavite operacije, pratite prisustvo i zadovoljite roditelje.",
     "cta1": "Probaj Besplatno",
-    "cta2": "Saznaj Više"
+    "cta2": "Saznaj Više",
+    "stats": {
+      "clubs": {
+        "value": "500+",
+        "label": "Aktivnih Klubova"
+      },
+      "members": {
+        "value": "10k+",
+        "label": "Članova"
+      },
+      "satisfaction": {
+        "value": "99%",
+        "label": "Zadovoljstvo"
+      }
+    }
+  },
+  "mockup": {
+    "title": "Vidi Kako Izgleda",
+    "titleHighlight": "Naša Aplikacija",
+    "description": "Moderni dizajn prilagođen svim uređajima za najbolje korisničko iskustvo",
+    "phone1": {
+      "title": "Početna Strana",
+      "description": "Intuitivna navigacija i brz pristup svim funkcijama"
+    },
+    "phone2": {
+      "title": "Profil",
+      "description": "Personalizovano iskustvo prilagođeno vašim potrebama"
+    },
+    "phone3": {
+      "title": "Chat & Notifikacije",
+      "description": "Brza komunikacija i uvek aktuelne informacije"
+    },
+    "desktop": {
+      "title": "Panel za Vlasnike",
+      "description": "Kompletna kontrola nad aplikacijom sa detaljnim analytics, upravljanjem korisnicima i naprednim funkcionalnostima",
+      "feature1": "Analytics",
+      "feature2": "Upravljanje",
+      "feature3": "Optimizacija"
+    },
+    "summary": {
+      "title": "Kompletno Rešenje",
+      "description": "Mobilna aplikacija za korisnike i napredni desktop panel za vlasnike - sve što vam je potrebno na jednom mestu"
+    }
   },
   "about": {
     "title": "Šta je 4sports?",
@@ -100,18 +142,26 @@
     "title": "Počni Danas",
     "subtitle": "Kontaktiraj nas ili izračunaj cenu",
     "form": {
+      "title": "Kontaktiraj Nas",
       "name": "Ime i Prezime",
       "email": "Email Adresa",
       "phone": "Broj Telefona",
       "message": "Poruka",
-      "submit": "Pošalji Poruku"
+      "submit": "Pošalji Poruku",
+      "successMessage": "Hvala na poruci! Kontaktiraćemo vas uskoro."
     },
     "calculator": {
       "title": "Kalkulator Cena",
       "members": "Broj Članova",
       "estimate": "Mesečna Procena",
-      "currency": "EUR",
-      "contactSales": "Kontaktiraj Prodajni Tim"
+      "currency": "€",
+      "perMonth": "mesečno",
+      "contactSales": "Kontaktiraj Prodajni Tim",
+      "features": {
+        "trial": "30-dnevni besplatan probni period",
+        "noFees": "Bez troškova podešavanja",
+        "cancel": "Otkažite kad god"
+      }
     }
   },
   "footer": {

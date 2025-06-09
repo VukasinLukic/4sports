@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
 import SimpleButton from '@/components/ui/simple-button';
+import AnimatedButton from '@/components/ui/animated-button';
 
 const Navigation = () => {
   const { language, toggleLanguage, t } = useLanguage();
@@ -80,12 +81,13 @@ const Navigation = () => {
               <Globe className="w-4 h-4 mr-2" />
               {language.toUpperCase()}
             </SimpleButton>
-            <SimpleButton 
+            <AnimatedButton 
               variant="primary"
               onClick={() => scrollToSection('contact')}
+              animated={true}
             >
               Probaj Besplatno
-            </SimpleButton>
+            </AnimatedButton>
           </div>
 
           {/* Mobile menu button */}
@@ -143,13 +145,14 @@ const Navigation = () => {
                   <Globe className="w-4 h-4 mr-2" />
                   {language.toUpperCase()}
                 </SimpleButton>
-                <SimpleButton 
+                <AnimatedButton 
                   variant="primary"
                   onClick={() => scrollToSection('contact')}
                   className="flex-1"
+                  animated={true}
                 >
                   Probaj Besplatno
-                </SimpleButton>
+                </AnimatedButton>
               </div>
             </div>
           </div>

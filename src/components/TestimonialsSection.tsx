@@ -23,11 +23,6 @@ const TestimonialsSection = () => {
     <section id="experiences" className="section-padding organic-bg hero-pattern relative overflow-hidden">
       <div className="container-custom relative z-10">
         <div className="text-center mb-20 fade-in">
-          <div className="badge-modern mb-12 mx-auto w-fit">
-            <Star className="w-5 h-5 text-primary mr-3" />
-            <span className="text-gray-300">Success</span>
-            <span className="ml-2 text-primary font-bold">Stories</span>
-          </div>
           <h2 className="text-balance mb-12 text-white">
             {t('testimonials.title')}
           </h2>

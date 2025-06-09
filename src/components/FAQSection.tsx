@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 
 const FAQSection = () => {
   const { t } = useLanguage();
@@ -19,11 +19,6 @@ const FAQSection = () => {
       
       <div className="container-custom relative z-10">
         <div className="text-center mb-20 fade-in">
-          <div className="badge-modern mb-12 mx-auto w-fit">
-            <HelpCircle className="w-5 h-5 text-primary mr-3" />
-            <span className="text-gray-300">Help</span>
-            <span className="ml-2 text-primary font-bold">Center</span>
-          </div>
           <h2 className="text-balance mb-12 text-white">
             {t('faq.title')}
           </h2>
@@ -59,12 +54,6 @@ const FAQSection = () => {
           ))}
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-1/3 right-20 w-5 h-5 rounded-full opacity-70 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #22c55e, #16a34a)', animationDelay: '0.5s'}}></div>
-      <div className="absolute bottom-1/4 left-1/3 w-3 h-3 rounded-full opacity-60 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #15803d, #22c55e)', animationDelay: '2s'}}></div>
     </section>
   );
 };

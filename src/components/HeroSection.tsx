@@ -17,7 +17,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center organic-bg hero-pattern">
+    <section id="home" className="relative min-h-screen flex items-center justify-center organic-bg hero-pattern pt-32">
       {/* Main content */}
       <div className="relative container-custom text-center z-10">
         <div className="max-w-6xl mx-auto fade-in">

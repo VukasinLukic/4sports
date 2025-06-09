@@ -12,52 +12,47 @@ export default function AnimatedStat({ value, label, className = '' }: AnimatedS
     <>
       <style>
         {`
-        @property --gradient-angle {
-          syntax: "<angle>";
-          inherits: false;
-          initial-value: 0deg;
-        }
-
-        .stat-card-animation {
-          animation: statGradientRotation 4s linear infinite;
-        }
-
-        @keyframes statGradientRotation {
-          0% { --gradient-angle: 0deg; }
-          100% { --gradient-angle: 360deg; }
-        }
-
-        .animated-stat-card {
-          background: 
-            conic-gradient(from var(--gradient-angle), 
-              transparent 0deg,
-              rgba(34, 197, 94, 0.6) 60deg,
-              rgba(34, 197, 94, 0.8) 120deg,
-              transparent 180deg,
-              rgba(34, 197, 94, 0.3) 240deg,
-              transparent 360deg
-            ),
-            linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
-          border: 1px solid rgba(34, 197, 94, 0.4);
+        .stat-card {
+          background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+          border: 1px solid rgba(34, 197, 94, 0.3);
           box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.8),
-            0 0 20px rgba(34, 197, 94, 0.3),
-            inset 0 1px 0 rgba(34, 197, 94, 0.2);
+            0 4px 20px rgba(0, 0, 0, 0.6),
+            0 0 15px rgba(34, 197, 94, 0.2);
         }
 
-        .animated-stat-card:hover {
-          border-color: rgba(34, 197, 94, 0.6);
+        .stat-card:hover {
+          border-color: rgba(34, 197, 94, 0.5);
           box-shadow: 
-            0 20px 50px rgba(0, 0, 0, 0.9),
-            0 0 40px rgba(34, 197, 94, 0.4),
-            inset 0 1px 0 rgba(34, 197, 94, 0.3);
-          transform: translateY(-8px);
+            0 8px 30px rgba(0, 0, 0, 0.8),
+            0 0 25px rgba(34, 197, 94, 0.3);
+          transform: translateY(-4px);
+        }
+
+        .stat-glow {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .stat-glow::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.4), transparent);
+          animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+          0% { left: -100%; }
+          100% { left: 100%; }
         }
         `}
       </style>
-      <div className={`stat-card-animation animated-stat-card text-center p-8 rounded-3xl transition-all duration-500 ${className}`}>
-        <div className="text-4xl lg:text-5xl font-black text-gradient mb-3">{value}</div>
-        <div className="text-sm text-gray-400 font-medium">{label}</div>
+      <div className={`stat-card stat-glow text-center p-8 rounded-3xl transition-all duration-300 ${className}`}>
+        <div className="text-4xl lg:text-5xl font-black text-gradient mb-3 relative z-10">{value}</div>
+        <div className="text-sm text-gray-400 font-medium relative z-10">{label}</div>
       </div>
     </>
   );

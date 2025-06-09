@@ -27,31 +27,33 @@ export function TestimonialCard({
     <Card
       {...(href ? { href } : {})}
       className={cn(
-        "flex flex-col rounded-lg border-t",
-        "bg-gradient-to-b from-muted/50 to-muted/10",
-        "p-4 text-start sm:p-6",
-        "hover:from-muted/60 hover:to-muted/20",
-        "max-w-[320px] sm:max-w-[320px]",
-        "transition-colors duration-300",
+        "glass-card-hover",
+        "flex flex-col rounded-xl",
+        "p-6 text-start",
+        "max-w-[350px] min-w-[350px]",
+        "transition-all duration-300",
+        "border border-primary/20",
         className
       )}
     >
-      <div className="flex items-center gap-3">
-        <Avatar className="h-12 w-12">
+      <div className="flex items-center gap-3 mb-4">
+        <Avatar className="h-12 w-12 border-2 border-primary/30">
           <AvatarImage src={author.avatar} alt={author.name} />
-          <AvatarFallback>{author.name.charAt(0)}</AvatarFallback>
+          <AvatarFallback className="bg-primary/20 text-primary font-bold">
+            {author.name.charAt(0)}
+          </AvatarFallback>
         </Avatar>
         <div className="flex flex-col items-start">
-          <h3 className="text-md font-semibold leading-none">
+          <h3 className="text-lg font-bold text-white leading-none">
             {author.name}
           </h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-primary font-medium">
             {author.handle}
           </p>
         </div>
       </div>
-      <p className="sm:text-md mt-4 text-sm text-muted-foreground">
-        {text}
+      <p className="text-base text-gray-300 leading-relaxed">
+        "{text}"
       </p>
     </Card>
   )

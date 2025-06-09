@@ -3,24 +3,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 4sports Design System - Modern Tech Startup */
+/* 4sports Design System - Modern Brand Identity */
 
 @layer base {
   :root {
-    /* Modern dark theme with professional green accents */
-    --background: 8 8 12; /* Very dark blue-gray */
+    /* Modern dark theme with organic green shapes */
+    --background: 8 8 12; /* Very dark background */
     --foreground: 250 250 250; /* Near white */
 
-    --card: 15 15 20; /* Slightly lighter dark */
+    --card: 15 15 20; /* Card background */
     --card-foreground: 250 250 250;
 
     --popover: 15 15 20;
     --popover-foreground: 250 250 250;
 
-    --primary: 34 197 94; /* Modern green */
+    --primary: 34 197 94; /* Bright green */
     --primary-foreground: 8 8 12;
 
-    --secondary: 24 24 27; /* Subtle dark */
+    --secondary: 24 24 27;
     --secondary-foreground: 161 161 170;
 
     --muted: 24 24 27;
@@ -36,7 +36,7 @@
     --input: 24 24 27;
     --ring: 34 197 94;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 8 8 12;
     --sidebar-foreground: 250 250 250;
@@ -87,6 +87,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   html {
@@ -109,15 +110,66 @@
 }
 
 @layer components {
+  /* Organic shapes and modern animations */
+  .organic-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .organic-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 70%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 30%, rgba(34, 197, 94, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 10% 90%, rgba(34, 197, 94, 0.08) 0%, transparent 50%);
+    animation: organic-float 20s ease-in-out infinite;
+    z-index: -1;
+  }
+
+  @keyframes organic-float {
+    0%, 100% {
+      transform: rotate(0deg) scale(1);
+    }
+    33% {
+      transform: rotate(5deg) scale(1.1);
+    }
+    66% {
+      transform: rotate(-3deg) scale(0.95);
+    }
+  }
+
+  /* Modern glass effect */
+  .glass-card {
+    background: rgba(15, 15, 20, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(34, 197, 94, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(15, 15, 20, 0.8);
+    border-color: rgba(34, 197, 94, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(34, 197, 94, 0.1);
+  }
+
   /* Elegant animations */
   .fade-in {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.8s ease-out;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(40px);
     }
     to {
       opacity: 1;
@@ -125,97 +177,161 @@
     }
   }
 
-  /* Smooth hover effects */
+  .slide-in-up {
+    animation: slideInUp 0.6s ease-out;
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover effects */
   .hover-lift {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .hover-lift:hover {
-    transform: translateY(-4px);
-  }
-
-  /* Gradient backgrounds */
-  .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
-  }
-
-  .gradient-card {
-    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--card) / 0.8));
-    border: 1px solid hsl(var(--border));
+    transform: translateY(-8px);
   }
 
   /* Text gradients */
   .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--foreground)));
+    background: linear-gradient(135deg, hsl(var(--primary)), rgba(34, 197, 94, 0.7));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Modern glass effect */
-  .glass-card {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .text-gradient-secondary {
+    background: linear-gradient(135deg, hsl(var(--foreground)), rgba(250, 250, 250, 0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  /* Elegant buttons */
+  /* Modern buttons */
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium;
-    @apply hover:bg-primary/90 transition-all duration-200;
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold;
+    @apply hover:bg-primary/90 transition-all duration-300;
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
+    transform: translateY(-2px);
   }
 
   .btn-secondary {
-    @apply bg-transparent border border-border text-foreground px-6 py-3 rounded-lg font-medium;
-    @apply hover:bg-muted hover:border-primary/50 transition-all duration-200;
+    @apply bg-transparent border-2 border-primary/20 text-foreground px-8 py-4 rounded-xl font-semibold;
+    @apply hover:border-primary/40 hover:bg-primary/5 transition-all duration-300;
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .btn-secondary:hover {
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Badge styles */
+  .badge-modern {
+    @apply inline-flex items-center px-4 py-2 rounded-full glass-card;
+    @apply text-sm font-medium border border-primary/20;
   }
 
   /* Section spacing */
   .section-padding {
-    @apply py-20 lg:py-32;
+    @apply py-24 lg:py-32;
   }
 
   /* Container with max width */
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Logo styles */
+  .logo-4sports {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  /* Hero section specific */
+  .hero-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.1) 0%, transparent 25%),
+      radial-gradient(circle at 75% 75%, rgba(34, 197, 94, 0.05) 0%, transparent 25%);
+  }
+
+  /* Form styles */
+  .form-input {
+    @apply bg-card border border-border text-foreground rounded-lg px-4 py-3;
+    @apply focus:border-primary focus:ring-1 focus:ring-primary/20;
+    @apply transition-all duration-200;
+  }
+
+  .form-input:focus {
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200;
+    @apply relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: hsl(var(--primary));
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
   }
 }
 
 /* Modern typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 h1 {
-  @apply text-4xl sm:text-5xl lg:text-6xl;
+  @apply text-5xl sm:text-6xl lg:text-7xl;
+  font-weight: 800;
 }
 
 h2 {
-  @apply text-3xl sm:text-4xl lg:text-5xl;
+  @apply text-4xl sm:text-5xl lg:text-6xl;
 }
 
 h3 {
-  @apply text-2xl sm:text-3xl;
-}
-
-/* Form elements */
-input, textarea, select {
-  @apply bg-input border border-border text-foreground rounded-lg;
-  @apply focus:border-primary focus:ring-1 focus:ring-primary;
-  @apply transition-colors duration-200;
-}
-
-/* Modern buttons */
-button {
-  @apply transition-all duration-200;
+  @apply text-2xl sm:text-3xl lg:text-4xl;
 }
 
 /* Utility classes */
 .text-balance {
   text-wrap: balance;
+}
+
+/* Enhanced backdrop blur for modern look */
+.backdrop-blur-modern {
+  backdrop-filter: blur(24px) saturate(180%);
+  background: rgba(8, 8, 12, 0.8);
 }

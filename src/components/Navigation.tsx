@@ -27,12 +27,12 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-background/80 backdrop-blur-lg border-b border-border' : 'bg-transparent'
+      isScrolled ? 'backdrop-blur-modern border-b border-border/50' : 'bg-transparent'
     }`}>
       <div className="container-custom">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="text-xl font-bold text-foreground">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo with modern styling */}
+          <div className="logo-4sports text-gradient">
             4sports
           </div>
 
@@ -40,31 +40,31 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('home')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="nav-link"
             >
               {t('navigation.home')}
             </button>
             <button 
               onClick={() => scrollToSection('purpose')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="nav-link"
             >
               {t('navigation.purpose')}
             </button>
             <button 
               onClick={() => scrollToSection('experiences')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="nav-link"
             >
               {t('navigation.experiences')}
             </button>
             <button 
               onClick={() => scrollToSection('faq')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="nav-link"
             >
               {t('navigation.faq')}
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="nav-link"
             >
               {t('navigation.contact')}
             </button>
@@ -74,14 +74,14 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button
               onClick={toggleLanguage}
-              className="btn-secondary !px-3 !py-2"
+              className="btn-secondary !px-4 !py-2 !min-w-0"
             >
-              <Globe className="w-4 h-4 mr-1" />
+              <Globe className="w-4 h-4 mr-2" />
               {language.toUpperCase()}
             </Button>
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="btn-primary"
+              className="btn-primary !py-3"
             >
               {t('navigation.tryFree')}
             </Button>
@@ -91,7 +91,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <Button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="btn-secondary !px-3 !py-2"
+              className="btn-secondary !px-3 !py-2 !min-w-0"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
@@ -100,44 +100,44 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-lg">
-            <div className="py-6 space-y-4">
+          <div className="md:hidden border-t border-border/50 backdrop-blur-modern">
+            <div className="py-8 space-y-6">
               <button 
                 onClick={() => scrollToSection('home')}
-                className="block w-full text-left text-muted-foreground hover:text-foreground py-2 transition-colors"
+                className="block w-full text-left nav-link py-2"
               >
                 {t('navigation.home')}
               </button>
               <button 
                 onClick={() => scrollToSection('purpose')}
-                className="block w-full text-left text-muted-foreground hover:text-foreground py-2 transition-colors"
+                className="block w-full text-left nav-link py-2"
               >
                 {t('navigation.purpose')}
               </button>
               <button 
                 onClick={() => scrollToSection('experiences')}
-                className="block w-full text-left text-muted-foreground hover:text-foreground py-2 transition-colors"
+                className="block w-full text-left nav-link py-2"
               >
                 {t('navigation.experiences')}
               </button>
               <button 
                 onClick={() => scrollToSection('faq')}
-                className="block w-full text-left text-muted-foreground hover:text-foreground py-2 transition-colors"
+                className="block w-full text-left nav-link py-2"
               >
                 {t('navigation.faq')}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="block w-full text-left text-muted-foreground hover:text-foreground py-2 transition-colors"
+                className="block w-full text-left nav-link py-2"
               >
                 {t('navigation.contact')}
               </button>
               <div className="flex space-x-3 pt-4">
                 <Button
                   onClick={toggleLanguage}
-                  className="btn-secondary !px-3 !py-2 flex-1"
+                  className="btn-secondary flex-1"
                 >
-                  <Globe className="w-4 h-4 mr-1" />
+                  <Globe className="w-4 h-4 mr-2" />
                   {language.toUpperCase()}
                 </Button>
                 <Button 

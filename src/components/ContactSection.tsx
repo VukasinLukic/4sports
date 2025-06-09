@@ -4,7 +4,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -16,16 +15,14 @@ const ContactSection = () => {
     message: '',
   });
 
-  // Simple pricing calculation (5 EUR per member per month)
   const calculatePrice = (memberCount: number) => {
-    const basePrice = 50; // Base price
+    const basePrice = 50;
     const pricePerMember = 5;
     return basePrice + (memberCount * pricePerMember);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     console.log('Form submitted:', formData);
     alert('Thank you for your message! We will contact you soon.');
   };
@@ -38,129 +35,143 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+    <section id="contact" className="py-24 bg-black">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16 font-mono">
+          <div className="text-primary text-sm mb-4">
+            $ ./contact.sh --init
+          </div>
+          <h2 className="text-2xl md:text-4xl font-mono text-primary mb-6">
             {t('contact.title')}
           </h2>
-          <p className="text-xl text-muted-foreground">
-            {t('contact.subtitle')}
+          <div className="h-px bg-primary w-40 mx-auto mb-6"></div>
+          <p className="text-primary text-sm">
+            &gt; {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="text-2xl text-foreground">
+          <div className="ascii-border bg-black p-8">
+            <div className="font-mono mb-6">
+              <div className="text-primary text-sm mb-4">
+                $ nano contact_form.txt
+              </div>
+              <h3 className="text-lg text-primary">
                 {t('footer.contact')}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name" className="text-foreground">
-                    {t('contact.form.name')}
-                  </Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
-                    className="mt-2"
-                    required
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="email" className="text-foreground">
-                    {t('contact.form.email')}
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="mt-2"
-                    required
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="phone" className="text-foreground">
-                    {t('contact.form.phone')}
-                  </Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className="mt-2"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="message" className="text-foreground">
-                    {t('contact.form.message')}
-                  </Label>
-                  <textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => handleInputChange('message', e.target.value)}
-                    className="mt-2 flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                    required
-                  />
-                </div>
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-                  {t('contact.form.submit')}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+              </h3>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-6 font-mono">
+              <div>
+                <Label htmlFor="name" className="text-primary text-sm">
+                  &gt; {t('contact.form.name')}:
+                </Label>
+                <Input
+                  id="name"
+                  type="text"
+                  value={formData.name}
+                  onChange={(e) => handleInputChange('name', e.target.value)}
+                  className="mt-2 bg-black border-primary text-primary font-mono"
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="email" className="text-primary text-sm">
+                  &gt; {t('contact.form.email')}:
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  className="mt-2 bg-black border-primary text-primary font-mono"
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="phone" className="text-primary text-sm">
+                  &gt; {t('contact.form.phone')}:
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange('phone', e.target.value)}
+                  className="mt-2 bg-black border-primary text-primary font-mono"
+                />
+              </div>
+              <div>
+                <Label htmlFor="message" className="text-primary text-sm">
+                  &gt; {t('contact.form.message')}:
+                </Label>
+                <textarea
+                  id="message"
+                  value={formData.message}
+                  onChange={(e) => handleInputChange('message', e.target.value)}
+                  className="mt-2 w-full min-h-[120px] bg-black border border-primary text-primary font-mono p-3 rounded-none"
+                  required
+                />
+              </div>
+              <Button type="submit" className="w-full bg-black border-primary text-primary hover:bg-primary hover:text-black font-mono">
+                $ {t('contact.form.submit')}
+              </Button>
+            </form>
+          </div>
 
           {/* Price Calculator */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="text-2xl text-foreground">
+          <div className="ascii-border bg-black p-8">
+            <div className="font-mono mb-6">
+              <div className="text-primary text-sm mb-4">
+                $ python3 calculator.py
+              </div>
+              <h3 className="text-lg text-primary">
                 {t('contact.calculator.title')}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
+              </h3>
+            </div>
+            <div className="space-y-6 font-mono">
               <div>
-                <Label htmlFor="members" className="text-foreground text-lg">
-                  {t('contact.calculator.members')}
+                <Label htmlFor="members" className="text-primary text-sm">
+                  &gt; {t('contact.calculator.members')}:
                 </Label>
                 <Input
                   id="members"
                   type="number"
                   value={members}
                   onChange={(e) => setMembers(Number(e.target.value))}
-                  className="mt-2 text-lg"
+                  className="mt-2 bg-black border-primary text-primary font-mono text-lg"
                   min="1"
                   max="1000"
                 />
               </div>
               
-              <div className="p-6 bg-primary/10 rounded-lg">
+              <div className="ascii-border p-6 bg-black">
                 <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-2">
-                    {t('contact.calculator.estimate')}
-                  </p>
-                  <div className="text-4xl font-bold text-primary">
-                    {calculatePrice(members)} {t('contact.calculator.currency')}
+                  <div className="text-primary text-xs mb-2">
+                    OUTPUT:
                   </div>
-                  <p className="text-sm text-muted-foreground mt-1">per month</p>
+                  <pre className="text-primary text-sm mb-4">
+{`┌─ PRICE CALCULATION ─┐
+│                     │
+│    ${calculatePrice(members)} EUR/MONTH   │
+│                     │
+└─────────────────────┘`}
+                  </pre>
+                  <div className="text-primary text-xs">
+                    ESTIMATED_COST
+                  </div>
                 </div>
               </div>
 
-              <Button className="w-full bg-primary hover:bg-primary/90 text-lg py-6">
-                {t('contact.calculator.contactSales')}
+              <Button className="w-full bg-black border-primary text-primary hover:bg-primary hover:text-black font-mono text-lg py-6">
+                $ {t('contact.calculator.contactSales')}
               </Button>
 
-              <div className="text-sm text-muted-foreground text-center">
-                <p>30-day free trial included</p>
-                <p>No setup fees • Cancel anytime</p>
+              <div className="text-xs text-primary text-center font-mono">
+                <div>&gt; 30-day free trial included</div>
+                <div>&gt; No setup fees • Cancel anytime</div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </section>

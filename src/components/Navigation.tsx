@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const { language, toggleLanguage, t } = useLanguage();
@@ -17,131 +16,121 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <div className="text-2xl font-bold text-primary">
-              4sports
-            </div>
+    <nav className="fixed top-0 w-full bg-black border-b border-primary z-50 font-mono">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex justify-between items-center h-14">
+          {/* ASCII Logo */}
+          <div className="text-primary font-mono text-sm hover-glow cursor-pointer">
+            &#91;4sports&#93;
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <button 
-                onClick={() => scrollToSection('home')}
-                className="text-foreground hover:text-primary transition-colors"
-              >
-                {t('navigation.home')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('purpose')}
-                className="text-foreground hover:text-primary transition-colors"
-              >
-                {t('navigation.purpose')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('experiences')}
-                className="text-foreground hover:text-primary transition-colors"
-              >
-                {t('navigation.experiences')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('faq')}
-                className="text-foreground hover:text-primary transition-colors"
-              >
-                {t('navigation.faq')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-foreground hover:text-primary transition-colors"
-              >
-                {t('navigation.contact')}
-              </button>
-            </div>
+          {/* Desktop Menu - Terminal Style */}
+          <div className="hidden md:flex items-center space-x-8 text-sm">
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="text-primary hover-glow transition-all"
+            >
+              &gt; {t('navigation.home')}
+            </button>
+            <button 
+              onClick={() => scrollToSection('purpose')}
+              className="text-primary hover-glow transition-all"
+            >
+              &gt; {t('navigation.purpose')}
+            </button>
+            <button 
+              onClick={() => scrollToSection('experiences')}
+              className="text-primary hover-glow transition-all"
+            >
+              &gt; {t('navigation.experiences')}
+            </button>
+            <button 
+              onClick={() => scrollToSection('faq')}
+              className="text-primary hover-glow transition-all"
+            >
+              &gt; {t('navigation.faq')}
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="text-primary hover-glow transition-all"
+            >
+              &gt; {t('navigation.contact')}
+            </button>
           </div>
 
           {/* Language Toggle & CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <Button
-              variant="outline"
-              size="sm"
               onClick={toggleLanguage}
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="border border-primary bg-black text-primary hover:bg-primary hover:text-black text-xs px-3 py-1 font-mono"
             >
-              {language.toUpperCase()}
+              [{language.toUpperCase()}]
             </Button>
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="bg-primary hover:bg-primary/90"
+              className="border border-primary bg-black text-primary hover:bg-primary hover:text-black text-xs px-3 py-1 font-mono"
             >
-              {t('navigation.tryFree')}
+              $ {t('navigation.tryFree')}
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <Button
-              variant="ghost"
-              size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="border border-primary bg-black text-primary hover:bg-primary hover:text-black text-xs px-2 py-1 font-mono"
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? '[X]' : '[≡]'}
             </Button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
+          <div className="md:hidden border-t border-primary">
+            <div className="py-4 space-y-2 text-sm font-mono">
               <button 
                 onClick={() => scrollToSection('home')}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block w-full text-left text-primary hover-glow py-1"
               >
-                {t('navigation.home')}
+                &gt; {t('navigation.home')}
               </button>
               <button 
                 onClick={() => scrollToSection('purpose')}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block w-full text-left text-primary hover-glow py-1"
               >
-                {t('navigation.purpose')}
+                &gt; {t('navigation.purpose')}
               </button>
               <button 
                 onClick={() => scrollToSection('experiences')}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block w-full text-left text-primary hover-glow py-1"
               >
-                {t('navigation.experiences')}
+                &gt; {t('navigation.experiences')}
               </button>
               <button 
                 onClick={() => scrollToSection('faq')}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block w-full text-left text-primary hover-glow py-1"
               >
-                {t('navigation.faq')}
+                &gt; {t('navigation.faq')}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block w-full text-left text-primary hover-glow py-1"
               >
-                {t('navigation.contact')}
+                &gt; {t('navigation.contact')}
               </button>
-              <div className="flex items-center space-x-2 px-3 py-2">
+              <div className="flex space-x-2 pt-2">
                 <Button
-                  variant="outline"
-                  size="sm"
                   onClick={toggleLanguage}
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  className="border border-primary bg-black text-primary hover:bg-primary hover:text-black text-xs px-2 py-1 font-mono"
                 >
-                  {language.toUpperCase()}
+                  [{language.toUpperCase()}]
                 </Button>
                 <Button 
                   onClick={() => scrollToSection('contact')}
-                  className="bg-primary hover:bg-primary/90"
-                  size="sm"
+                  className="border border-primary bg-black text-primary hover:bg-primary hover:text-black text-xs px-2 py-1 font-mono"
                 >
-                  {t('navigation.tryFree')}
+                  $ {t('navigation.tryFree')}
                 </Button>
               </div>
             </div>

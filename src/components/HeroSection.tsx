@@ -1,10 +1,23 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const fullText = '4sports';
+
+  useEffect(() => {
+    if (currentIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + fullText[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -14,60 +27,61 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10"></div>
-      
-      {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(12, 191, 103, 0.3) 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
+    <section id="home" className="min-h-screen flex items-center justify-center bg-black">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        {/* ASCII Art Logo */}
+        <div className="mb-12 font-mono text-primary">
+          <pre className="text-xs sm:text-sm leading-tight">
+{`
+ ██╗  ██╗    ███████╗██████╗  ██████╗ ██████╗ ████████╗███████╗
+ ██║  ██║    ██╔════╝██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝
+ ███████║    ███████╗██████╔╝██║   ██║██████╔╝   ██║   ███████╗
+ ╚════██║    ╚════██║██╔═══╝ ██║   ██║██╔══██╗   ██║   ╚════██║
+      ██║    ███████║██║     ╚██████╔╝██║  ██║   ██║   ███████║
+      ╚═╝    ╚══════╝╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝
+`}
+          </pre>
+        </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="space-y-8">
-          {/* Main Title */}
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-tight">
-              {t('hero.title')}
-            </h1>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary">
-              {t('hero.subtitle')}
-            </h2>
-          </div>
+        {/* Typewriter Title */}
+        <div className="mb-8">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-mono text-primary mb-4">
+            {displayText}<span className="animate-pulse">|</span>
+          </h1>
+          <div className="h-px bg-primary w-32 mx-auto mb-6"></div>
+        </div>
 
-          {/* Description */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            {t('hero.description')}
+        {/* Matrix-style subtitle */}
+        <div className="mb-12 font-mono">
+          <p className="text-sm sm:text-lg text-primary matrix-text">
+            &gt; {t('hero.description')}
           </p>
+        </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+        {/* Terminal-style buttons */}
+        <div className="space-y-4 font-mono">
+          <div className="text-primary text-sm mb-4">
+            $ choose_option:
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              size="lg"
               onClick={() => scrollToSection('contact')}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-full min-w-48"
+              className="border border-primary bg-black text-primary hover:bg-primary hover:text-black px-8 py-3 font-mono"
             >
-              {t('hero.cta1')}
+              [1] {t('hero.cta1')}
             </Button>
             <Button 
-              variant="outline"
-              size="lg"
               onClick={() => scrollToSection('purpose')}
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold rounded-full min-w-48"
+              className="border border-primary bg-black text-primary hover:bg-primary hover:text-black px-8 py-3 font-mono"
             >
-              {t('hero.cta2')}
+              [2] {t('hero.cta2')}
             </Button>
           </div>
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+        {/* Terminal cursor */}
+        <div className="mt-16 text-primary font-mono text-sm">
+          <span className="animate-pulse">_</span>
         </div>
       </div>
     </section>

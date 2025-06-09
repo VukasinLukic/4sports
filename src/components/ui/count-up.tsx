@@ -78,9 +78,8 @@ export default function CountUp({
           maximumFractionDigits: 0,
         };
 
-        const formattedNumber = Intl.NumberFormat("en-US", options).format(
-          latest.toFixed(0)
-        );
+        const roundedNumber = Math.round(latest);
+        const formattedNumber = Intl.NumberFormat("en-US", options).format(roundedNumber);
 
         ref.current.textContent = separator
           ? formattedNumber.replace(/,/g, separator)

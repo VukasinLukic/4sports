@@ -3,6 +3,8 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, Play } from 'lucide-react';
 import AnimatedButton from '@/components/ui/animated-button';
+import SimpleButton from '@/components/ui/simple-button';
+import AnimatedStat from '@/components/ui/animated-stat';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -36,34 +38,26 @@ const HeroSection = () => {
               variant="primary"
               onClick={() => scrollToSection('contact')}
               className="min-w-[240px]"
+              animated={true}
             >
               Probaj Besplatno
               <ArrowRight className="ml-3 h-6 w-6" />
             </AnimatedButton>
-            <AnimatedButton 
+            <SimpleButton 
               variant="secondary"
               onClick={() => scrollToSection('purpose')}
               className="min-w-[240px]"
             >
               <Play className="mr-3 h-6 w-6" />
               Saznaj Više
-            </AnimatedButton>
+            </SimpleButton>
           </div>
 
-          {/* Stats with modern design */}
+          {/* Stats with animated design */}
           <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="text-center glass-card p-8 rounded-3xl hover-lift">
-              <div className="text-4xl lg:text-5xl font-black text-gradient mb-3">500+</div>
-              <div className="text-sm text-gray-400 font-medium">Aktivnih Klubova</div>
-            </div>
-            <div className="text-center glass-card p-8 rounded-3xl hover-lift">
-              <div className="text-4xl lg:text-5xl font-black text-gradient mb-3">10k+</div>
-              <div className="text-sm text-gray-400 font-medium">Članova</div>
-            </div>
-            <div className="text-center glass-card p-8 rounded-3xl hover-lift">
-              <div className="text-4xl lg:text-5xl font-black text-gradient mb-3">99%</div>
-              <div className="text-sm text-gray-400 font-medium">Zadovoljstvo</div>
-            </div>
+            <AnimatedStat value="500+" label="Aktivnih Klubova" />
+            <AnimatedStat value="10k+" label="Članova" />
+            <AnimatedStat value="99%" label="Zadovoljstvo" />
           </div>
         </div>
       </div>

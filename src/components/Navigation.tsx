@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
-import AnimatedButton from '@/components/ui/animated-button';
+import SimpleButton from '@/components/ui/simple-button';
 
 const Navigation = () => {
   const { language, toggleLanguage, t } = useLanguage();
@@ -72,31 +72,31 @@ const Navigation = () => {
 
           {/* Language Toggle & CTA */}
           <div className="hidden md:flex items-center space-x-6">
-            <AnimatedButton
-              variant="secondary"
+            <SimpleButton
+              variant="language"
               onClick={toggleLanguage}
               className="!min-w-0"
             >
-              <Globe className="w-5 h-5 mr-2" />
+              <Globe className="w-4 h-4 mr-2" />
               {language.toUpperCase()}
-            </AnimatedButton>
-            <AnimatedButton 
+            </SimpleButton>
+            <SimpleButton 
               variant="primary"
               onClick={() => scrollToSection('contact')}
             >
               Probaj Besplatno
-            </AnimatedButton>
+            </SimpleButton>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <AnimatedButton
+            <SimpleButton
               variant="secondary"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="!min-w-0"
+              className="!min-w-0 !px-4 !py-2"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </AnimatedButton>
+            </SimpleButton>
           </div>
         </div>
 
@@ -135,21 +135,21 @@ const Navigation = () => {
                 {t('navigation.contact')}
               </button>
               <div className="flex space-x-4 pt-6">
-                <AnimatedButton
-                  variant="secondary"
+                <SimpleButton
+                  variant="language"
                   onClick={toggleLanguage}
                   className="flex-1"
                 >
-                  <Globe className="w-5 h-5 mr-2" />
+                  <Globe className="w-4 h-4 mr-2" />
                   {language.toUpperCase()}
-                </AnimatedButton>
-                <AnimatedButton 
+                </SimpleButton>
+                <SimpleButton 
                   variant="primary"
                   onClick={() => scrollToSection('contact')}
                   className="flex-1"
                 >
                   Probaj Besplatno
-                </AnimatedButton>
+                </SimpleButton>
               </div>
             </div>
           </div>

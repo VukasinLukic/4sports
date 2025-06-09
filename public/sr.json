@@ -2,7 +2,7 @@
 {
   "navigation": {
     "home": "Početna",
-    "purpose": "Namena i Benefiti",
+    "purpose": "Svrha i Prednosti",
     "experiences": "Iskustva Klubova",
     "faq": "Česta Pitanja",
     "contact": "Kontakt i Cene",
@@ -12,7 +12,7 @@
   "hero": {
     "title": "Upravljaj Sportskim Klubom",
     "subtitle": "Bez Prepreka",
-    "description": "4sports je kompletno rešenje za upravljanje sportskim klubovima. Optimizuj operacije, prati prisustvo i usreći roditelje.",
+    "description": "4sports je kompletno rešenje za upravljanje sportskim klubovima. Pojednostavite operacije, pratite prisustvo i zadovoljite roditelje.",
     "cta1": "Probaj Besplatno",
     "cta2": "Saznaj Više"
   },
@@ -24,7 +24,7 @@
     "title": "Ključne Funkcionalnosti",
     "calendar": {
       "title": "Pametni Kalendar",
-      "description": "Zakaži treninge i utakmice sa lakoćom"
+      "description": "Zakaži treninge i utakmice jednostavno"
     },
     "members": {
       "title": "Upravljanje Članovima",
@@ -32,37 +32,45 @@
     },
     "attendance": {
       "title": "Praćenje Prisustva",
-      "description": "Kontroliši ko je prisutan na svakom treningu"
+      "description": "Vidi ko je prisutan na svakom treningu"
     },
     "payments": {
       "title": "Upravljanje Plaćanjima",
       "description": "Rukuj članarinama i plaćanjima bez problema"
+    },
+    "analytics": {
+      "title": "Analitika i Izveštaji",
+      "description": "Uvid u performanse kluba kroz detaljne izveštaje"
+    },
+    "scheduling": {
+      "title": "Zakazivanje Termina",
+      "description": "Efikasno organizuj treninge i događaje"
     }
   },
   "benefits": {
     "title": "Zašto Izabrati 4sports?",
     "efficiency": {
-      "title": "Povećana Efikasnost",
+      "title": "Veća Efikasnost",
       "description": "Uštedi sate administrativnog posla svake nedelje"
     },
     "organization": {
       "title": "Bolja Organizacija",
-      "description": "Drži sve organizovano na jednom centralnom mestu"
+      "description": "Sve organizovano na jednom centralnom mestu"
     },
     "parents": {
       "title": "Zadovoljni Roditelji",
-      "description": "Roditelji su obavešteni sa ažuriranjima u realnom vremenu"
+      "description": "Roditelji uvek obavešteni u realnom vremenu"
     }
   },
   "testimonials": {
     "title": "Šta Klubovi Kažu o Nama",
     "testimonial1": {
-      "quote": "4sports je transformisao način kako upravljamo našim fudbalskim klubom. Sve je sada mnogo lakše!",
+      "quote": "4sports je potpuno promenio način kako vodimo naš fudbalski klub. Sve je sada mnogo lakše!",
       "author": "Milan Jovanović",
       "club": "FK Partizan Omladinci"
     },
     "testimonial2": {
-      "quote": "Samo funkcija praćenja prisustva nam je uštedela nebrojeno sati svakog meseca.",
+      "quote": "Samo funkcija praćenja prisustva nam je uštedela nebrojano sati svakog meseca.",
       "author": "Ana Petrović",
       "club": "Tenis Klub Novak"
     }
@@ -72,7 +80,7 @@
     "questions": [
       {
         "question": "Koliko košta 4sports?",
-        "answer": "Cena zavisi od broja članova u vašem klubu. Koristite naš kalkulator ispod da dobijete procenu, ili nas kontaktirajte za prilagođenu ponudu."
+        "answer": "Cena zavisi od broja članova u vašem klubu. Koristite naš kalkulator ispod za procenu, ili nas kontaktirajte za prilagođenu ponudu."
       },
       {
         "question": "Da li postoji besplatan probni period?",
@@ -84,7 +92,7 @@
       },
       {
         "question": "Da li su moji podaci bezbedni?",
-        "answer": "Apsolutno. Koristimo enterprise-level bezbednost i poštujemo sve regulacije o zaštiti podataka."
+        "answer": "Apsolutno. Koristimo bezbednost na nivou preduzeća i poštujemo sve propise o zaštiti podataka."
       }
     ]
   },

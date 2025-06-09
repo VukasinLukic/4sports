@@ -52,7 +52,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="font-bold text-white mb-6 text-xl">
-              Quick Links
+              {t('footer.quickLinks')}
             </h3>
             <div className="space-y-4">
               <button 
@@ -85,13 +85,13 @@ const Footer = () => {
           {/* Support */}
           <div>
             <h3 className="font-bold text-white mb-6 text-xl">
-              Support
+              {t('footer.support')}
             </h3>
             <div className="space-y-4">
-              <div className="text-gray-300 text-lg hover:text-primary transition-colors cursor-pointer">Help Center</div>
-              <div className="text-gray-300 text-lg hover:text-primary transition-colors cursor-pointer">Privacy Policy</div>
-              <div className="text-gray-300 text-lg hover:text-primary transition-colors cursor-pointer">Terms of Service</div>
-              <div className="text-gray-300 text-lg hover:text-primary transition-colors cursor-pointer">Contact Support</div>
+              <div className="text-gray-300 text-lg hover:text-primary transition-colors cursor-pointer">{t('footer.helpCenter')}</div>
+              <div className="text-gray-300 text-lg hover:text-primary transition-colors cursor-pointer">{t('footer.privacy')}</div>
+              <div className="text-gray-300 text-lg hover:text-primary transition-colors cursor-pointer">{t('footer.terms')}</div>
+              <div className="text-gray-300 text-lg hover:text-primary transition-colors cursor-pointer">{t('footer.contactSupport')}</div>
             </div>
           </div>
         </div>
@@ -108,16 +108,10 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-16 pt-10 text-center">
           <p className="text-gray-400 text-lg">
-            © 2024 4sports. All rights reserved.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-1/3 left-1/4 w-3 h-3 rounded-full opacity-60 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #22c55e, #16a34a)', animationDelay: '2s'}}></div>
-      <div className="absolute bottom-1/4 right-1/3 w-4 h-4 rounded-full opacity-70 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #15803d, #22c55e)'}}></div>
     </footer>
   );
 };

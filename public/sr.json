@@ -154,7 +154,7 @@
       "title": "Kalkulator Cena",
       "members": "Broj Članova",
       "estimate": "Mesečna Procena",
-      "currency": "€",
+      "currency": "EUR",
       "perMonth": "mesečno",
       "contactSales": "Kontaktiraj Prodajni Tim",
       "features": {
@@ -168,6 +168,12 @@
     "contact": "Kontaktiraj Nas",
     "email": "info@4sports.com",
     "phone": "+381 11 123 4567",
+    "quickLinks": "Brzi Linkovi",
+    "support": "Podrška",
+    "helpCenter": "Centar za Pomoć",
+    "privacy": "Politika Privatnosti",
+    "terms": "Uslovi Korišćenja",
+    "contactSupport": "Kontaktiraj Podršku",
     "copyright": "© 2024 4sports. Sva prava zadržana."
   }
 }

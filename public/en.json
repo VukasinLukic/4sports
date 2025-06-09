@@ -154,7 +154,7 @@
       "title": "Price Calculator",
       "members": "Number of Members",
       "estimate": "Monthly Estimate",
-      "currency": "€",
+      "currency": "EUR",
       "perMonth": "per month",
       "contactSales": "Contact Sales Team",
       "features": {
@@ -168,6 +168,12 @@
     "contact": "Contact Us",
     "email": "info@4sports.com",
     "phone": "+381 11 123 4567",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "helpCenter": "Help Center",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contactSupport": "Contact Support",
     "copyright": "© 2024 4sports. All rights reserved."
   }
 }

@@ -11,57 +11,46 @@ const BenefitsSection = () => {
       icon: Zap,
       titleKey: 'benefits.efficiency.title',
       descriptionKey: 'benefits.efficiency.description',
-      gradient: 'from-primary/30 via-primary/20 to-primary/10',
     },
     {
       icon: Target,
       titleKey: 'benefits.organization.title',
       descriptionKey: 'benefits.organization.description',
-      gradient: 'from-primary/25 via-primary/15 to-primary/5',
     },
     {
       icon: Heart,
       titleKey: 'benefits.parents.title',
       descriptionKey: 'benefits.parents.description',
-      gradient: 'from-primary/35 via-primary/25 to-primary/15',
     },
   ];
 
   return (
     <section id="purpose" className="section-padding organic-bg hero-pattern relative overflow-hidden">
       {/* Decorative gradient orbs */}
-      <div className="absolute top-20 left-1/4 w-96 h-96 gradient-orb opacity-25 animate-pulse"></div>
-      <div className="absolute bottom-10 right-20 w-72 h-72 gradient-orb opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+      <div className="absolute top-16 left-20 w-72 h-72 gradient-orb opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-16 right-10 w-80 h-80 gradient-orb opacity-15 animate-pulse" style={{animationDelay: '2s'}}></div>
       
       <div className="container-custom relative z-10">
         <div className="text-center mb-20 fade-in">
-          <div className="badge-modern mb-12 mx-auto w-fit">
-            <span className="text-gray-300">Zašto Izabrati</span>
-            <span className="ml-2 text-primary font-bold">4sports</span>
-          </div>
           <h2 className="text-balance mb-12 text-white">
-            Zašto Izabrati 4sports?
+            {t('benefits.title')}
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-primary/60 rounded-full mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
-              <div key={index} className="text-center group">
-                <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center mx-auto mb-10 group-hover:scale-110 transition-all duration-300 glass-card`}>
-                  <Icon className="w-12 h-12 text-primary" />
+              <div key={index} className="glass-card p-10 rounded-3xl hover-lift group text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
+                  <Icon className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-6">
-                  {index === 0 && "Veća Efikasnost"}
-                  {index === 1 && "Bolja Organizacija"}
-                  {index === 2 && "Zadovoljni Roditelji"}
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  {t(benefit.titleKey)}
                 </h3>
-                <p className="text-gray-300 text-xl leading-relaxed">
-                  {index === 0 && "Uštedi sate administrativnog posla svake nedelje"}
-                  {index === 1 && "Sve organizovano na jednom centralnom mestu"}
-                  {index === 2 && "Roditelji uvek obavešteni u realnom vremenu"}
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  {t(benefit.descriptionKey)}
                 </p>
               </div>
             );

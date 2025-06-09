@@ -71,12 +71,6 @@ const TestimonialsSection = () => {
           ))}
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 left-20 w-4 h-4 rounded-full opacity-60 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #22c55e, #16a34a)', animationDelay: '2s'}}></div>
-      <div className="absolute bottom-1/3 right-1/3 w-6 h-6 rounded-full opacity-50 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #15803d, #22c55e)'}}></div>
     </section>
   );
 };

@@ -34,15 +34,14 @@ const HeroSection = () => {
 
           {/* CTA buttons with enhanced styling */}
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-24">
-            <AnimatedButton 
+            <SimpleButton 
               variant="primary"
               onClick={() => scrollToSection('contact')}
               className="min-w-[240px]"
-              animated={true}
             >
               Probaj Besplatno
               <ArrowRight className="ml-3 h-6 w-6" />
-            </AnimatedButton>
+            </SimpleButton>
             <SimpleButton 
               variant="secondary"
               onClick={() => scrollToSection('purpose')}

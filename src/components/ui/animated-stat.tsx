@@ -1,5 +1,6 @@
 
 import React from 'react';
+import CountUp from './count-up';
 
 interface AnimatedStatProps {
   value: string;
@@ -8,6 +9,12 @@ interface AnimatedStatProps {
 }
 
 export default function AnimatedStat({ value, label, className = '' }: AnimatedStatProps) {
+  // Extract numeric value from string like "500+" or "10k+"
+  const numericValue = value.replace(/[^0-9]/g, '');
+  const suffix = value.replace(/[0-9]/g, '');
+  const multiplier = suffix.includes('k') ? 1000 : 1;
+  const finalNumber = parseInt(numericValue) * multiplier;
+
   return (
     <>
       <style>
@@ -27,31 +34,18 @@ export default function AnimatedStat({ value, label, className = '' }: AnimatedS
             0 0 25px rgba(34, 197, 94, 0.3);
           transform: translateY(-4px);
         }
-
-        .stat-glow {
-          position: relative;
-          overflow: hidden;
-        }
-
-        .stat-glow::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.4), transparent);
-          animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-          0% { left: -100%; }
-          100% { left: 100%; }
-        }
         `}
       </style>
-      <div className={`stat-card stat-glow text-center p-8 rounded-3xl transition-all duration-300 ${className}`}>
-        <div className="text-4xl lg:text-5xl font-black text-gradient mb-3 relative z-10">{value}</div>
+      <div className={`stat-card text-center p-8 rounded-3xl transition-all duration-300 ${className}`}>
+        <div className="text-4xl lg:text-5xl font-black text-gradient mb-3 relative z-10">
+          <CountUp
+            from={0}
+            to={finalNumber}
+            duration={2}
+            className="count-up-text"
+          />
+          {suffix}
+        </div>
         <div className="text-sm text-gray-400 font-medium relative z-10">{label}</div>
       </div>
     </>

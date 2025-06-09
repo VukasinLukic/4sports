@@ -39,27 +39,13 @@ export function TestimonialsSection({
         </div>
 
         <div className="relative w-full overflow-hidden">
-          {/* First marquee row */}
+          {/* Single continuous marquee row */}
           <div className="flex overflow-hidden [--gap:2rem] [gap:var(--gap)] [--duration:60s]">
-            <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
-              {[...Array(6)].map((_, setIndex) => (
+            <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group hover:[animation-play-state:paused]">
+              {[...Array(8)].map((_, setIndex) => (
                 testimonials.map((testimonial, i) => (
                   <TestimonialCard 
-                    key={`row1-${setIndex}-${i}`}
-                    {...testimonial}
-                  />
-                ))
-              ))}
-            </div>
-          </div>
-
-          {/* Second marquee row with reverse direction */}
-          <div className="flex overflow-hidden [--gap:2rem] [gap:var(--gap)] [--duration:60s] mt-6">
-            <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee-reverse flex-row">
-              {[...Array(6)].map((_, setIndex) => (
-                testimonials.map((testimonial, i) => (
-                  <TestimonialCard 
-                    key={`row2-${setIndex}-${i}`}
+                    key={`${setIndex}-${i}`}
                     {...testimonial}
                   />
                 ))

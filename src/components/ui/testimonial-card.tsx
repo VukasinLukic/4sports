@@ -27,11 +27,10 @@ export function TestimonialCard({
     <Card
       {...(href ? { href } : {})}
       className={cn(
-        "glass-card-hover",
+        "glass-card",
         "flex flex-col rounded-xl",
         "p-6 text-start",
         "max-w-[350px] min-w-[350px]",
-        "transition-all duration-300",
         "border border-primary/20",
         className
       )}

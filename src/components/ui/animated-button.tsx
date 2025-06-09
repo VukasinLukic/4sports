@@ -37,7 +37,7 @@ export default function AnimatedButton({
 
         /* Animated button styles */
         .rotation-animation {
-          animation: rotationKeyFrames 2s linear 0.5s infinite, translationKeyFrames 2s linear 0.5s infinite;
+          animation: rotationKeyFrames 3s linear infinite, translationKeyFrames 3s linear infinite;
         }
 
         /* Keyframes for rotation */
@@ -45,13 +45,13 @@ export default function AnimatedButton({
           0% {
             --r2: 0deg;
           }
-          32.8228% {
+          25% {
             --r2: 0deg;
           }
           50% {
             --r2: 180deg;
           }
-          82.8228% {
+          75% {
             --r2: 180deg;
           }
           100% {
@@ -64,36 +64,70 @@ export default function AnimatedButton({
           0% {
             --x: 20px;
           }
-          32.8228% {
-            --x: 160px;
+          25% {
+            --x: 200px;
           }
           50% {
-            --x: 160px;
+            --x: 200px;
           }
-          82.8228% {
+          75% {
             --x: 20px;
           }
           100% {
             --x: 20px;
           }
         }
+
+        .animated-btn-primary {
+          background: conic-gradient(from calc(var(--r2) - 80deg) at var(--x) 15px, transparent 0, #22c55e 20%, transparent 25%), 
+                      linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+          border: 2px solid #22c55e;
+          box-shadow: 
+            0 0 20px rgba(34, 197, 94, 0.3),
+            inset 0 1px 0 rgba(34, 197, 94, 0.2);
+        }
+
+        .animated-btn-primary:hover {
+          border-color: #16a34a;
+          box-shadow: 
+            0 0 30px rgba(34, 197, 94, 0.5),
+            0 0 60px rgba(34, 197, 94, 0.2),
+            inset 0 1px 0 rgba(34, 197, 94, 0.3);
+          transform: translateY(-2px);
+        }
+
+        .animated-btn-secondary {
+          background: conic-gradient(from calc(var(--r2) - 80deg) at var(--x) 15px, transparent 0, rgba(255,255,255,0.3) 20%, transparent 25%), 
+                      linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          box-shadow: 
+            0 0 20px rgba(255, 255, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .animated-btn-secondary:hover {
+          border-color: rgba(255, 255, 255, 0.5);
+          box-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.2),
+            0 0 60px rgba(255, 255, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+          transform: translateY(-2px);
+        }
       `}
       </style>
       <button
-        className={`rotation-animation transform-gpu cursor-pointer rounded-2xl p-px shadow-[0_0_20px_0_rgba(34,197,94,0.1)] transition-all hover:shadow-[0_0_30px_5px_rgba(34,197,94,0.3)] ${className}`}
-        style={{
-          background: isPrimary 
-            ? "conic-gradient(from calc(var(--r2) - 80deg) at var(--x) 15px, transparent 0, #22c55e 20%, transparent 25%), #000000"
-            : "conic-gradient(from calc(var(--r2) - 80deg) at var(--x) 15px, transparent 0, rgba(255,255,255,0.5) 20%, transparent 25%), #000000",
-        }}
+        className={`rotation-animation ${isPrimary ? 'animated-btn-primary' : 'animated-btn-secondary'} 
+                   transform-gpu cursor-pointer rounded-2xl p-1 transition-all duration-300 
+                   hover:scale-[1.02] active:scale-[0.98] ${className}`}
         type={type}
         onClick={onClick}
       >
-        <span className={`pointer-events-none flex h-12 flex-nowrap items-center gap-3 rounded-2xl px-8 py-4 font-bold text-lg tracking-tight ${
-          isPrimary 
-            ? 'bg-black text-primary' 
-            : 'bg-black text-white'
-        }`}>
+        <span className={`pointer-events-none flex h-12 flex-nowrap items-center gap-3 rounded-xl px-8 py-4 
+                         font-bold text-lg tracking-tight backdrop-blur-sm
+                         ${isPrimary 
+                           ? 'bg-black/80 text-primary' 
+                           : 'bg-black/80 text-white'
+                         }`}>
           <span>{children}</span>
         </span>
       </button>

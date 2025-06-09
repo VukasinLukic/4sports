@@ -32,13 +32,13 @@ const Navigation = () => {
     }`}>
       <div className="container-custom">
         <div className="flex justify-between items-center h-24">
-          {/* Logo with enhanced gradient */}
+          {/* Logo aligned to left edge */}
           <div className="logo-4sports">
             4sports
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-10">
+          {/* Desktop Menu - centered */}
+          <div className="hidden md:flex items-center space-x-10 absolute left-1/2 transform -translate-x-1/2">
             <button 
               onClick={() => scrollToSection('home')}
               className="nav-link text-lg"
@@ -71,8 +71,8 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Language Toggle & CTA */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Language Toggle & CTA - aligned to right edge */}
+          <div className="hidden md:flex items-center space-x-4">
             <SimpleButton
               variant="language"
               onClick={toggleLanguage}

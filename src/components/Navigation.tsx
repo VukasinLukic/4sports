@@ -42,31 +42,31 @@ const Navigation = () => {
               onClick={() => scrollToSection('home')}
               className="nav-link text-lg"
             >
-              {t('navigation.home')}
+              Početna
             </button>
             <button 
               onClick={() => scrollToSection('purpose')}
               className="nav-link text-lg"
             >
-              {t('navigation.purpose')}
+              Svrha i Prednosti
             </button>
             <button 
               onClick={() => scrollToSection('experiences')}
               className="nav-link text-lg"
             >
-              {t('navigation.experiences')}
+              Iskustva Klubova
             </button>
             <button 
               onClick={() => scrollToSection('faq')}
               className="nav-link text-lg"
             >
-              {t('navigation.faq')}
+              Česta Pitanja
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="nav-link text-lg"
             >
-              {t('navigation.contact')}
+              Kontakt i Cene
             </button>
           </div>
 
@@ -74,16 +74,16 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Button
               onClick={toggleLanguage}
-              className="btn-secondary !px-6 !py-3 !min-w-0 text-base"
+              className="btn-secondary !px-6 !py-3 !min-w-0 !text-base"
             >
               <Globe className="w-5 h-5 mr-2" />
               {language.toUpperCase()}
             </Button>
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="btn-primary !py-3 text-base"
+              className="btn-primary !py-3 !text-base"
             >
-              {t('navigation.tryFree')}
+              Probaj Besplatno
             </Button>
           </div>
 
@@ -144,7 +144,7 @@ const Navigation = () => {
                   onClick={() => scrollToSection('contact')}
                   className="btn-primary flex-1"
                 >
-                  {t('navigation.tryFree')}
+                  Probaj Besplatno
                 </Button>
               </div>
             </div>

@@ -36,11 +36,11 @@ const BenefitsSection = () => {
       <div className="container-custom relative z-10">
         <div className="text-center mb-20 fade-in">
           <div className="badge-modern mb-12 mx-auto w-fit">
-            <span className="text-gray-300">Why Choose</span>
+            <span className="text-gray-300">Zašto Izabrati</span>
             <span className="ml-2 text-primary font-bold">4sports</span>
           </div>
           <h2 className="text-balance mb-12 text-white">
-            {t('benefits.title')}
+            Zašto Izabrati 4sports?
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-primary/60 rounded-full mx-auto"></div>
         </div>
@@ -54,22 +54,20 @@ const BenefitsSection = () => {
                   <Icon className="w-12 h-12 text-primary" />
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-6">
-                  {t(benefit.titleKey)}
+                  {index === 0 && "Veća Efikasnost"}
+                  {index === 1 && "Bolja Organizacija"}
+                  {index === 2 && "Zadovoljni Roditelji"}
                 </h3>
                 <p className="text-gray-300 text-xl leading-relaxed">
-                  {t(benefit.descriptionKey)}
+                  {index === 0 && "Uštedi sate administrativnog posla svake nedelje"}
+                  {index === 1 && "Sve organizovano na jednom centralnom mestu"}
+                  {index === 2 && "Roditelji uvek obavešteni u realnom vremenu"}
                 </p>
               </div>
             );
           })}
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-16 w-5 h-5 rounded-full opacity-70 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #22c55e, #16a34a)', animationDelay: '0.5s'}}></div>
-      <div className="absolute bottom-1/3 left-1/4 w-3 h-3 rounded-full opacity-60 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #15803d, #22c55e)', animationDelay: '1.5s'}}></div>
     </section>
   );
 };

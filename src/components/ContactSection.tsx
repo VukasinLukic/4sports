@@ -46,14 +46,14 @@ const ContactSection = () => {
         <div className="text-center mb-20 fade-in">
           <div className="badge-modern mb-12 mx-auto w-fit">
             <Sparkles className="w-5 h-5 text-primary mr-3" />
-            <span className="text-gray-300">Get</span>
-            <span className="ml-2 text-primary font-bold">Started</span>
+            <span className="text-gray-300">Počni</span>
+            <span className="ml-2 text-primary font-bold">Danas</span>
           </div>
           <h2 className="text-balance mb-12 text-white">
-            {t('contact.title')}
+            Počni Danas
           </h2>
           <p className="text-2xl lg:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
-            {t('contact.subtitle')}
+            Kontaktiraj nas ili izračunaj cenu
           </p>
         </div>
 
@@ -65,13 +65,13 @@ const ContactSection = () => {
                 <Send className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-white">
-                {t('footer.contact')}
+                Kontaktiraj Nas
               </h3>
             </div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-white text-lg font-medium mb-3 block">
-                  {t('contact.form.name')}
+                  Ime i Prezime
                 </Label>
                 <Input
                   id="name"
@@ -84,7 +84,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <Label htmlFor="email" className="text-white text-lg font-medium mb-3 block">
-                  {t('contact.form.email')}
+                  Email Adresa
                 </Label>
                 <Input
                   id="email"
@@ -97,7 +97,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <Label htmlFor="phone" className="text-white text-lg font-medium mb-3 block">
-                  {t('contact.form.phone')}
+                  Broj Telefona
                 </Label>
                 <Input
                   id="phone"
@@ -109,7 +109,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <Label htmlFor="message" className="text-white text-lg font-medium mb-3 block">
-                  {t('contact.form.message')}
+                  Poruka
                 </Label>
                 <Textarea
                   id="message"
@@ -119,8 +119,8 @@ const ContactSection = () => {
                   required
                 />
               </div>
-              <Button type="submit" className="btn-primary w-full text-lg py-4">
-                {t('contact.form.submit')}
+              <Button type="submit" className="btn-primary w-full">
+                Pošalji Poruku
                 <Send className="ml-3 w-5 h-5" />
               </Button>
             </form>
@@ -133,13 +133,13 @@ const ContactSection = () => {
                 <Calculator className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-white">
-                {t('contact.calculator.title')}
+                Kalkulator Cena
               </h3>
             </div>
             <div className="space-y-8">
               <div>
                 <Label htmlFor="members" className="text-white text-lg font-medium mb-3 block">
-                  {t('contact.calculator.members')}
+                  Broj Članova
                 </Label>
                 <Input
                   id="members"
@@ -164,8 +164,8 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <Button className="btn-primary w-full text-lg py-4">
-                {t('contact.calculator.contactSales')}
+              <Button className="btn-primary w-full">
+                Kontaktiraj Prodajni Tim
               </Button>
 
               <div className="text-center space-y-3">
@@ -177,12 +177,6 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 left-16 w-4 h-4 rounded-full opacity-60 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #22c55e, #16a34a)'}}></div>
-      <div className="absolute bottom-1/3 right-20 w-5 h-5 rounded-full opacity-70 animate-pulse" 
-           style={{background: 'linear-gradient(45deg, #15803d, #22c55e)', animationDelay: '1.5s'}}></div>
     </section>
   );
 };

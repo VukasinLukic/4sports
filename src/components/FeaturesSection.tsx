@@ -40,18 +40,22 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-background">
-      <div className="container-custom">
+    <section className="section-padding organic-bg hero-pattern relative overflow-hidden">
+      {/* Decorative gradient orbs */}
+      <div className="absolute top-10 right-10 w-80 h-80 gradient-orb opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-20 left-10 w-64 h-64 gradient-orb opacity-15 animate-pulse" style={{animationDelay: '1.5s'}}></div>
+      
+      <div className="container-custom relative z-10">
         {/* About Section */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-6">
-            <span className="text-sm text-muted-foreground">About</span>
-            <span className="ml-2 text-sm font-medium text-primary">4sports</span>
+        <div className="text-center mb-20 fade-in">
+          <div className="badge-modern mb-12 mx-auto w-fit">
+            <span className="text-gray-300">About</span>
+            <span className="ml-2 text-primary font-bold">4sports</span>
           </div>
-          <h2 className="text-balance mb-6 text-foreground">
+          <h2 className="text-balance mb-12 text-white">
             {t('about.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-2xl lg:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
             {t('about.description')}
           </p>
         </div>
@@ -61,14 +65,14 @@ const FeaturesSection = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <div key={index} className="glass-card p-8 rounded-xl hover-lift group">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <Icon className="w-6 h-6 text-primary" />
+              <div key={index} className="glass-card p-8 rounded-3xl hover-lift group">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-300">
+                  <Icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">
+                <h3 className="text-2xl font-bold text-white mb-6">
                   {t(feature.titleKey)}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-gray-300 text-lg leading-relaxed">
                   {t(feature.descriptionKey)}
                 </p>
               </div>
@@ -76,6 +80,12 @@ const FeaturesSection = () => {
           })}
         </div>
       </div>
+
+      {/* Additional decorative elements */}
+      <div className="absolute top-1/3 left-20 w-4 h-4 rounded-full opacity-60 animate-pulse" 
+           style={{background: 'linear-gradient(45deg, #22c55e, #16a34a)'}}></div>
+      <div className="absolute bottom-1/4 right-1/4 w-3 h-3 rounded-full opacity-80 animate-pulse" 
+           style={{background: 'linear-gradient(45deg, #16a34a, #15803d)', animationDelay: '1s'}}></div>
     </section>
   );
 };

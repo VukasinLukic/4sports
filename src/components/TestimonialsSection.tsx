@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Quote } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const { t } = useLanguage();
@@ -19,40 +20,38 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="experiences" className="py-24 bg-black">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16 font-mono">
-          <div className="text-primary text-sm mb-4">
-            $ cat testimonials.log
+    <section id="experiences" className="section-padding bg-background">
+      <div className="container-custom">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-6">
+            <span className="text-sm text-muted-foreground">Success</span>
+            <span className="ml-2 text-sm font-medium text-primary">Stories</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-mono text-primary mb-6">
+          <h2 className="text-balance mb-6 text-foreground">
             {t('testimonials.title')}
           </h2>
-          <div className="h-px bg-primary w-56 mx-auto"></div>
+          <div className="h-1 w-20 bg-primary rounded-full mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="ascii-border bg-black p-8 hover-glow transition-all">
-              <div className="font-mono">
-                <div className="text-primary text-xs mb-4">
-                  OUTPUT_LOG_{index + 1}:
+            <div key={index} className="glass-card p-8 rounded-xl hover-lift">
+              <Quote className="w-8 h-8 text-primary mb-6" />
+              <blockquote className="text-lg text-foreground mb-8 leading-relaxed">
+                "{t(testimonial.quoteKey)}"
+              </blockquote>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-primary font-semibold">
+                    {t(testimonial.authorKey).charAt(0)}
+                  </span>
                 </div>
-                <div className="mb-6">
-                  <pre className="text-primary text-sm leading-relaxed">
-{`┌─ FEEDBACK ─────────────┐
-│                        │
-│ "${t(testimonial.quoteKey)}"
-│                        │
-└────────────────────────┘`}
-                  </pre>
-                </div>
-                <div className="border-t border-primary pt-4">
-                  <div className="text-primary text-sm">
-                    &gt; USER: {t(testimonial.authorKey)}
+                <div>
+                  <div className="font-semibold text-foreground">
+                    {t(testimonial.authorKey)}
                   </div>
-                  <div className="text-primary text-sm">
-                    &gt; ORG:  {t(testimonial.clubKey)}
+                  <div className="text-muted-foreground">
+                    {t(testimonial.clubKey)}
                   </div>
                 </div>
               </div>

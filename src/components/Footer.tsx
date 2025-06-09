@@ -1,75 +1,93 @@
 
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useLanguage();
 
-  return (
-    <footer className="bg-black border-t border-primary">
-      <div className="max-w-7xl mx-auto px-4 py-12 font-mono">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Logo and Description */}
-          <div className="space-y-4">
-            <div className="text-primary text-lg font-mono">
-              [4sports]
-            </div>
-            <pre className="text-primary text-xs">
-{`┌─ SYSTEM INFO ──┐
-│ SPORT_MGMT_APP │
-│ VERSION: 2.0   │
-│ STATUS: ACTIVE │
-└────────────────┘`}
-            </pre>
-            <p className="text-primary text-xs opacity-80">
-              &gt; {t('about.description')}
-            </p>
-          </div>
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-primary text-sm">
-              $ cat contact.info
-            </h3>
-            <div className="space-y-2 text-xs">
-              <div className="text-primary">
-                &gt; EMAIL: {t('footer.email')}
+  return (
+    <footer className="bg-muted/30 border-t border-border">
+      <div className="container-custom py-16">
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Logo and Description */}
+          <div className="md:col-span-2">
+            <div className="text-2xl font-bold text-foreground mb-4">
+              4sports
+            </div>
+            <p className="text-muted-foreground mb-6 max-w-md">
+              {t('about.description')}
+            </p>
+            <div className="space-y-2">
+              <div className="flex items-center text-muted-foreground">
+                <Mail className="w-4 h-4 mr-2" />
+                {t('footer.email')}
               </div>
-              <div className="text-primary">
-                &gt; PHONE: {t('footer.phone')}
+              <div className="flex items-center text-muted-foreground">
+                <Phone className="w-4 h-4 mr-2" />
+                {t('footer.phone')}
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-primary text-sm">
-              $ ls quick_links/
+          <div>
+            <h3 className="font-semibold text-foreground mb-4">
+              Quick Links
             </h3>
-            <div className="space-y-2 text-xs">
-              <div className="text-primary hover-glow cursor-pointer">
-                &gt; {t('navigation.purpose')}
-              </div>
-              <div className="text-primary hover-glow cursor-pointer">
-                &gt; {t('navigation.experiences')}
-              </div>
-              <div className="text-primary hover-glow cursor-pointer">
-                &gt; {t('navigation.faq')}
-              </div>
-              <div className="text-primary hover-glow cursor-pointer">
-                &gt; {t('navigation.contact')}
-              </div>
+            <div className="space-y-2">
+              <button 
+                onClick={() => scrollToSection('purpose')}
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t('navigation.purpose')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('experiences')}
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t('navigation.experiences')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('faq')}
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t('navigation.faq')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t('navigation.contact')}
+              </button>
+            </div>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h3 className="font-semibold text-foreground mb-4">
+              Support
+            </h3>
+            <div className="space-y-2">
+              <div className="text-muted-foreground">Help Center</div>
+              <div className="text-muted-foreground">Privacy Policy</div>
+              <div className="text-muted-foreground">Terms of Service</div>
+              <div className="text-muted-foreground">Contact Support</div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-primary mt-8 pt-8 text-center">
-          <pre className="text-primary text-xs">
-{`────────────────────────────────────────────────
-  © 2024 4SPORTS | ALL RIGHTS RESERVED
-  SYSTEM RUNNING SINCE: ${new Date().getFullYear()}
-────────────────────────────────────────────────`}
-          </pre>
+        <div className="border-t border-border mt-12 pt-8 text-center">
+          <p className="text-muted-foreground">
+            © 2024 4sports. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

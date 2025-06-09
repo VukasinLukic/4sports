@@ -1,23 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { ArrowRight, Play } from 'lucide-react';
 
 const HeroSection = () => {
   const { t } = useLanguage();
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const fullText = '4sports';
-
-  useEffect(() => {
-    if (currentIndex < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + fullText[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, 300);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -27,63 +15,72 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-black">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        {/* ASCII Art Logo */}
-        <div className="mb-12 font-mono text-primary">
-          <pre className="text-xs sm:text-sm leading-tight">
-{`
- ██╗  ██╗    ███████╗██████╗  ██████╗ ██████╗ ████████╗███████╗
- ██║  ██║    ██╔════╝██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝
- ███████║    ███████╗██████╔╝██║   ██║██████╔╝   ██║   ███████╗
- ╚════██║    ╚════██║██╔═══╝ ██║   ██║██╔══██╗   ██║   ╚════██║
-      ██║    ███████║██║     ╚██████╔╝██║  ██║   ██║   ███████║
-      ╚═╝    ╚══════╝╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝
-`}
-          </pre>
-        </div>
-
-        {/* Typewriter Title */}
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-4xl md:text-6xl font-mono text-primary mb-4">
-            {displayText}<span className="animate-pulse">|</span>
-          </h1>
-          <div className="h-px bg-primary w-32 mx-auto mb-6"></div>
-        </div>
-
-        {/* Matrix-style subtitle */}
-        <div className="mb-12 font-mono">
-          <p className="text-sm sm:text-lg text-primary matrix-text">
-            &gt; {t('hero.description')}
-          </p>
-        </div>
-
-        {/* Terminal-style buttons */}
-        <div className="space-y-4 font-mono">
-          <div className="text-primary text-sm mb-4">
-            $ choose_option:
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/50"></div>
+      
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      
+      <div className="relative container-custom text-center">
+        <div className="max-w-4xl mx-auto fade-in">
+          {/* Small badge */}
+          <div className="inline-flex items-center px-4 py-2 rounded-full glass-card mb-8">
+            <span className="text-sm text-muted-foreground">Presenting</span>
+            <span className="ml-2 text-sm font-medium text-primary">4sports v2.0</span>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* Main heading */}
+          <h1 className="text-balance mb-6">
+            <span className="block text-foreground">Transform Your</span>
+            <span className="block text-gradient">Sports Club Management</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+            {t('hero.description')}
+          </p>
+
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="border border-primary bg-black text-primary hover:bg-primary hover:text-black px-8 py-3 font-mono"
+              className="btn-primary group"
             >
-              [1] {t('hero.cta1')}
+              {t('hero.cta1')}
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               onClick={() => scrollToSection('purpose')}
-              className="border border-primary bg-black text-primary hover:bg-primary hover:text-black px-8 py-3 font-mono"
+              className="btn-secondary group"
             >
-              [2] {t('hero.cta2')}
+              <Play className="mr-2 h-4 w-4" />
+              {t('hero.cta2')}
             </Button>
           </div>
-        </div>
 
-        {/* Terminal cursor */}
-        <div className="mt-16 text-primary font-mono text-sm">
-          <span className="animate-pulse">_</span>
+          {/* Stats or social proof */}
+          <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary">500+</div>
+              <div className="text-sm text-muted-foreground">Active Clubs</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary">10k+</div>
+              <div className="text-sm text-muted-foreground">Members</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary">99%</div>
+              <div className="text-sm text-muted-foreground">Satisfaction</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Floating elements */}
+      <div className="absolute top-1/4 left-10 w-2 h-2 bg-primary rounded-full opacity-30 animate-pulse"></div>
+      <div className="absolute top-1/3 right-16 w-1 h-1 bg-primary rounded-full opacity-50 animate-pulse" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/4 left-1/4 w-1.5 h-1.5 bg-primary rounded-full opacity-40 animate-pulse" style={{animationDelay: '2s'}}></div>
     </section>
   );
 };

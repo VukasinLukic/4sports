@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, Play } from 'lucide-react';
+import AnimatedButton from '@/components/ui/animated-button';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -16,11 +16,6 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center organic-bg hero-pattern">
-      {/* Decorative gradient orbs */}
-      <div className="absolute top-20 left-10 w-96 h-96 gradient-orb opacity-30 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-80 h-80 gradient-orb opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] gradient-orb opacity-10"></div>
-
       {/* Main content */}
       <div className="relative container-custom text-center z-10">
         <div className="max-w-6xl mx-auto fade-in">
@@ -37,20 +32,22 @@ const HeroSection = () => {
 
           {/* CTA buttons with enhanced styling */}
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-24">
-            <Button 
+            <AnimatedButton 
+              variant="primary"
               onClick={() => scrollToSection('contact')}
-              className="btn-primary group min-w-[240px]"
+              className="min-w-[240px]"
             >
               Probaj Besplatno
-              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
-            </Button>
-            <Button 
+              <ArrowRight className="ml-3 h-6 w-6" />
+            </AnimatedButton>
+            <AnimatedButton 
+              variant="secondary"
               onClick={() => scrollToSection('purpose')}
-              className="btn-secondary group min-w-[240px]"
+              className="min-w-[240px]"
             >
               <Play className="mr-3 h-6 w-6" />
               Saznaj Više
-            </Button>
+            </AnimatedButton>
           </div>
 
           {/* Stats with modern design */}

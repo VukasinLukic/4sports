@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Calculator, Send, Sparkles } from 'lucide-react';
+import AnimatedButton from '@/components/ui/animated-button';
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -38,10 +38,6 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="section-padding organic-bg hero-pattern relative overflow-hidden">
-      {/* Decorative gradient orbs */}
-      <div className="absolute top-10 right-1/4 w-96 h-96 gradient-orb opacity-25 animate-pulse"></div>
-      <div className="absolute bottom-20 left-10 w-80 h-80 gradient-orb opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
-      
       <div className="container-custom relative z-10">
         <div className="text-center mb-20 fade-in">
           <div className="badge-modern mb-12 mx-auto w-fit">
@@ -119,10 +115,10 @@ const ContactSection = () => {
                   required
                 />
               </div>
-              <Button type="submit" className="btn-primary w-full">
+              <AnimatedButton type="submit" variant="primary" className="w-full">
                 Pošalji Poruku
                 <Send className="ml-3 w-5 h-5" />
-              </Button>
+              </AnimatedButton>
             </form>
           </div>
 
@@ -164,9 +160,9 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <Button className="btn-primary w-full">
+              <AnimatedButton variant="primary" className="w-full">
                 Kontaktiraj Prodajni Tim
-              </Button>
+              </AnimatedButton>
 
               <div className="text-center space-y-3">
                 <div className="text-lg text-gray-300">✓ 30-day free trial</div>

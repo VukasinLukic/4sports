@@ -21,10 +21,6 @@ const TestimonialsSection = () => {
 
   return (
     <section id="experiences" className="section-padding organic-bg hero-pattern relative overflow-hidden">
-      {/* Decorative gradient orbs */}
-      <div className="absolute top-1/3 right-10 w-80 h-80 gradient-orb opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-1/4 left-16 w-96 h-96 gradient-orb opacity-15 animate-pulse" style={{animationDelay: '1s'}}></div>
-      
       <div className="container-custom relative z-10">
         <div className="text-center mb-20 fade-in">
           <div className="badge-modern mb-12 mx-auto w-fit">

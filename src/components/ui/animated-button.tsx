@@ -37,7 +37,7 @@ export default function AnimatedButton({
 
         /* Animated button styles */
         .rotation-animation {
-          animation: rotationKeyFrames -.64s linear 3s infinite, translationKeyFrames -.64s linear 3s infinite;
+          animation: rotationKeyFrames 2s linear 0.5s infinite, translationKeyFrames 2s linear 0.5s infinite;
         }
 
         /* Keyframes for rotation */
@@ -65,10 +65,10 @@ export default function AnimatedButton({
             --x: 20px;
           }
           32.8228% {
-            --x: 180px;
+            --x: 160px;
           }
           50% {
-            --x: 180px;
+            --x: 160px;
           }
           82.8228% {
             --x: 20px;
@@ -80,19 +80,19 @@ export default function AnimatedButton({
       `}
       </style>
       <button
-        className={`rotation-animation transform-gpu cursor-pointer rounded-2xl p-px border border-green-500/50 shadow-[0_0_20px_0_rgba(34,197,94,0.1)] transition-all hover:shadow-[0_0_30px_5px_rgba(34,197,94,0.3)] hover:border-green-400 ${className}`}
+        className={`rotation-animation transform-gpu cursor-pointer rounded-2xl p-px shadow-[0_0_20px_0_rgba(34,197,94,0.1)] transition-all hover:shadow-[0_0_30px_5px_rgba(34,197,94,0.3)] ${className}`}
         style={{
           background: isPrimary 
-            ? "conic-gradient(from calc(var(--r2) - 80deg) at var(--x) 15px, transparent 0, #22c55e 20%, transparent 25%), transparent"
-            : "conic-gradient(from calc(var(--r2) - 80deg) at var(--x) 15px, transparent 0, rgba(255,255,255,0.5) 20%, transparent 25%), transparent",
+            ? "conic-gradient(from calc(var(--r2) - 80deg) at var(--x) 15px, transparent 0, #22c55e 20%, transparent 25%), #000000"
+            : "conic-gradient(from calc(var(--r2) - 80deg) at var(--x) 15px, transparent 0, rgba(255,255,255,0.5) 20%, transparent 25%), #000000",
         }}
         type={type}
         onClick={onClick}
       >
-        <span className={`pointer-events-none flex h-12 flex-nowrap items-center gap-3 rounded-2xl px-8 py-4 font-bold text-lg tracking-tight bg-transparent ${
+        <span className={`pointer-events-none flex h-12 flex-nowrap items-center gap-3 rounded-2xl px-8 py-4 font-bold text-lg tracking-tight ${
           isPrimary 
-            ? 'text-primary' 
-            : 'text-white'
+            ? 'bg-black text-primary' 
+            : 'bg-black text-white'
         }`}>
           <span>{children}</span>
         </span>

@@ -37,8 +37,8 @@ const Navigation = () => {
             4sports
           </div>
 
-          {/* Desktop Menu - centered using flex-1 and justify-center */}
-          <div className="hidden md:flex flex-1 justify-center">
+          {/* Desktop Menu - absolutely centered */}
+          <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
             <div className="flex items-center space-x-10">
               <button 
                 onClick={() => scrollToSection('home')}
@@ -81,7 +81,7 @@ const Navigation = () => {
               className="!min-w-0 border-2 border-white/20"
             >
               <Globe className="w-4 h-4 mr-2" />
-              {language.toUpperCase()}
+              SR
             </SimpleButton>
             <AnimatedButton 
               variant="primary"
@@ -146,7 +146,7 @@ const Navigation = () => {
                   className="flex-1 border-2 border-white/20"
                 >
                   <Globe className="w-4 h-4 mr-2" />
-                  {language.toUpperCase()}
+                  SR
                 </SimpleButton>
                 <AnimatedButton 
                   variant="primary"

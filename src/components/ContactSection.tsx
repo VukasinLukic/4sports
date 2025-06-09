@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Input } from '@/components/ui/input';
@@ -110,7 +109,7 @@ const ContactSection = () => {
                   required
                 />
               </div>
-              <AnimatedButton type="submit" variant="primary" className="w-full border-2 border-primary">
+              <AnimatedButton type="submit" variant="primary" className="w-full border-2 border-primary" animated={false}>
                 {t('contact.form.submit')}
                 <Send className="ml-3 w-5 h-5" />
               </AnimatedButton>
@@ -155,7 +154,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <AnimatedButton variant="primary" className="w-full border-2 border-primary">
+              <AnimatedButton variant="primary" className="w-full border-2 border-primary" animated={false}>
                 {t('contact.calculator.contactSales')}
               </AnimatedButton>
 

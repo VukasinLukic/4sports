@@ -37,38 +37,40 @@ const Navigation = () => {
             4sports
           </div>
 
-          {/* Desktop Menu - centered */}
-          <div className="hidden md:flex items-center space-x-10 absolute left-1/2 transform -translate-x-1/2">
-            <button 
-              onClick={() => scrollToSection('home')}
-              className="nav-link text-lg"
-            >
-              {t('navigation.home')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('purpose')}
-              className="nav-link text-lg"
-            >
-              {t('navigation.purpose')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('experiences')}
-              className="nav-link text-lg"
-            >
-              {t('navigation.experiences')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('faq')}
-              className="nav-link text-lg"
-            >
-              {t('navigation.faq')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="nav-link text-lg"
-            >
-              {t('navigation.contact')}
-            </button>
+          {/* Desktop Menu - centered using flex-1 and justify-center */}
+          <div className="hidden md:flex flex-1 justify-center">
+            <div className="flex items-center space-x-10">
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="nav-link text-lg"
+              >
+                {t('navigation.home')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('purpose')}
+                className="nav-link text-lg"
+              >
+                {t('navigation.purpose')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('experiences')}
+                className="nav-link text-lg"
+              >
+                {t('navigation.experiences')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('faq')}
+                className="nav-link text-lg"
+              >
+                {t('navigation.faq')}
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="nav-link text-lg"
+              >
+                {t('navigation.contact')}
+              </button>
+            </div>
           </div>
 
           {/* Language Toggle & CTA - aligned to right edge */}

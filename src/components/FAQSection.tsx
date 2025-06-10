@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Plus, Minus } from 'lucide-react';
+import { Plus } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const FAQSection = () => {
   const { t } = useLanguage();
@@ -36,15 +37,16 @@ const FAQSection = () => {
                   {t(`faq.questions.${index}.question`)}
                 </span>
                 <div className="bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl p-3 ml-6">
-                  {openIndex === index ? (
-                    <Minus className="w-6 h-6 text-primary flex-shrink-0" />
-                  ) : (
-                    <Plus className="w-6 h-6 text-primary flex-shrink-0" />
-                  )}
+                  <Plus 
+                    className={cn(
+                      "w-6 h-6 text-primary flex-shrink-0 transition-transform duration-300 ease-in-out",
+                      openIndex === index ? "rotate-45" : "rotate-0"
+                    )} 
+                  />
                 </div>
               </button>
               {openIndex === index && (
-                <div className="px-8 pb-8 border-t border-white/10">
+                <div className="px-8 pb-8 border-t border-white/10 animate-accordion-down">
                   <p className="text-gray-300 leading-relaxed pt-6 text-lg">
                     {t(`faq.questions.${index}.answer`)}
                   </p>

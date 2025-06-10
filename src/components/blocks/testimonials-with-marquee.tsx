@@ -40,7 +40,7 @@ export function TestimonialsSection({
 
         {/* Beskonačni marquee sa dovoljno kopija da se nikad ne troše */}
         <div className="relative w-full overflow-hidden">
-          <div className="flex overflow-hidden [--gap:2rem] [gap:var(--gap)] [--duration:80s]">
+          <div className="flex overflow-hidden [--gap:2rem] [gap:var(--gap)] [--duration:160s]">
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group hover:[animation-play-state:paused]">
               {[...Array(20)].map((_, setIndex) => (
                 testimonials.map((testimonial, i) => (

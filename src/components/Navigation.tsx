@@ -30,71 +30,73 @@ const Navigation = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
       isScrolled ? 'backdrop-blur-modern border-b border-green-500/20' : 'bg-transparent'
     }`}>
-      <div className="container-custom">
-        <div className="flex justify-between items-center h-24">
-          {/* Logo aligned to left edge */}
-          <div className="logo-4sports">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-24 relative">
+          {/* Logo - potpuno levo */}
+          <div className="logo-4sports flex-shrink-0">
             4sports
           </div>
 
-          {/* Desktop Menu - absolutely centered */}
+          {/* Desktop Menu - apsolutno centrirano */}
           <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
-            <div className="flex items-center space-x-10">
+            <div className="flex items-center space-x-8">
               <button 
                 onClick={() => scrollToSection('home')}
-                className="nav-link text-lg"
+                className="nav-link text-lg whitespace-nowrap"
               >
                 {t('navigation.home')}
               </button>
               <button 
                 onClick={() => scrollToSection('purpose')}
-                className="nav-link text-lg"
+                className="nav-link text-lg whitespace-nowrap"
               >
                 {t('navigation.purpose')}
               </button>
               <button 
                 onClick={() => scrollToSection('experiences')}
-                className="nav-link text-lg"
+                className="nav-link text-lg whitespace-nowrap"
               >
                 {t('navigation.experiences')}
               </button>
               <button 
                 onClick={() => scrollToSection('faq')}
-                className="nav-link text-lg"
+                className="nav-link text-lg whitespace-nowrap"
               >
                 {t('navigation.faq')}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="nav-link text-lg"
+                className="nav-link text-lg whitespace-nowrap"
               >
                 {t('navigation.contact')}
               </button>
             </div>
           </div>
 
-          {/* Language Toggle & CTA - aligned to right edge */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Language Toggle & CTA - potpuno desno */}
+          <div className="hidden md:flex items-center space-x-3 flex-shrink-0">
             <SimpleButton
               variant="language"
               onClick={toggleLanguage}
-              className="!min-w-0 border-2 border-white/20"
+              className="!min-w-[60px] border-2 border-white/20 flex items-center justify-center"
             >
-              <Globe className="w-4 h-4 mr-2" />
-              SR
+              <Globe className="w-4 h-4 mr-1" />
+              <span className="text-sm font-medium">
+                {language === 'en' ? 'SR' : 'EN'}
+              </span>
             </SimpleButton>
             <AnimatedButton 
               variant="primary"
               onClick={() => scrollToSection('contact')}
               animated={true}
-              className="border-2 border-primary"
+              className="border-2 border-primary whitespace-nowrap"
             >
               {t('navigation.tryFree')}
             </AnimatedButton>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex-shrink-0">
             <SimpleButton
               variant="secondary"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -146,7 +148,7 @@ const Navigation = () => {
                   className="flex-1 border-2 border-white/20"
                 >
                   <Globe className="w-4 h-4 mr-2" />
-                  SR
+                  {language === 'en' ? 'SR' : 'EN'}
                 </SimpleButton>
                 <AnimatedButton 
                   variant="primary"

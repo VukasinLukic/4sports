@@ -3,8 +3,7 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-import MockupSection from '@/components/MockupSection';
-import FeaturesSection from '@/components/FeaturesSection';
+import FeaturesMockupSection from '@/components/FeaturesMockupSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQSection from '@/components/FAQSection';
@@ -30,8 +29,7 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <MockupSection />
-        <FeaturesSection />
+        <FeaturesMockupSection />
         <BenefitsSection />
         <TestimonialsSection />
         <FAQSection />

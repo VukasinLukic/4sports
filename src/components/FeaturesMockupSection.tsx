@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Iphone16Pro } from '@/components/ui/iphone-16-pro';
-import { Calendar, Users, MessageCircle, Monitor, Clock, CheckCircle, CreditCard, BarChart3 } from 'lucide-react';
+import { Calendar, Users, MessageCircle, Clock, CheckCircle, CreditCard } from 'lucide-react';
 
 const FeaturesMockupSection = () => {
   const { t } = useLanguage();
@@ -42,17 +42,6 @@ const FeaturesMockupSection = () => {
       functionalities: [
         { icon: CreditCard, title: "Payment Management", desc: "Handle membership fees and payments seamlessly" }
       ]
-    },
-    {
-      mockup: {
-        type: 'desktop',
-        src: "/lovable-uploads/d7924c41-baea-4511-bc86-b313675ec586.png",
-        title: "Owner Panel",
-        subtitle: "Complete control over the application with detailed analytics"
-      },
-      functionalities: [
-        { icon: BarChart3, title: "Analytics & Reports", desc: "Insight into club performance through detailed reports" }
-      ]
     }
   ];
 
@@ -84,33 +73,16 @@ const FeaturesMockupSection = () => {
             const isReversed = index % 2 === 1;
             
             return (
-              <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${isReversed ? 'lg:grid-flow-col-dense' : ''}`}>
+              <div key={index} className={`grid lg:grid-cols-2 gap-8 items-center ${isReversed ? 'lg:grid-flow-col-dense' : ''}`}>
                 {/* Mockup */}
                 <div className={`flex justify-center ${isReversed ? 'lg:col-start-2' : ''}`}>
                   <div className="relative">
-                    <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/40 rounded-3xl blur-2xl opacity-60"></div>
-                    
-                    {feature.mockup.type === 'mobile' ? (
-                      <Iphone16Pro
-                        src={feature.mockup.src}
-                        width={280}
-                        height={560}
-                        className="relative z-10 transition-transform duration-500 hover:scale-105"
-                      />
-                    ) : (
-                      <div className="relative z-10 bg-gray-900 rounded-3xl p-6 shadow-2xl transition-transform duration-500 hover:scale-105">
-                        <div className="w-96 h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden">
-                          <img 
-                            src={feature.mockup.src}
-                            alt="Desktop mockup"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="w-48 h-4 bg-gray-700 rounded-full mx-auto mt-4 relative">
-                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-2 bg-gray-600 rounded-full"></div>
-                        </div>
-                      </div>
-                    )}
+                    <Iphone16Pro
+                      src={feature.mockup.src}
+                      width={320}
+                      height={640}
+                      className="relative z-10"
+                    />
                   </div>
                 </div>
 
@@ -125,7 +97,7 @@ const FeaturesMockupSection = () => {
                     {feature.functionalities.map((func, funcIndex) => {
                       const IconComponent = func.icon;
                       return (
-                        <div key={funcIndex} className="glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300">
+                        <div key={funcIndex} className="glass-card p-6 rounded-2xl">
                           <div className="flex items-start gap-4">
                             <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
                               <IconComponent className="w-6 h-6 text-primary" />

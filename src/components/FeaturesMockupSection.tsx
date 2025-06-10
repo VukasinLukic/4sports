@@ -2,178 +2,137 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Iphone16Pro } from '@/components/ui/iphone-16-pro';
-import { Calendar, Users, CheckCircle, CreditCard, BarChart3, Clock, Monitor, Smartphone, MessageCircle, Zap } from 'lucide-react';
+import { Calendar, Users, MessageCircle, Monitor, Clock, CheckCircle, CreditCard, BarChart3 } from 'lucide-react';
 
 const FeaturesMockupSection = () => {
   const { t } = useLanguage();
 
-  const mockupFeatures = [
+  const features = [
     {
       mockup: {
         type: 'mobile',
         src: "/lovable-uploads/d7924c41-baea-4511-bc86-b313675ec586.png",
-        title: t('mockup.phone1.title'),
-        description: t('mockup.phone1.description'),
-        icon: Zap
+        title: "Home Page",
+        subtitle: "Intuitive navigation and quick access to all functions"
       },
-      features: [
-        {
-          icon: Calendar,
-          title: t('features.calendar.title'),
-          description: t('features.calendar.description')
-        },
-        {
-          icon: Clock,
-          title: t('features.scheduling.title'),
-          description: t('features.scheduling.description')
-        }
+      functionalities: [
+        { icon: Calendar, title: "Smart Calendar", desc: "Schedule training sessions and matches with ease" },
+        { icon: Clock, title: "Appointment Scheduling", desc: "Efficiently organize training sessions and events" }
       ]
     },
     {
       mockup: {
         type: 'mobile',
         src: "/lovable-uploads/d7924c41-baea-4511-bc86-b313675ec586.png",
-        title: t('mockup.phone2.title'),
-        description: t('mockup.phone2.description'),
-        icon: Users
+        title: "Profile",
+        subtitle: "Personalized experience tailored to your needs"
       },
-      features: [
-        {
-          icon: Users,
-          title: t('features.members.title'),
-          description: t('features.members.description')
-        },
-        {
-          icon: CheckCircle,
-          title: t('features.attendance.title'),
-          description: t('features.attendance.description')
-        }
+      functionalities: [
+        { icon: Users, title: "Member Management", desc: "Track all club members and their progress" },
+        { icon: CheckCircle, title: "Attendance Tracking", desc: "Monitor who's present at each session" }
       ]
     },
     {
       mockup: {
         type: 'mobile',
         src: "/lovable-uploads/d7924c41-baea-4511-bc86-b313675ec586.png",
-        title: t('mockup.phone3.title'),
-        description: t('mockup.phone3.description'),
-        icon: MessageCircle
+        title: "Chat & Notifications",
+        subtitle: "Fast communication and always current information"
       },
-      features: [
-        {
-          icon: CreditCard,
-          title: t('features.payments.title'),
-          description: t('features.payments.description')
-        }
+      functionalities: [
+        { icon: CreditCard, title: "Payment Management", desc: "Handle membership fees and payments seamlessly" }
       ]
     },
     {
       mockup: {
         type: 'desktop',
         src: "/lovable-uploads/d7924c41-baea-4511-bc86-b313675ec586.png",
-        title: t('mockup.desktop.title'),
-        description: t('mockup.desktop.description'),
-        icon: Monitor
+        title: "Owner Panel",
+        subtitle: "Complete control over the application with detailed analytics"
       },
-      features: [
-        {
-          icon: BarChart3,
-          title: t('features.analytics.title'),
-          description: t('features.analytics.description')
-        }
+      functionalities: [
+        { icon: BarChart3, title: "Analytics & Reports", desc: "Insight into club performance through detailed reports" }
       ]
     }
   ];
 
   return (
-    <section className="section-padding organic-bg relative overflow-hidden">
-      {/* Decorative gradient orbs */}
-      <div className="absolute top-10 right-10 w-80 h-80 gradient-orb opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 left-10 w-64 h-64 gradient-orb opacity-15 animate-pulse" style={{animationDelay: '1.5s'}}></div>
-      
+    <section className="section-padding bg-black relative overflow-hidden">
       <div className="container-custom relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-20 fade-in">
-          <h2 className="text-balance mb-8 text-white">
-            {t('mockup.title')} <span className="text-gradient">{t('mockup.titleHighlight')}</span>
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            See How Our <span className="text-gradient">Application Looks</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
-            {t('mockup.description')}
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-16">
+            Modern design adapted to all devices for the best user experience
           </p>
-          <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-white mb-6">{t('about.title')}</h3>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              {t('about.description')}
+          
+          {/* About section */}
+          <div className="glass-card p-8 rounded-3xl max-w-4xl mx-auto mb-16">
+            <h3 className="text-3xl font-bold text-white mb-4">What is 4sports?</h3>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              A comprehensive platform designed specifically for sports clubs to manage members, 
+              track attendance, handle payments, and communicate with parents - all in one place.
             </p>
           </div>
         </div>
 
-        {/* Mockup Features Grid */}
-        <div className="space-y-32">
-          {mockupFeatures.map((item, index) => {
-            const MockupIcon = item.mockup.icon;
+        {/* Features Grid */}
+        <div className="space-y-24">
+          {features.map((feature, index) => {
             const isReversed = index % 2 === 1;
             
             return (
-              <div key={index} className={`flex items-center gap-16 ${isReversed ? 'flex-row-reverse' : ''}`}>
-                {/* Mockup Side */}
-                <div className="flex-1 flex justify-center">
-                  <div className="text-center hover-lift">
-                    <div className="mb-8 flex justify-center relative">
-                      <div className="absolute -inset-6 bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 rounded-3xl blur-2xl animate-pulse"></div>
-                      
-                      {item.mockup.type === 'mobile' ? (
-                        <Iphone16Pro
-                          src={item.mockup.src}
-                          width={280}
-                          height={560}
-                          className="text-gray-800 relative z-10 transition-transform duration-500 hover:scale-105 shadow-2xl"
-                        />
-                      ) : (
-                        <div className="relative z-10 bg-gray-800 rounded-3xl p-6 shadow-2xl transition-transform duration-700 hover:scale-105">
-                          <div className="w-96 h-64 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 mb-4">
-                            <div className="w-full h-full rounded-xl overflow-hidden relative">
-                              <img 
-                                src={item.mockup.src}
-                                alt="Desktop mockup"
-                                className="w-full h-full object-cover"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
-                            </div>
-                          </div>
-                          <div className="w-48 h-4 bg-gray-700 rounded-full mx-auto relative">
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-2 bg-gray-600 rounded-full"></div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
+              <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${isReversed ? 'lg:grid-flow-col-dense' : ''}`}>
+                {/* Mockup */}
+                <div className={`flex justify-center ${isReversed ? 'lg:col-start-2' : ''}`}>
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/40 rounded-3xl blur-2xl opacity-60"></div>
                     
-                    {/* Mockup Description */}
-                    <div className="glass-card p-6 rounded-2xl max-w-sm mx-auto border border-primary/20">
-                      <MockupIcon className="w-8 h-8 text-primary mx-auto mb-3" />
-                      <h4 className="text-xl font-bold text-white mb-3">{item.mockup.title}</h4>
-                      <p className="text-gray-300">{item.mockup.description}</p>
-                    </div>
+                    {feature.mockup.type === 'mobile' ? (
+                      <Iphone16Pro
+                        src={feature.mockup.src}
+                        width={280}
+                        height={560}
+                        className="relative z-10 transition-transform duration-500 hover:scale-105"
+                      />
+                    ) : (
+                      <div className="relative z-10 bg-gray-900 rounded-3xl p-6 shadow-2xl transition-transform duration-500 hover:scale-105">
+                        <div className="w-96 h-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden">
+                          <img 
+                            src={feature.mockup.src}
+                            alt="Desktop mockup"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="w-48 h-4 bg-gray-700 rounded-full mx-auto mt-4 relative">
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-2 bg-gray-600 rounded-full"></div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
 
-                {/* Features Side */}
-                <div className="flex-1">
-                  <div className="space-y-8">
-                    {item.features.map((feature, featureIndex) => {
-                      const FeatureIcon = feature.icon;
+                {/* Content */}
+                <div className={`space-y-8 ${isReversed ? 'lg:col-start-1' : ''}`}>
+                  <div className="text-center lg:text-left">
+                    <h3 className="text-3xl font-bold text-white mb-3">{feature.mockup.title}</h3>
+                    <p className="text-lg text-gray-300 mb-8">{feature.mockup.subtitle}</p>
+                  </div>
+
+                  <div className="space-y-6">
+                    {feature.functionalities.map((func, funcIndex) => {
+                      const IconComponent = func.icon;
                       return (
-                        <div key={featureIndex} className="glass-card p-8 rounded-3xl hover-lift group">
-                          <div className="flex items-start gap-6">
-                            <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300">
-                              <FeatureIcon className="w-8 h-8 text-primary" />
+                        <div key={funcIndex} className="glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300">
+                          <div className="flex items-start gap-4">
+                            <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                              <IconComponent className="w-6 h-6 text-primary" />
                             </div>
                             <div>
-                              <h4 className="text-2xl font-bold text-white mb-4">
-                                {feature.title}
-                              </h4>
-                              <p className="text-gray-300 text-lg leading-relaxed">
-                                {feature.description}
-                              </p>
+                              <h4 className="text-xl font-bold text-white mb-2">{func.title}</h4>
+                              <p className="text-gray-300">{func.desc}</p>
                             </div>
                           </div>
                         </div>
@@ -188,39 +147,33 @@ const FeaturesMockupSection = () => {
 
         {/* Bottom Summary */}
         <div className="text-center mt-32">
-          <div className="glass-card p-12 rounded-3xl max-w-5xl mx-auto border border-primary/20">
-            <div className="flex items-center justify-center gap-6 mb-8">
-              <Smartphone className="w-10 h-10 text-primary" />
-              <div className="w-16 h-px bg-primary"></div>
-              <Monitor className="w-10 h-10 text-primary" />
-            </div>
-            <h3 className="text-3xl font-bold text-white mb-6">{t('mockup.summary.title')}</h3>
-            <p className="text-gray-300 text-xl leading-relaxed mb-8">
-              {t('mockup.summary.description')}
+          <div className="glass-card p-12 rounded-3xl max-w-5xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-6">Complete Solution</h3>
+            <p className="text-xl text-gray-300 mb-12">
+              Mobile application for users and advanced desktop panel for owners - everything you need in one place
             </p>
             
-            {/* Feature highlights grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">📊</span>
                 </div>
-                <h5 className="text-lg font-bold text-white mb-2">{t('mockup.desktop.feature1')}</h5>
-                <p className="text-gray-400">Detaljni izveštaji i statistike</p>
+                <h5 className="text-lg font-bold text-white mb-2">Analytics</h5>
+                <p className="text-gray-400">Detailed reports and statistics</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">⚙️</span>
                 </div>
-                <h5 className="text-lg font-bold text-white mb-2">{t('mockup.desktop.feature2')}</h5>
-                <p className="text-gray-400">Potpuna kontrola nad klubom</p>
+                <h5 className="text-lg font-bold text-white mb-2">Management</h5>
+                <p className="text-gray-400">Complete control over the club</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">🚀</span>
                 </div>
-                <h5 className="text-lg font-bold text-white mb-2">{t('mockup.desktop.feature3')}</h5>
-                <p className="text-gray-400">Optimizovani procesi rada</p>
+                <h5 className="text-lg font-bold text-white mb-2">Optimization</h5>
+                <p className="text-gray-400">Optimized work processes</p>
               </div>
             </div>
           </div>

@@ -73,8 +73,8 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Language Toggle & CTA - desno sa padding */}
-          <div className="hidden md:flex items-center space-x-3 flex-shrink-0 pr-6">
+          {/* Language Toggle & CTA - vratiti originalno pozicioniranje */}
+          <div className="hidden md:flex items-center space-x-3 flex-shrink-0">
             <SimpleButton
               variant="language"
               onClick={toggleLanguage}

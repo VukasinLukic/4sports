@@ -89,9 +89,9 @@ const Navigation = () => {
               variant="primary"
               onClick={() => scrollToSection('contact')}
               animated={true}
-              className="border-2 border-primary !min-w-[140px] !w-[140px] flex items-center justify-center"
+              className="border-2 border-primary whitespace-nowrap"
             >
-              <span className="truncate">
+              <span>
                 {t('navigation.tryFree')}
               </span>
             </AnimatedButton>

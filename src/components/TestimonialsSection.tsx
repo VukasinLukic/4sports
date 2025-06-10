@@ -26,12 +26,12 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <div id="experiences" className="section-padding organic-bg hero-pattern relative overflow-hidden">
+    <div id="experiences" className="w-full">
       <TestimonialsSectionBlock
         title={t('testimonials.title')}
         description=""
         testimonials={testimonials}
-        className="!py-0"
+        className="!py-16"
       />
     </div>
   );

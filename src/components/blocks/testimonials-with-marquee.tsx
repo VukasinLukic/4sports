@@ -23,11 +23,11 @@ export function TestimonialsSection({
     <section className={cn(
       "bg-black text-white",
       "py-12 sm:py-24 md:py-32",
-      "w-full overflow-hidden",
+      "w-full",
       className
     )}>
-      <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16 px-4">
-        <div className="flex flex-col items-center gap-4 sm:gap-8">
+      <div className="w-full">
+        <div className="flex flex-col items-center gap-4 text-center sm:gap-16 px-4 mb-8 sm:mb-16">
           <h2 className="max-w-[720px] text-3xl font-bold leading-tight sm:text-5xl sm:leading-tight text-gradient">
             {title}
           </h2>
@@ -38,8 +38,8 @@ export function TestimonialsSection({
           )}
         </div>
 
+        {/* Full width marquee without any containers or padding */}
         <div className="relative w-full overflow-hidden">
-          {/* Single continuous marquee row */}
           <div className="flex overflow-hidden [--gap:2rem] [gap:var(--gap)] [--duration:60s]">
             <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group hover:[animation-play-state:paused]">
               {[...Array(8)].map((_, setIndex) => (

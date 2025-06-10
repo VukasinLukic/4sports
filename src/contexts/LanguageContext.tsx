@@ -27,7 +27,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const loadTranslations = async (lang: Language) => {
     try {
-      setIsLoading(true);
+      // Ne pokazuj loading stanje za promenu jezika
+      if (Object.keys(translations).length > 0) {
+        setIsLoading(false);
+      } else {
+        setIsLoading(true);
+      }
+      
       const response = await fetch(`/${lang}.json`);
       const data = await response.json();
       setTranslations(data);

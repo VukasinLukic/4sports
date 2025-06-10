@@ -73,12 +73,12 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Language Toggle & CTA - potpuno desno */}
+          {/* Language Toggle & CTA - fiksirana pozicija desno */}
           <div className="hidden md:flex items-center space-x-3 flex-shrink-0">
             <SimpleButton
               variant="language"
               onClick={toggleLanguage}
-              className="!min-w-[60px] border-2 border-white/20 flex items-center justify-center"
+              className="!min-w-[60px] !w-[60px] border-2 border-white/20 flex items-center justify-center"
             >
               <Globe className="w-4 h-4 mr-1" />
               <span className="text-sm font-medium">
@@ -89,9 +89,11 @@ const Navigation = () => {
               variant="primary"
               onClick={() => scrollToSection('contact')}
               animated={true}
-              className="border-2 border-primary whitespace-nowrap"
+              className="border-2 border-primary !min-w-[140px] !w-[140px] flex items-center justify-center"
             >
-              {t('navigation.tryFree')}
+              <span className="truncate">
+                {t('navigation.tryFree')}
+              </span>
             </AnimatedButton>
           </div>
 

@@ -30,7 +30,7 @@ const Navigation = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
       isScrolled ? 'backdrop-blur-modern border-b border-green-500/20' : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="flex justify-between items-center h-24 relative">
           {/* Logo - potpuno levo */}
           <div className="logo-4sports flex-shrink-0">
@@ -73,8 +73,8 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Language Toggle & CTA - fiksirana pozicija desno */}
-          <div className="hidden md:flex items-center space-x-3 flex-shrink-0">
+          {/* Language Toggle & CTA - desno sa padding */}
+          <div className="hidden md:flex items-center space-x-3 flex-shrink-0 pr-6">
             <SimpleButton
               variant="language"
               onClick={toggleLanguage}

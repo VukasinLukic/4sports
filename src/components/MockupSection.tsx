@@ -27,7 +27,7 @@ const MockupSection = () => {
               <div className="mb-6 flex justify-center relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-transparent rounded-3xl blur-xl animate-pulse"></div>
                 <Iphone16Pro
-                  src="/lovable-uploads/d7924c41-baea-4511-bc86-b313675ec586.png"
+                  src="/assets/Lista V2.png"
                   width={220}
                   height={440}
                   className="text-gray-800 relative z-10 transition-transform duration-500 hover:scale-105"
@@ -45,7 +45,7 @@ const MockupSection = () => {
               <div className="mb-6 flex justify-center relative">
                 <div className="absolute -inset-6 bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 rounded-3xl blur-2xl animate-pulse"></div>
                 <Iphone16Pro
-                  src="/lovable-uploads/d7924c41-baea-4511-bc86-b313675ec586.png"
+                  src="/assets/3.png"
                   width={240}
                   height={480}
                   className="text-gray-800 relative z-10 transition-transform duration-500 hover:scale-105 shadow-2xl"
@@ -63,7 +63,7 @@ const MockupSection = () => {
               <div className="mb-6 flex justify-center relative">
                 <div className="absolute -inset-4 bg-gradient-to-l from-primary/20 to-transparent rounded-3xl blur-xl animate-pulse"></div>
                 <Iphone16Pro
-                  src="/lovable-uploads/d7924c41-baea-4511-bc86-b313675ec586.png"
+                  src="/assets/Kalendar V2.png"
                   width={220}
                   height={440}
                   className="text-gray-800 relative z-10 transition-transform duration-500 hover:scale-105"
@@ -97,8 +97,8 @@ const MockupSection = () => {
                 {/* Screen */}
                 <div className="w-96 h-64 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 mb-4">
                   <div className="w-full h-full rounded-xl overflow-hidden relative">
-                    <img 
-                      src="/lovable-uploads/d7924c41-baea-4511-bc86-b313675ec586.png"
+                    <img
+                      src="/assets/3.png"
                       alt="Desktop owner panel mockup"
                       className="w-full h-full object-cover"
                     />

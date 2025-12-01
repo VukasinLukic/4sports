@@ -10,9 +10,10 @@
     "learnMore": "Learn More"
   },
   "hero": {
+    "badge": "New Platform Available",
     "title": "Manage Your Sports Club",
-    "subtitle": "Without Obstacles",
-    "description": "4sports is the complete solution for managing sports clubs. Streamline operations, track attendance, and keep parents happy.",
+    "titleHighlight": "Without Obstacles",
+    "subtitle": "4sports is the complete solution for managing sports clubs. Streamline operations, track attendance, and keep parents happy.",
     "cta1": "Try Free",
     "cta2": "Learn More",
     "stats": {
@@ -59,11 +60,42 @@
     }
   },
   "about": {
-    "title": "What is 4sports?",
-    "description": "A comprehensive platform designed specifically for sports clubs to manage members, track attendance, handle payments, and communicate with parents - all in one place."
+    "title": "Who is 4sports for?",
+    "subtitle": "A comprehensive platform designed specifically for sports clubs to manage members, track attendance, handle payments, and communicate with parents - all in one place.",
+    "roles": {
+      "parents": {
+        "title": "For Parents",
+        "description": "Stay informed about your child's activities, attendance, and payments in real-time.",
+        "features": {
+          "schedules": "Real-time training schedules",
+          "attendance": "Attendance tracking",
+          "payments": "Easy payment management"
+        }
+      },
+      "coaches": {
+        "title": "For Coaches",
+        "description": "Plan training sessions, manage lineups, and communicate with your team effortlessly.",
+        "features": {
+          "planning": "Training session planning",
+          "lineup": "Lineup management",
+          "communication": "Team communication"
+        }
+      },
+      "clubs": {
+        "title": "For Clubs",
+        "description": "Complete club management with membership tracking, payments, and detailed reports.",
+        "features": {
+          "membership": "Membership management",
+          "payments": "Payment processing",
+          "reports": "Analytics and reports"
+        }
+      }
+    }
   },
   "features": {
-    "title": "Key Features",
+    "badge": "Features",
+    "title": "Everything You Need",
+    "subtitle": "Powerful features designed to make sports club management effortless",
     "calendar": {
       "title": "Smart Calendar",
       "description": "Schedule training sessions and matches with ease"
@@ -106,6 +138,7 @@
   },
   "testimonials": {
     "title": "What Clubs Say About Us",
+    "subtitle": "See what our customers have to say about 4sports",
     "testimonial1": {
       "quote": "4sports transformed how we manage our football club. Everything is so much easier now!",
       "author": "Milan Jovanović",
@@ -115,6 +148,43 @@
       "quote": "The attendance tracking feature alone saved us countless hours every month.",
       "author": "Ana Petrović",
       "club": "Tennis Club Novak"
+    }
+  },
+  "pricing": {
+    "title": "Pricing & Plans",
+    "subtitle": "Choose the perfect plan for your sports club",
+    "solo": {
+      "title": "Solo",
+      "price": "From €29/mo",
+      "description": "Perfect for small clubs and individual coaches",
+      "features": {
+        "members": "Up to 50 Members",
+        "attendance": "Attendance Tracking",
+        "calendar": "Smart Calendar",
+        "notifications": "Push Notifications",
+        "support": "Email Support"
+      },
+      "cta": "Try 14 Days Free Trial"
+    },
+    "startup": {
+      "title": "Startup",
+      "price": "From €99/mo",
+      "description": "Ideal for growing clubs with advanced needs",
+      "features": {
+        "members": "Up to 200 Members",
+        "projects": "Unlimited Projects",
+        "calendar": "Advanced Calendar",
+        "integrations": "150+ Integrations",
+        "support": "Priority Support",
+        "analytics": "Analytics & Reports"
+      },
+      "cta": "Try 14 Days Free Trial"
+    },
+    "custom": {
+      "title": "Custom",
+      "price": "From €399/mo",
+      "description": "We can customize a plan that suits the exact needs of your business",
+      "cta": "Contact Sales"
     }
   },
   "faq": {

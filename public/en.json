@@ -1,5 +1,12 @@
 
 {
+  "nav": {
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Get Started"
+  },
   "navigation": {
     "home": "Home",
     "purpose": "Purpose & Benefits",
@@ -29,6 +36,15 @@
         "value": "99%",
         "label": "Satisfaction"
       }
+    },
+    "minimal": {
+      "intro": "Sports clubs are complex.",
+      "word1": "Players.",
+      "word2": "Schedules.",
+      "word3": "Memberships.",
+      "word4": "Payments.",
+      "outro1": "Too many tools.",
+      "outro2": "Too little clarity."
     }
   },
   "mockup": {

@@ -1,5 +1,12 @@
 
 {
+  "nav": {
+    "pricing": "Cene",
+    "testimonials": "Iskustva",
+    "faq": "Pitanja",
+    "contact": "Kontakt",
+    "cta": "Počni Sada"
+  },
   "navigation": {
     "home": "Početna",
     "purpose": "Svrha i Prednosti",
@@ -28,6 +35,15 @@
         "value": "99%",
         "label": "Zadovoljstvo"
       }
+    },
+    "minimal": {
+      "intro": "Sportski klubovi su složeni.",
+      "word1": "Igrači.",
+      "word2": "Rasporedi.",
+      "word3": "Članarine.",
+      "word4": "Plaćanja.",
+      "outro1": "Previše alata.",
+      "outro2": "Premalo jasnoće."
     }
   },
   "mockup": {

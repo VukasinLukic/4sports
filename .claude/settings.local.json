@@ -3,7 +3,18 @@
     "allow": [
       "Bash(tree:*)",
       "Bash(timeout /t 10)",
-      "Bash(nul)"
+      "Bash(nul)",
+      "Bash(ls:*)",
+      "Read(//d/4sports/**)",
+      "Bash(for file in d:/4sports/src/components/ui/*.tsx)",
+      "Bash(do basename \"$file\")",
+      "Bash(done)",
+      "Bash(grep:*)",
+      "Bash(comm:*)",
+      "Bash(xargs du:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

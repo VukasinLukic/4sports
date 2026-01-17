@@ -122,9 +122,9 @@ function FooterContent() {
       </div>
 
       {/* Bottom Section */}
-      <div className="relative z-10 flex justify-between flex-col gap-6 sm:flex-row items-end mt-12 pt-8 border-t border-white/10">
+      <div className="relative z-10 flex justify-between flex-col gap-6 sm:flex-row items-end mt-12 pt-8">
         <div className="flex items-center">
-          <h1 className="text-[12vw] sm:text-[8vw] lg:text-[6vw] font-black leading-[0.85] text-white">
+          <h1 className="text-[16vw] sm:text-[12vw] lg:text-[10vw] font-black leading-[0.85] text-white">
             4sports
           </h1>
         </div>

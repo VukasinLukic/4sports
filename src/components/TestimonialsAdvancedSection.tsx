@@ -68,7 +68,7 @@ const TestimonialsAdvancedSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden bg-black w-full">
+    <section id="testimonials" className="py-20 lg:py-24 relative overflow-hidden bg-black w-full">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
@@ -79,9 +79,9 @@ const TestimonialsAdvancedSection = () => {
       <div className="relative z-10 w-full">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto px-4 mb-20"
         >

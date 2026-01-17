@@ -79,30 +79,69 @@
     "description": "Sveobuhvatna platforma dizajnirana posebno za sportske klubove za upravljanje članovima, praćenje prisustva, rukovanje plaćanjima i komunikaciju sa roditeljima - sve na jednom mestu."
   },
   "features": {
-    "title": "Ključne Funkcionalnosti",
-    "calendar": {
-      "title": "Pametni Kalendar",
-      "description": "Zakaži treninge i utakmice jednostavno"
+    "main": {
+      "title": "Napravljeno za Sve",
+      "subtitle": "Moćne funkcionalnosti dizajnirane za vlasnike klubova, trenere i roditelje"
     },
-    "members": {
-      "title": "Upravljanje Članovima",
-      "description": "Prati sve članove kluba i njihov napredak"
+    "owners": {
+      "title": "Za Vlasnike Klubova",
+      "subtitle": "Pretvorite haos u red. Zamenite Excel tabele kompletnim digitalnim sistemom.",
+      "dashboard": {
+        "title": "Finansijski Dashboard",
+        "desc": "Kompletno praćenje prihoda i rashoda kluba na jednom mestu."
+      },
+      "memberships": {
+        "title": "Automatizacija Članarina",
+        "desc": "Digitalna evidencija uplata članarina i automatsko praćenje dugovanja."
+      },
+      "reports": {
+        "title": "Finansijsko Izveštavanje",
+        "desc": "Generisanje detaljnih finansijskih izveštaja za bolji uvid u poslovanje."
+      },
+      "data": {
+        "title": "Upravljanje Podacima",
+        "desc": "Centralizovana baza svih članova, trenera i medicinskih pregleda."
+      }
     },
-    "attendance": {
-      "title": "Praćenje Prisustva",
-      "description": "Vidi ko je prisutan na svakom treningu"
+    "coaches": {
+      "title": "Za Trenere",
+      "subtitle": "Uštedite vreme na administraciji i fokusirajte se na ono što je bitno - trening.",
+      "attendance": {
+        "title": "Digitalna Evidencija Prisustva",
+        "desc": "Brzo i lako vođenje dnevnika prisustva na treninzima."
+      },
+      "calendar": {
+        "title": "Interaktivni Kalendar",
+        "desc": "Planiranje i pregled svih termina treninga i utakmica u realnom vremenu."
+      },
+      "communication": {
+        "title": "Komunikacioni Centar",
+        "desc": "Centralizovan kanal za komunikaciju sa roditeljima i igračima."
+      },
+      "progress": {
+        "title": "Praćenje Napretka",
+        "desc": "Mogućnost beleženja rezultata i performansi sportista."
+      }
     },
-    "payments": {
-      "title": "Upravljanje Plaćanjima",
-      "description": "Rukuj članarinama i plaćanjima bez problema"
-    },
-    "analytics": {
-      "title": "Analitika i Izveštaji",
-      "description": "Uvid u performanse kluba kroz detaljne izveštaje"
-    },
-    "scheduling": {
-      "title": "Zakazivanje Termina",
-      "description": "Efikasno organizuj treninge i događaje"
+    "parents": {
+      "title": "Za Roditelje",
+      "subtitle": "Ostanite informisani i povezani sa sportskim aktivnostima vašeg deteta.",
+      "schedule": {
+        "title": "Pregled Rasporeda",
+        "desc": "Uvek dostupan plan treninga, utakmica i drugih klupskih događaja."
+      },
+      "payments": {
+        "title": "Praćenje Uplata",
+        "desc": "Jasan uvid u statuse plaćenih i neplaćenih članarina."
+      },
+      "tracking": {
+        "title": "Napredak Deteta",
+        "desc": "Informacije o prisustvu, rezultatima i sportskom razvoju deteta."
+      },
+      "notifications": {
+        "title": "Notifikacije u Realnom Vremenu",
+        "desc": "Primanje važnih obaveštenja od kluba bez gubitka informacija."
+      }
     }
   },
   "benefits": {
@@ -131,6 +170,66 @@
       "quote": "Samo funkcija praćenja prisustva nam je uštedela nebrojano sati svakog meseca.",
       "author": "Ana Petrović",
       "club": "Tenis Klub Novak"
+    }
+  },
+  "mockupShowcase": {
+    "hero": {
+      "title": "Kompletno Upravljanje Sportskim Klubom.",
+      "subtitle": "Pojednostavite operacije, unapredite vaš klub.",
+      "cta1": "Započni",
+      "cta2": "Saznaj Više"
+    },
+    "features": {
+      "title": "Moćne Funkcije za Svaku Ulogu.",
+      "subtitle": "Od trenera do blagajnika, 4sports pokriva sve.",
+      "cta": "Istraži Funkcije"
+    },
+    "mobile": {
+      "title": "Vaš Klub, u Vašem Džepu.",
+      "subtitle": "Ostanite povezani i upravljajte svime u pokretu sa našom mobilnom aplikacijom.",
+      "cta": "Preuzmi Aplikaciju"
+    },
+    "analytics": {
+      "title": "Donosite Pametnije Odluke sa Podacima.",
+      "subtitle": "Steknite uvid u performanse vašeg kluba sa naprednom analitikom.",
+      "cta": "Pogledaj Analitiku"
+    }
+  },
+  "pricing": {
+    "title": "Cene i Planovi",
+    "subtitle": "Izaberite savršen plan za vaš sportski klub",
+    "solo": {
+      "title": "Solo",
+      "price": "Od €29/mesečno",
+      "description": "Savršeno za male klubove i individualne trenere",
+      "features": {
+        "members": "Do 50 Članova",
+        "attendance": "Praćenje Prisustva",
+        "calendar": "Pametni Kalendar",
+        "notifications": "Push Notifikacije",
+        "support": "Email Podrška"
+      },
+      "cta": "Probaj 14 Dana Besplatno"
+    },
+    "startup": {
+      "title": "Startup",
+      "price": "Od €99/mesečno",
+      "description": "Idealno za klubove u razvoju sa naprednim potrebama",
+      "features": {
+        "members": "Do 200 Članova",
+        "projects": "Neograničeni Projekti",
+        "calendar": "Napredni Kalendar",
+        "integrations": "150+ Integracija",
+        "support": "Prioritetna Podrška",
+        "analytics": "Analitika i Izveštaji"
+      },
+      "cta": "Probaj 14 Dana Besplatno"
+    },
+    "custom": {
+      "title": "Prilagođeno",
+      "price": "Od €399/mesečno",
+      "description": "Možemo prilagoditi plan koji odgovara potrebama vašeg kluba",
+      "cta": "Kontaktiraj Prodaju"
     }
   },
   "faq": {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { GradientButton } from './ui/gradient-button';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Sparkles } from 'lucide-react';
 
@@ -38,9 +37,9 @@ const ContactSection = () => {
       <div className="container px-4 mx-auto relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
@@ -61,9 +60,9 @@ const ContactSection = () => {
           <div className="grid lg:grid-cols-5 gap-8">
             {/* Contact Info - Left Side */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
               viewport={{ once: true }}
               className="lg:col-span-2 space-y-8"
             >
@@ -132,9 +131,9 @@ const ContactSection = () => {
 
             {/* Contact Form - Right Side */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
               viewport={{ once: true }}
               className="lg:col-span-3"
             >
@@ -195,6 +194,7 @@ const ContactSection = () => {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       value={formData.message}
                       onChange={(e) => handleInputChange('message', e.target.value)}
                       rows={5}
@@ -204,15 +204,19 @@ const ContactSection = () => {
                     />
                   </div>
 
-                  {/* Submit Button */}
-                  <GradientButton
+                  {/* Submit Button - Matching Navbar Style */}
+                  <button
                     type="submit"
-                    size="lg"
-                    className="w-full group"
+                    className="relative w-full px-6 py-3.5 border-2 border-white/20 text-white font-bold rounded-lg transition-all duration-300 overflow-hidden group hover:border-white/40"
                   >
-                    Send Message
-                    <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </GradientButton>
+                    {/* Background fill on hover */}
+                    <span className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                    {/* Text & Icon */}
+                    <span className="relative z-10 group-hover:text-black transition-colors duration-300 flex items-center justify-center gap-2">
+                      Send Message
+                      <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </button>
 
                   <p className="text-center text-sm text-gray-500">
                     We'll get back to you within 24 hours

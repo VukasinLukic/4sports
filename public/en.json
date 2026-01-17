@@ -109,32 +109,69 @@
     }
   },
   "features": {
-    "badge": "Features",
-    "title": "Everything You Need",
-    "subtitle": "Powerful features designed to make sports club management effortless",
-    "calendar": {
-      "title": "Smart Calendar",
-      "description": "Schedule training sessions and matches with ease"
+    "main": {
+      "title": "Built for Everyone",
+      "subtitle": "Powerful features designed for club owners, coaches, and parents"
     },
-    "members": {
-      "title": "Member Management",
-      "description": "Track all club members and their progress"
+    "owners": {
+      "title": "For Club Owners",
+      "subtitle": "Transform chaos into clarity. Replace spreadsheets with a complete digital management system.",
+      "dashboard": {
+        "title": "Financial Dashboard",
+        "desc": "Complete tracking of club revenue and expenses in one place."
+      },
+      "memberships": {
+        "title": "Membership Automation",
+        "desc": "Digital payment records and automatic debt tracking."
+      },
+      "reports": {
+        "title": "Financial Reporting",
+        "desc": "Generate detailed financial reports for better business insights."
+      },
+      "data": {
+        "title": "Data Management",
+        "desc": "Centralized database of all members, coaches, and medical records."
+      }
     },
-    "attendance": {
-      "title": "Attendance Tracking",
-      "description": "Monitor who's present at each session"
+    "coaches": {
+      "title": "For Coaches",
+      "subtitle": "Save time on admin work and focus on what matters - training your athletes.",
+      "attendance": {
+        "title": "Digital Attendance",
+        "desc": "Quick and easy attendance tracking for training sessions."
+      },
+      "calendar": {
+        "title": "Interactive Calendar",
+        "desc": "Plan and view all training sessions and matches in real-time."
+      },
+      "communication": {
+        "title": "Communication Hub",
+        "desc": "Centralized channel for communicating with parents and players."
+      },
+      "progress": {
+        "title": "Progress Tracking",
+        "desc": "Record athlete results and performance metrics."
+      }
     },
-    "payments": {
-      "title": "Payment Management",
-      "description": "Handle membership fees and payments seamlessly"
-    },
-    "analytics": {
-      "title": "Analytics & Reports",
-      "description": "Insight into club performance through detailed reports"
-    },
-    "scheduling": {
-      "title": "Appointment Scheduling",
-      "description": "Efficiently organize training sessions and events"
+    "parents": {
+      "title": "For Parents",
+      "subtitle": "Stay informed and connected with your child's sports activities.",
+      "schedule": {
+        "title": "Schedule Overview",
+        "desc": "Always-accessible plan of training sessions, matches, and club events."
+      },
+      "payments": {
+        "title": "Payment Tracking",
+        "desc": "Clear overview of paid and unpaid membership fees."
+      },
+      "tracking": {
+        "title": "Child's Progress",
+        "desc": "Information about attendance, results, and athletic development."
+      },
+      "notifications": {
+        "title": "Real-time Notifications",
+        "desc": "Receive important club announcements without information getting lost."
+      }
     }
   },
   "benefits": {
@@ -164,6 +201,29 @@
       "quote": "The attendance tracking feature alone saved us countless hours every month.",
       "author": "Ana Petrović",
       "club": "Tennis Club Novak"
+    }
+  },
+  "mockupShowcase": {
+    "hero": {
+      "title": "Complete Sports Club Management.",
+      "subtitle": "Streamline operations, elevate your club.",
+      "cta1": "Get Started",
+      "cta2": "Learn More"
+    },
+    "features": {
+      "title": "Powerful Features for Every Role.",
+      "subtitle": "From coaches to treasurers, 4sports covers it all.",
+      "cta": "Explore Features"
+    },
+    "mobile": {
+      "title": "Your Club, in Your Pocket.",
+      "subtitle": "Stay connected and manage everything on the go with our mobile app.",
+      "cta": "Download App"
+    },
+    "analytics": {
+      "title": "Make Smarter Decisions with Data.",
+      "subtitle": "Gain insights into your club's performance with advanced analytics.",
+      "cta": "View Analytics"
     }
   },
   "pricing": {

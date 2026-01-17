@@ -5,6 +5,8 @@ import MinimalHeroSection from '@/components/MinimalHeroSection';
 import FullHeroSection from '@/components/FullHeroSection';
 
 // Lazy load below-the-fold sections for better initial load performance
+const MockupShowcase = lazy(() => import('@/components/MockupShowcase'));
+const FeaturesSection = lazy(() => import('@/components/FeaturesSection'));
 const PricingSection = lazy(() => import('@/components/PricingSection'));
 const TestimonialsAdvancedSection = lazy(() => import('@/components/TestimonialsAdvancedSection'));
 const FAQSection = lazy(() => import('@/components/FAQSection'));
@@ -77,6 +79,16 @@ const Index = () => {
       <main>
         {/* Full Hero Section with rotating text */}
         <FullHeroSection />
+
+        {/* Mockup Showcase - Platform Features */}
+        <Suspense fallback={<SectionSkeleton />}>
+          <MockupShowcase />
+        </Suspense>
+
+        {/* Features Section - For Owners, Coaches, Parents */}
+        <Suspense fallback={<SectionSkeleton />}>
+          <FeaturesSection />
+        </Suspense>
 
         <Suspense fallback={<SectionSkeleton />}>
           <PricingSection />

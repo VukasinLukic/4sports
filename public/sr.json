@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "pricing": "Cene",
@@ -85,6 +84,7 @@
     },
     "owners": {
       "title": "Za Vlasnike Klubova",
+      "tab": "Vlasnici Klubova",
       "subtitle": "Pretvorite haos u red. Zamenite Excel tabele kompletnim digitalnim sistemom.",
       "dashboard": {
         "title": "Finansijski Dashboard",
@@ -105,6 +105,7 @@
     },
     "coaches": {
       "title": "Za Trenere",
+      "tab": "Treneri",
       "subtitle": "Uštedite vreme na administraciji i fokusirajte se na ono što je bitno - trening.",
       "attendance": {
         "title": "Digitalna Evidencija Prisustva",
@@ -125,6 +126,7 @@
     },
     "parents": {
       "title": "Za Roditelje",
+      "tab": "Roditelji",
       "subtitle": "Ostanite informisani i povezani sa sportskim aktivnostima vašeg deteta.",
       "schedule": {
         "title": "Pregled Rasporeda",
@@ -256,12 +258,28 @@
   "contact": {
     "title": "Počni Danas",
     "subtitle": "Kontaktiraj nas ili izračunaj cenu",
+    "badge": "Kontaktiraj Nas",
+    "heading": "Razgovarajmo",
+    "description": "Spremni da transformišete upravljanje sportskim klubom? Javite nam se i krenimo.",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefon",
+    "locationLabel": "Lokacija",
+    "locationValue": "Beograd, Srbija",
+    "whyChooseUs": "Zašto Mi?",
+    "support247": "24/7 Podrška",
+    "fastResponse": "Brzo Vreme Odgovora",
+    "freeConsultation": "Besplatna Konsultacija",
+    "responseTime": "Odgovorićemo vam u roku od 24 sata",
     "form": {
       "title": "Kontaktiraj Nas",
       "name": "Ime i Prezime",
+      "namePlaceholder": "Petar Petrović",
       "email": "Email Adresa",
+      "emailPlaceholder": "petar@primer.com",
       "phone": "Broj Telefona",
+      "phonePlaceholder": "+381 11 123 4567",
       "message": "Poruka",
+      "messagePlaceholder": "Recite nam nešto o vašem sportskom klubu i šta tražite...",
       "submit": "Pošalji Poruku",
       "successMessage": "Hvala na poruci! Kontaktiraćemo vas uskoro."
     },
@@ -280,15 +298,71 @@
     }
   },
   "footer": {
-    "contact": "Kontaktiraj Nas",
-    "email": "info@4sports.com",
-    "phone": "+381 11 123 4567",
     "quickLinks": "Brzi Linkovi",
+    "home": "Početna",
+    "features": "Funkcije",
+    "pricing": "Cene",
+    "testimonials": "Iskustva",
     "support": "Podrška",
     "helpCenter": "Centar za Pomoć",
-    "privacy": "Politika Privatnosti",
-    "terms": "Uslovi Korišćenja",
+    "documentation": "Dokumentacija",
+    "community": "Zajednica",
     "contactSupport": "Kontaktiraj Podršku",
+    "contact": "Kontakt",
+    "followUs": "Pratite Nas",
+    "privacy": "Politika Privatnosti",
+    "terms": "Uslovi",
+    "cookies": "Kolačići",
     "copyright": "© 2024 4sports. Sva prava zadržana."
+  },
+  "privacy": {
+    "title": "Politika Privatnosti",
+    "lastUpdated": "Poslednja izmena: 26. januar 2026.",
+    "backToHome": "Nazad na Početnu",
+    "section1": {
+      "title": "Informacije Koje Prikupljamo",
+      "content": "Prikupljamo informacije koje nam direktno pružite prilikom korišćenja 4sports platforme, uključujući vaše ime, email adresu, broj telefona i podatke vezane za klub. Ove informacije su neophodne za pružanje naših usluga upravljanja sportskim klubovima i efikasnu komunikaciju sa vama."
+    },
+    "section2": {
+      "title": "Kako Koristimo Vaše Informacije",
+      "content": "Koristimo prikupljene informacije za rad i unapređenje 4sports platforme, pružanje korisničke podrške, slanje obaveštenja o našim uslugama i osiguravanje bezbednosti vaših podataka. Nikada ne prodajemo vaše lične podatke trećim stranama."
+    },
+    "section3": {
+      "title": "Bezbednost Podataka",
+      "content": "Primenjujemo bezbednosne mere koje odgovaraju industrijskim standardima kako bismo zaštitili vaše podatke. Svi podaci su šifrovani tokom prenosa i skladištenja. Redovno ažuriramo naše bezbednosne prakse kako bismo osigurali da vaše informacije ostanu bezbedne."
+    },
+    "section4": {
+      "title": "Vaša Prava",
+      "content": "Imate pravo da pristupite, ispravite ili obrišete svoje lične podatke u bilo kom trenutku. Takođe možete zatražiti kopiju svojih podataka ili ograničiti njihovu obradu. Kontaktirajte naš tim podrške kako biste ostvarili ova prava."
+    },
+    "section5": {
+      "title": "Kontaktirajte Nas",
+      "content": "Ako imate bilo kakva pitanja o ovoj Politici Privatnosti ili o tome kako rukujemo vašim podacima, molimo vas da nas kontaktirate na privacy@4sports.com ili putem našeg kontakt formulara."
+    }
+  },
+  "terms": {
+    "title": "Uslovi Korišćenja",
+    "lastUpdated": "Poslednja izmena: 26. januar 2026.",
+    "backToHome": "Nazad na Početnu",
+    "section1": {
+      "title": "Prihvatanje Uslova",
+      "content": "Pristupanjem i korišćenjem 4sports platforme, prihvatate da budete vezani ovim Uslovima Korišćenja. Ako se ne slažete sa ovim uslovima, molimo vas da ne koristite našu uslugu. Zadržavamo pravo da izmenimo ove uslove u bilo kom trenutku."
+    },
+    "section2": {
+      "title": "Opis Usluge",
+      "content": "4sports pruža sveobuhvatnu platformu za upravljanje sportskim klubovima koja uključuje upravljanje članovima, praćenje prisustva, obradu plaćanja i komunikacione alate. Trudimo se da održimo dostupnost usluge, ali ne garantujemo neprekidan pristup."
+    },
+    "section3": {
+      "title": "Odgovornosti Korisnika",
+      "content": "Vi ste odgovorni za održavanje poverljivosti akreditiva vašeg naloga i za sve aktivnosti koje se dešavaju pod vašim nalogom. Slažete se da koristite 4sports samo u zakonite svrhe i u skladu sa ovim uslovima."
+    },
+    "section4": {
+      "title": "Uslovi Plaćanja",
+      "content": "Pretplatnički troškovi se naplaćuju mesečno ili godišnje prema vašem izboru. Svi troškovi su nepovratni osim ako to nije zakonom propisano. Zadržavamo pravo da izmenimo cene uz obaveštenje postojećim korisnicima 30 dana unapred."
+    },
+    "section5": {
+      "title": "Ograničenje Odgovornosti",
+      "content": "4sports se pruža 'kakav jeste' bez ikakvih garancija. Nismo odgovorni za bilo kakvu indirektnu, slučajnu ili posledičnu štetu koja proizlazi iz vašeg korišćenja usluge. Naša ukupna odgovornost je ograničena na iznos koji ste platili u poslednjih 12 meseci."
+    }
   }
 }

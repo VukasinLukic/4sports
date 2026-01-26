@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "pricing": "Pricing",
@@ -115,6 +114,7 @@
     },
     "owners": {
       "title": "For Club Owners",
+      "tab": "Club Owners",
       "subtitle": "Transform chaos into clarity. Replace spreadsheets with a complete digital management system.",
       "dashboard": {
         "title": "Financial Dashboard",
@@ -135,6 +135,7 @@
     },
     "coaches": {
       "title": "For Coaches",
+      "tab": "Coaches",
       "subtitle": "Save time on admin work and focus on what matters - training your athletes.",
       "attendance": {
         "title": "Digital Attendance",
@@ -155,6 +156,7 @@
     },
     "parents": {
       "title": "For Parents",
+      "tab": "Parents",
       "subtitle": "Stay informed and connected with your child's sports activities.",
       "schedule": {
         "title": "Schedule Overview",
@@ -287,12 +289,28 @@
   "contact": {
     "title": "Get Started Today",
     "subtitle": "Contact us or calculate your pricing",
+    "badge": "Get in Touch",
+    "heading": "Let's Talk",
+    "description": "Ready to transform your sports club management? Reach out and let's get started.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "locationLabel": "Location",
+    "locationValue": "Belgrade, Serbia",
+    "whyChooseUs": "Why Choose Us?",
+    "support247": "24/7 Support",
+    "fastResponse": "Fast Response Time",
+    "freeConsultation": "Free Consultation",
+    "responseTime": "We'll get back to you within 24 hours",
     "form": {
       "title": "Contact Us",
       "name": "Full Name",
+      "namePlaceholder": "John Doe",
       "email": "Email Address",
+      "emailPlaceholder": "john@example.com",
       "phone": "Phone Number",
+      "phonePlaceholder": "+381 11 123 4567",
       "message": "Message",
+      "messagePlaceholder": "Tell us about your sports club and what you're looking for...",
       "submit": "Send Message",
       "successMessage": "Thank you for your message! We will contact you soon."
     },
@@ -311,15 +329,71 @@
     }
   },
   "footer": {
-    "contact": "Contact Us",
-    "email": "info@4sports.com",
-    "phone": "+381 11 123 4567",
     "quickLinks": "Quick Links",
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
     "support": "Support",
     "helpCenter": "Help Center",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
+    "documentation": "Documentation",
+    "community": "Community",
     "contactSupport": "Contact Support",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms",
+    "cookies": "Cookies",
     "copyright": "© 2024 4sports. All rights reserved."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: January 26, 2026",
+    "backToHome": "Back to Home",
+    "section1": {
+      "title": "Information We Collect",
+      "content": "We collect information you provide directly to us when using 4sports, including your name, email address, phone number, and club-related data. This information is necessary to provide our sports club management services and communicate with you effectively."
+    },
+    "section2": {
+      "title": "How We Use Your Information",
+      "content": "We use the information we collect to operate and improve 4sports, provide customer support, send you updates about our service, and ensure the security of your data. We never sell your personal information to third parties."
+    },
+    "section3": {
+      "title": "Data Security",
+      "content": "We implement industry-standard security measures to protect your data. All data is encrypted in transit and at rest. We regularly update our security practices to ensure your information remains safe and secure."
+    },
+    "section4": {
+      "title": "Your Rights",
+      "content": "You have the right to access, correct, or delete your personal data at any time. You can also request a copy of your data or restrict its processing. Contact our support team to exercise these rights."
+    },
+    "section5": {
+      "title": "Contact Us",
+      "content": "If you have any questions about this Privacy Policy or how we handle your data, please contact us at privacy@4sports.com or through our contact form."
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: January 26, 2026",
+    "backToHome": "Back to Home",
+    "section1": {
+      "title": "Agreement to Terms",
+      "content": "By accessing and using 4sports, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our service. We reserve the right to modify these terms at any time."
+    },
+    "section2": {
+      "title": "Service Description",
+      "content": "4sports provides a comprehensive sports club management platform including member management, attendance tracking, payment processing, and communication tools. We strive to maintain service availability but do not guarantee uninterrupted access."
+    },
+    "section3": {
+      "title": "User Responsibilities",
+      "content": "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to use 4sports only for lawful purposes and in accordance with these terms."
+    },
+    "section4": {
+      "title": "Payment Terms",
+      "content": "Subscription fees are billed monthly or annually as selected. All fees are non-refundable except as required by law. We reserve the right to modify pricing with 30 days notice to existing customers."
+    },
+    "section5": {
+      "title": "Limitation of Liability",
+      "content": "4sports is provided 'as is' without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from your use of the service. Our total liability is limited to the amount you paid in the last 12 months."
+    }
   }
 }

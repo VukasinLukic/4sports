@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { GooglePlayButton, AppStoreButton } from '@/components/ui/AppStoreButtons';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const FullHeroSection = () => {
@@ -131,12 +132,23 @@ const FullHeroSection = () => {
           </AnimatePresence>
         </motion.div>
 
+        {/* App Store Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 20, x: -12 }}
+          transition={{ duration: 0.8, delay: 2.5 }}
+          className="absolute bottom-28 inset-x-0 flex flex-col sm:flex-row items-center justify-center gap-3 z-20"
+        >
+          <GooglePlayButton size="lg" />
+          <AppStoreButton size="lg" />
+        </motion.div>
+
         {/* Scroll indicator - positioned at bottom */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: showContent ? 1 : 0 }}
+          animate={{ opacity: showContent ? 1 : 0, x: -10 }}
           transition={{ duration: 1, delay: 3.0 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
+          className="absolute bottom-12 inset-x-0 flex flex-col items-center gap-2 text-gray-400"
         >
           <span className="text-xs uppercase tracking-wider">Scroll</span>
           <motion.div

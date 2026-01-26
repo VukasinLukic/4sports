@@ -57,10 +57,16 @@ const MockupShowcase = () => {
             viewport={{ once: true }}
             className="flex justify-center gap-3 mb-6"
           >
-            <button className="px-5 py-2.5 bg-primary text-black font-medium text-sm rounded-full hover:bg-primary/90 transition-colors">
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-5 py-2.5 bg-primary text-black font-medium text-sm rounded-full hover:bg-primary/90 transition-colors"
+            >
               {t('mockupShowcase.hero.cta1')}
             </button>
-            <button className="px-5 py-2.5 bg-transparent text-white font-medium text-sm rounded-full border border-white/20 hover:border-white/40 transition-colors">
+            <button
+              onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-5 py-2.5 bg-transparent text-white font-medium text-sm rounded-full border border-white/20 hover:border-white/40 transition-colors"
+            >
               {t('mockupShowcase.hero.cta2')}
             </button>
           </motion.div>

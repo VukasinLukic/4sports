@@ -103,15 +103,16 @@ const FullHeroSection = () => {
       </div>
 
       {/* Main content - Rotating text */}
-      <div className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center justify-center min-h-screen">
+      <div className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center justify-end min-h-screen pb-12">
+        {/* Rotating text - just above store buttons */}
         <motion.div
-          className="h-40 md:h-48 flex items-center justify-center"
+          className="h-32 md:h-36 flex items-center justify-center mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 20 }}
           transition={{
             duration: 0.8,
             ease: [0.25, 0.1, 0.25, 1],
-            delay: 1.5, // Container se pojavljuje 1.5s nakon što video krene
+            delay: 1.5,
           }}
         >
           <AnimatePresence mode="wait">
@@ -137,18 +138,18 @@ const FullHeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 20, x: -12 }}
           transition={{ duration: 0.8, delay: 2.5 }}
-          className="absolute bottom-28 inset-x-0 flex flex-col sm:flex-row items-center justify-center gap-3 z-20"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 z-20 mb-8"
         >
           <GooglePlayButton size="lg" />
           <AppStoreButton size="lg" />
         </motion.div>
 
-        {/* Scroll indicator - positioned at bottom */}
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: showContent ? 1 : 0, x: -10 }}
+          animate={{ opacity: showContent ? 1 : 0 }}
           transition={{ duration: 1, delay: 3.0 }}
-          className="absolute bottom-12 inset-x-0 flex flex-col items-center gap-2 text-gray-400"
+          className="flex flex-col items-center gap-2 text-gray-400"
         >
           <span className="text-xs uppercase tracking-wider">Scroll</span>
           <motion.div

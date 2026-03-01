@@ -1,17 +1,16 @@
 {
   "nav": {
-    "pricing": "Cene",
     "testimonials": "Iskustva",
     "faq": "Pitanja",
     "contact": "Kontakt",
-    "cta": "Počni Sada"
+    "cta": "Idi na Aplikaciju"
   },
   "navigation": {
     "home": "Početna",
     "purpose": "Svrha i Prednosti",
     "experiences": "Iskustva Klubova",
     "faq": "Česta Pitanja",
-    "contact": "Kontakt i Cene",
+    "contact": "Kontakt",
     "tryFree": "Probaj Besplatno",
     "learnMore": "Saznaj Više"
   },
@@ -197,43 +196,6 @@
       "cta": "Pogledaj Analitiku"
     }
   },
-  "pricing": {
-    "title": "Cene i Planovi",
-    "subtitle": "Izaberite savršen plan za vaš sportski klub",
-    "solo": {
-      "title": "Solo",
-      "price": "Od €29/mesečno",
-      "description": "Savršeno za male klubove i individualne trenere",
-      "features": {
-        "members": "Do 50 Članova",
-        "attendance": "Praćenje Prisustva",
-        "calendar": "Pametni Kalendar",
-        "notifications": "Push Notifikacije",
-        "support": "Email Podrška"
-      },
-      "cta": "Probaj 14 Dana Besplatno"
-    },
-    "startup": {
-      "title": "Startup",
-      "price": "Od €99/mesečno",
-      "description": "Idealno za klubove u razvoju sa naprednim potrebama",
-      "features": {
-        "members": "Do 200 Članova",
-        "projects": "Neograničeni Projekti",
-        "calendar": "Napredni Kalendar",
-        "integrations": "150+ Integracija",
-        "support": "Prioritetna Podrška",
-        "analytics": "Analitika i Izveštaji"
-      },
-      "cta": "Probaj 14 Dana Besplatno"
-    },
-    "custom": {
-      "title": "Prilagođeno",
-      "price": "Od €399/mesečno",
-      "description": "Možemo prilagoditi plan koji odgovara potrebama vašeg kluba",
-      "cta": "Kontaktiraj Prodaju"
-    }
-  },
   "faq": {
     "title": "Često Postavljena Pitanja",
     "questions": [
@@ -301,7 +263,6 @@
     "quickLinks": "Brzi Linkovi",
     "home": "Početna",
     "features": "Funkcije",
-    "pricing": "Cene",
     "testimonials": "Iskustva",
     "support": "Podrška",
     "helpCenter": "Centar za Pomoć",

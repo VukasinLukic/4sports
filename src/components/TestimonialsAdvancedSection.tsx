@@ -1,3 +1,5 @@
+'use client';
+
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'motion/react';
 import { TestimonialsColumn } from './ui/testimonials-columns-1';

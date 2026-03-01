@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Globe } from 'lucide-react';
@@ -27,7 +29,6 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
   };
 
   const navItems = [
-    { id: 'pricing', label: t('nav.pricing') },
     { id: 'testimonials', label: t('nav.testimonials') },
     { id: 'faq', label: t('nav.faq') },
     { id: 'contact', label: t('nav.contact') },
@@ -95,9 +96,11 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
               <span>{language === 'en' ? 'SR' : 'EN'}</span>
             </button>
 
-            {/* CTA Button */}
-            <button
-              onClick={() => scrollToSection('contact')}
+            {/* Go to App Button */}
+            <a
+              href="https://app.4sports.rs"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:block relative px-6 py-2.5 border-2 border-white/20 text-white font-bold rounded-lg transition-all duration-300 overflow-hidden group hover:border-white/40"
             >
               {/* Background fill on hover */}
@@ -106,7 +109,7 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
               <span className="relative z-10 group-hover:text-black transition-colors duration-300">
                 {t('nav.cta')}
               </span>
-            </button>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
@@ -150,18 +153,17 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
                 {item.label}
               </button>
             ))}
-            <button
-              onClick={() => {
-                scrollToSection('contact');
-                document.getElementById('mobile-menu')?.classList.add('hidden');
-              }}
+            <a
+              href="https://app.4sports.rs"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative px-6 py-2.5 border-2 border-white/20 text-white font-bold rounded-lg transition-all text-center overflow-hidden group"
             >
               <span className="absolute inset-0 bg-white transform -translate-x-full group-active:translate-x-0 transition-transform duration-500"></span>
               <span className="relative z-10 group-active:text-black transition-colors">
                 {t('nav.cta')}
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

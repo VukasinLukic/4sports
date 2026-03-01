@@ -1,17 +1,16 @@
 {
   "nav": {
-    "pricing": "Pricing",
     "testimonials": "Testimonials",
     "faq": "FAQ",
     "contact": "Contact",
-    "cta": "Get Started"
+    "cta": "Go to App"
   },
   "navigation": {
     "home": "Home",
     "purpose": "Purpose & Benefits",
     "experiences": "Club Experiences",
     "faq": "FAQ",
-    "contact": "Contact & Pricing",
+    "contact": "Contact",
     "tryFree": "Try Free",
     "learnMore": "Learn More"
   },
@@ -228,43 +227,6 @@
       "cta": "View Analytics"
     }
   },
-  "pricing": {
-    "title": "Pricing & Plans",
-    "subtitle": "Choose the perfect plan for your sports club",
-    "solo": {
-      "title": "Solo",
-      "price": "From €29/mo",
-      "description": "Perfect for small clubs and individual coaches",
-      "features": {
-        "members": "Up to 50 Members",
-        "attendance": "Attendance Tracking",
-        "calendar": "Smart Calendar",
-        "notifications": "Push Notifications",
-        "support": "Email Support"
-      },
-      "cta": "Try 14 Days Free Trial"
-    },
-    "startup": {
-      "title": "Startup",
-      "price": "From €99/mo",
-      "description": "Ideal for growing clubs with advanced needs",
-      "features": {
-        "members": "Up to 200 Members",
-        "projects": "Unlimited Projects",
-        "calendar": "Advanced Calendar",
-        "integrations": "150+ Integrations",
-        "support": "Priority Support",
-        "analytics": "Analytics & Reports"
-      },
-      "cta": "Try 14 Days Free Trial"
-    },
-    "custom": {
-      "title": "Custom",
-      "price": "From €399/mo",
-      "description": "We can customize a plan that suits the exact needs of your business",
-      "cta": "Contact Sales"
-    }
-  },
   "faq": {
     "title": "Frequently Asked Questions",
     "questions": [
@@ -332,7 +294,6 @@
     "quickLinks": "Quick Links",
     "home": "Home",
     "features": "Features",
-    "pricing": "Pricing",
     "testimonials": "Testimonials",
     "support": "Support",
     "helpCenter": "Help Center",

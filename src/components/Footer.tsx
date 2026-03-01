@@ -1,8 +1,10 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { Github, Twitter, Linkedin, Mail, Phone } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 function StickyFooter({
   children,
@@ -65,7 +67,6 @@ function FooterContent() {
           {[
             { id: 'home', label: t('footer.home') },
             { id: 'features', label: t('footer.features') },
-            { id: 'pricing', label: t('footer.pricing') },
             { id: 'testimonials', label: t('footer.testimonials') },
           ].map((link) => (
             <button
@@ -134,8 +135,8 @@ function FooterContent() {
         </div>
         <div className="flex flex-col sm:items-end gap-2">
           <div className="flex gap-4 text-xs text-gray-500">
-            <Link to="/privacy-policy" className="hover:text-primary transition-colors">{t('footer.privacy')}</Link>
-            <Link to="/terms" className="hover:text-primary transition-colors">{t('footer.terms')}</Link>
+            <Link href="/privacy-policy" className="hover:text-primary transition-colors">{t('footer.privacy')}</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">{t('footer.terms')}</Link>
             <a href="#" className="hover:text-primary transition-colors">{t('footer.cookies')}</a>
           </div>
           <p className="text-gray-500 text-sm">{t('footer.copyright')}</p>

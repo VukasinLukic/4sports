@@ -27,16 +27,13 @@ type Role = (typeof ROLES)[number];
 
 const AUTO_ROTATE_MS = 15000;
 
-// App screenshot background color
-const APP_BG = '#141414';
-
 // Phone (Trener / Clan)
-const PHONE_W = 280;
+const PHONE_W = 380;
 const PHONE_H = Math.round(PHONE_W * (19.5 / 9));
 
 // Desktop monitor (Vlasnik)
-const MONITOR_W = 480;
-const MONITOR_H = 270;
+const MONITOR_W = 700;
+const MONITOR_H = Math.round(MONITOR_W * (9 / 16));
 
 interface FeatureItem {
   icon: LucideIcon;
@@ -60,31 +57,31 @@ const roleConfig: Record<Role, RoleConfig> = {
     tabKey: 'features.owners.tab',
     titleKey: 'features.owners.title',
     subtitleKey: 'features.owners.subtitle',
-    defaultMockup: '/assets/mockups/Vlasnik/pocetna.png',
+    defaultMockup: '/assets/mockups/Vlasnik/pocetnaStranaDashboardVlasnik.png',
     items: [
       {
         icon: LineChart,
         titleKey: 'features.owners.dashboard.title',
         descKey: 'features.owners.dashboard.desc',
-        mockup: '/assets/mockups/Vlasnik/finansije.png',
+        mockup: '/assets/mockups/Vlasnik/finansijeVlasnik.png',
       },
       {
         icon: CreditCard,
         titleKey: 'features.owners.memberships.title',
         descKey: 'features.owners.memberships.desc',
-        mockup: '/assets/mockups/Vlasnik/clanovi.png',
+        mockup: '/assets/mockups/Vlasnik/clanoviVlasnik.png',
       },
       {
         icon: FileText,
         titleKey: 'features.owners.reports.title',
         descKey: 'features.owners.reports.desc',
-        mockup: '/assets/mockups/Vlasnik/evidencija.png',
+        mockup: '/assets/mockups/Vlasnik/evidencijaVlasnik.png',
       },
       {
         icon: Database,
         titleKey: 'features.owners.data.title',
         descKey: 'features.owners.data.desc',
-        mockup: '/assets/mockups/Vlasnik/novosti.png',
+        mockup: '/assets/mockups/Vlasnik/novostiVlasnik.png',
       },
     ],
   },
@@ -93,31 +90,31 @@ const roleConfig: Record<Role, RoleConfig> = {
     tabKey: 'features.coaches.tab',
     titleKey: 'features.coaches.title',
     subtitleKey: 'features.coaches.subtitle',
-    defaultMockup: '/assets/mockups/Trener/home.jpg',
+    defaultMockup: '/assets/mockups/Trener/memberProfileTrener.png',
     items: [
       {
         icon: ClipboardCheck,
         titleKey: 'features.coaches.attendance.title',
         descKey: 'features.coaches.attendance.desc',
-        mockup: '/assets/mockups/Trener/evidencija.jpg',
+        mockup: '/assets/mockups/Trener/evidencijaPrisustvaTrener.png',
       },
       {
         icon: Calendar,
         titleKey: 'features.coaches.calendar.title',
         descKey: 'features.coaches.calendar.desc',
-        mockup: '/assets/mockups/Trener/kalendar.jpg',
+        mockup: '/assets/mockups/Trener/kalendarTrener.png',
       },
       {
         icon: MessageSquare,
         titleKey: 'features.coaches.communication.title',
         descKey: 'features.coaches.communication.desc',
-        mockup: '/assets/mockups/Trener/Chat.jpg',
+        mockup: '/assets/mockups/Trener/InviteCodesTrener.png',
       },
       {
         icon: TrendingUp,
         titleKey: 'features.coaches.progress.title',
         descKey: 'features.coaches.progress.desc',
-        mockup: '/assets/mockups/Trener/memberDetailsAttendace.jpg',
+        mockup: '/assets/mockups/Trener/memberDetailsAttendanceTrener.png',
       },
     ],
   },
@@ -126,31 +123,31 @@ const roleConfig: Record<Role, RoleConfig> = {
     tabKey: 'features.parents.tab',
     titleKey: 'features.parents.title',
     subtitleKey: 'features.parents.subtitle',
-    defaultMockup: '/assets/mockups/Clan/homepage.jpg',
+    defaultMockup: '/assets/mockups/Clan/mojProfilParent.png',
     items: [
       {
         icon: CalendarDays,
         titleKey: 'features.parents.schedule.title',
         descKey: 'features.parents.schedule.desc',
-        mockup: '/assets/mockups/Clan/kalendarpage.jpg',
+        mockup: '/assets/mockups/Clan/novostiParent.png',
       },
       {
         icon: Wallet,
         titleKey: 'features.parents.payments.title',
         descKey: 'features.parents.payments.desc',
-        mockup: '/assets/mockups/Clan/evidencijaPagePayments.jpg',
+        mockup: '/assets/mockups/Clan/scanQRCodeparent.png',
       },
       {
         icon: Activity,
         titleKey: 'features.parents.tracking.title',
         descKey: 'features.parents.tracking.desc',
-        mockup: '/assets/mockups/Clan/evidencijaDolazsci.jpg',
+        mockup: '/assets/mockups/Clan/chatpageParents.png',
       },
       {
         icon: Bell,
         titleKey: 'features.parents.notifications.title',
         descKey: 'features.parents.notifications.desc',
-        mockup: '/assets/mockups/Clan/chatpage.jpg',
+        mockup: '/assets/mockups/Clan/chatpageParents.png',
       },
     ],
   },
@@ -214,8 +211,8 @@ const UnifiedFeaturesSection = () => {
   const rightFeatures = config.items.slice(2, 4);
 
   const deviceH = isOwner ? MONITOR_H : PHONE_H;
-  const lineWidth = isOwner ? '1.25rem' : '2.5rem';
-  const featureMaxW = isOwner ? 'max-w-[220px]' : 'max-w-[260px]';
+  const lineWidth = isOwner ? '1.5rem' : '3rem';
+  const featureMaxW = isOwner ? 'max-w-[280px]' : 'max-w-[300px]';
 
   // Shared image transition props
   const imgTransition = { duration: 0.4, ease: 'easeInOut' as const };
@@ -490,215 +487,131 @@ const UnifiedFeaturesSection = () => {
           </p>
         </motion.div>
 
-        {/* ===== MOBILE / TABLET: horizontal tabs (< xl) ===== */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 xl:hidden">
+        {/* ===== Role Tabs — centered, directly below header ===== */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {ROLES.map((role, idx) => renderRoleTab(role, idx, 'horizontal'))}
         </div>
 
-        {/* ===== DESKTOP (xl+): vertical tabs left + content right ===== */}
-        <div className="hidden xl:flex items-start gap-6">
-          {/* Vertical role selector */}
-          <div className="flex flex-col gap-5 shrink-0 pt-12 -ml-2" style={{ width: '260px' }}>
-            {ROLES.map((role, idx) => renderRoleTab(role, idx, 'vertical'))}
-          </div>
+        {/* ===== Content ===== */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeRole}
+            initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Role subtitle */}
+            <div className="text-center mt-6 mb-16">
+              <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
+                {t(config.titleKey)}
+              </h3>
+              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+                {t(config.subtitleKey)}
+              </p>
+            </div>
 
-          {/* Content */}
-          <div className="flex-1 min-w-0 pl-6">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeRole}
-                initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
-                transition={{ duration: 0.5 }}
+            {/* ===== DESKTOP: left features | device | right features ===== */}
+            <div className="hidden md:flex items-center justify-center">
+              {/* Left features */}
+              <div
+                className={`${featureMaxW} flex flex-col ${isOwner ? 'justify-center gap-8' : 'justify-around'}`}
+                style={{ minHeight: `${deviceH}px` }}
               >
-                {/* Subtitle */}
-                <div className="text-center mb-10">
-                  <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-3 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
-                    {t(config.titleKey)}
-                  </h3>
-                  <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                    {t(config.subtitleKey)}
-                  </p>
-                </div>
-
-                {/* Features + Device + Features */}
-                <div className="flex items-center justify-center">
-                  {/* Left features */}
-                  <div
-                    className={`flex-1 ${featureMaxW} ${
-                      isOwner
-                        ? 'flex flex-col justify-center gap-8'
-                        : 'flex flex-col justify-around'
-                    }`}
-                    style={{ minHeight: `${deviceH}px` }}
-                  >
-                    {leftFeatures.map((item, i) => renderLeftCard(item, i))}
-                  </div>
-
-                  {/* Device */}
-                  <div className={`relative shrink-0 ${isOwner ? 'mx-5' : 'mx-10'}`}>
-                    {isOwner ? (
-                      /* ---- DESKTOP MONITOR ---- */
-                      <div className="flex flex-col items-center">
-                        <div
-                          className="relative rounded-xl border-[5px] border-neutral-600/80 shadow-2xl overflow-hidden"
-                          style={{
-                            width: `${MONITOR_W}px`,
-                            height: `${MONITOR_H}px`,
-                            backgroundColor: APP_BG,
-                          }}
-                        >
-                          {/* Camera */}
-                          <div className="absolute top-[6px] left-1/2 -translate-x-1/2 w-2 h-2 bg-neutral-500/40 rounded-full z-20" />
-                          {/* Screen */}
-                          <AnimatePresence mode="wait">
-                            <motion.img
-                              key={currentMockup}
-                              src={currentMockup}
-                              alt="Dashboard"
-                              className="absolute inset-0 w-full h-full object-cover"
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              exit={{ opacity: 0 }}
-                              transition={imgTransition}
-                            />
-                          </AnimatePresence>
-                        </div>
-                        {/* Stand */}
-                        <div className="w-20 h-5 bg-neutral-600/80 rounded-b-sm" />
-                        <div className="w-36 h-[6px] bg-neutral-600/60 rounded-b-lg" />
-                      </div>
-                    ) : (
-                      /* ---- PHONE ---- */
-                      <div
-                        className="relative rounded-[3rem] border-[6px] border-neutral-700/80 shadow-2xl overflow-hidden"
-                        style={{
-                          width: `${PHONE_W}px`,
-                          height: `${PHONE_H}px`,
-                          backgroundColor: APP_BG,
-                        }}
-                      >
-                        {/* Dynamic Island */}
-                        <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[90px] h-[25px] bg-black rounded-full z-20" />
-                        {/* Screen - 5% zoomed out */}
-                        <AnimatePresence mode="wait">
-                          <motion.img
-                            key={currentMockup}
-                            src={currentMockup}
-                            alt="App mockup"
-                            className="absolute object-cover object-top rounded-md"
-                            style={{
-                              top: '2.5%',
-                              left: '2.5%',
-                              width: '95%',
-                              height: '95%',
-                            }}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={imgTransition}
-                          />
-                        </AnimatePresence>
-                        {/* Home indicator */}
-                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-[120px] h-[4px] bg-white/15 rounded-full z-20" />
-                      </div>
-                    )}
-                    {/* Glow */}
-                    <div className="absolute inset-0 -z-10 bg-primary/10 blur-[80px] scale-150 rounded-full" />
-                  </div>
-
-                  {/* Right features */}
-                  <div
-                    className={`flex-1 ${featureMaxW} ${
-                      isOwner
-                        ? 'flex flex-col justify-center gap-8'
-                        : 'flex flex-col justify-around'
-                    }`}
-                    style={{ minHeight: `${deviceH}px` }}
-                  >
-                    {rightFeatures.map((item, i) => renderRightCard(item, i))}
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
-
-        {/* ===== MOBILE / TABLET LAYOUT (< xl) ===== */}
-        <div className="xl:hidden">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeRole}
-              initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
-              transition={{ duration: 0.5 }}
-            >
-              {/* Subtitle */}
-              <div className="text-center mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-3 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
-                  {t(config.titleKey)}
-                </h3>
-                <p className="text-base text-gray-400 max-w-lg mx-auto">
-                  {t(config.subtitleKey)}
-                </p>
+                {leftFeatures.map((item, i) => renderLeftCard(item, i))}
               </div>
 
               {/* Device */}
-              <div className="flex justify-center mb-10">
+              <div className={`relative shrink-0 ${isOwner ? 'mx-6' : 'mx-12'}`}>
                 {isOwner ? (
-                  <div className="flex flex-col items-center">
-                    <div
-                      className="relative rounded-lg border-[4px] border-neutral-600/80 shadow-2xl overflow-hidden"
-                      style={{
-                        width: '340px',
-                        height: '190px',
-                        backgroundColor: APP_BG,
-                      }}
-                    >
-                      <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-neutral-500/40 rounded-full z-20" />
-                      <AnimatePresence mode="wait">
-                        <motion.img
-                          key={currentMockup}
-                          src={currentMockup}
-                          alt="Dashboard"
-                          className="absolute inset-0 w-full h-full object-cover"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={imgTransition}
-                        />
-                      </AnimatePresence>
-                    </div>
-                    <div className="w-14 h-3 bg-neutral-600/80 rounded-b-sm" />
-                    <div className="w-24 h-1 bg-neutral-600/60 rounded-b-lg" />
-                  </div>
-                ) : (
                   <div
-                    className="relative w-[220px] rounded-[2.5rem] border-[5px] border-neutral-700/80 shadow-2xl overflow-hidden"
-                    style={{ aspectRatio: '9/19.5', backgroundColor: APP_BG }}
+                    className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+                    style={{ width: `${MONITOR_W}px`, height: `${MONITOR_H}px` }}
                   >
-                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[70px] h-[20px] bg-black rounded-full z-20" />
                     <AnimatePresence mode="wait">
                       <motion.img
                         key={currentMockup}
                         src={currentMockup}
-                        alt="App mockup"
-                        className="absolute object-cover object-top"
-                        style={{
-                          top: '2.5%',
-                          left: '2.5%',
-                          width: '95%',
-                          height: '95%',
-                        }}
+                        alt="Dashboard"
+                        className="absolute inset-0 w-full h-full object-cover"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={imgTransition}
                       />
                     </AnimatePresence>
-                    <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-[100px] h-[3px] bg-white/15 rounded-full z-20" />
+                  </div>
+                ) : (
+                  <div
+                    className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+                    style={{ width: `${PHONE_W}px`, height: `${PHONE_H}px` }}
+                  >
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={currentMockup}
+                        src={currentMockup}
+                        alt="App mockup"
+                        className="absolute inset-0 w-full h-full object-cover object-top"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={imgTransition}
+                      />
+                    </AnimatePresence>
+                  </div>
+                )}
+                {/* Glow */}
+                <div className="absolute inset-0 -z-10 bg-primary/10 blur-[80px] scale-150 rounded-full" />
+              </div>
+
+              {/* Right features */}
+              <div
+                className={`${featureMaxW} flex flex-col ${isOwner ? 'justify-center gap-8' : 'justify-around'}`}
+                style={{ minHeight: `${deviceH}px` }}
+              >
+                {rightFeatures.map((item, i) => renderRightCard(item, i))}
+              </div>
+            </div>
+
+            {/* ===== MOBILE layout (< md) ===== */}
+            <div className="md:hidden">
+              {/* Device */}
+              <div className="flex justify-center mb-10">
+                {isOwner ? (
+                  <div
+                    className="relative rounded-xl overflow-hidden shadow-2xl border border-white/10"
+                    style={{ width: '340px', height: '191px' }}
+                  >
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={currentMockup}
+                        src={currentMockup}
+                        alt="Dashboard"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={imgTransition}
+                      />
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <div
+                    className="relative w-[220px] rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+                    style={{ aspectRatio: '9/19.5' }}
+                  >
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={currentMockup}
+                        src={currentMockup}
+                        alt="App mockup"
+                        className="absolute inset-0 w-full h-full object-cover object-top"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={imgTransition}
+                      />
+                    </AnimatePresence>
                   </div>
                 )}
               </div>
@@ -752,9 +665,9 @@ const UnifiedFeaturesSection = () => {
                   );
                 })}
               </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

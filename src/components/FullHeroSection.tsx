@@ -151,7 +151,7 @@ const FullHeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: showContent ? 1 : 0 }}
           transition={{ duration: 1, delay: 3.0 }}
-          className="flex flex-col items-center gap-2 text-gray-400"
+          className="flex flex-col items-center gap-2 text-gray-400 -translate-x-8"
         >
           <span className="text-xs uppercase tracking-wider">Scroll</span>
           <motion.div

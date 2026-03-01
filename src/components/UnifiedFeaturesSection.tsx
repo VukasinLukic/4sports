@@ -378,7 +378,7 @@ const UnifiedFeaturesSection = () => {
         onClick={() => handleRoleChange(role)}
         className={`relative overflow-hidden transition-all duration-300 flex items-center ${
           isVertical
-            ? `w-full gap-4 px-5 py-4 rounded-2xl ${
+            ? `w-full gap-4 px-6 py-5 rounded-2xl ${
                 active
                   ? 'bg-white/[0.07] shadow-[0_0_25px_rgba(34,197,94,0.06)]'
                   : 'bg-transparent hover:bg-white/[0.03]'
@@ -394,7 +394,7 @@ const UnifiedFeaturesSection = () => {
         <div
           className={`flex items-center justify-center shrink-0 rounded-xl border transition-all duration-300 ${
             isVertical
-              ? `w-12 h-12 ${
+              ? `w-14 h-14 ${
                   active
                     ? 'bg-primary/15 border-primary/30'
                     : 'bg-white/5 border-white/10'
@@ -407,7 +407,7 @@ const UnifiedFeaturesSection = () => {
           <Icon
             className={`transition-colors duration-300 ${
               isVertical
-                ? `w-6 h-6 ${active ? 'text-primary' : 'text-gray-500'}`
+                ? `w-7 h-7 ${active ? 'text-primary' : 'text-gray-500'}`
                 : `w-4 h-4 ${active ? 'text-black' : 'text-gray-400'}`
             }`}
           />
@@ -415,7 +415,7 @@ const UnifiedFeaturesSection = () => {
         <span
           className={`font-semibold whitespace-nowrap transition-colors duration-300 ${
             isVertical
-              ? `text-lg ${active ? 'text-white' : 'text-gray-500'}`
+              ? `text-xl ${active ? 'text-white' : 'text-gray-500'}`
               : `text-base ${active ? 'text-black' : ''}`
           }`}
         >
@@ -496,9 +496,9 @@ const UnifiedFeaturesSection = () => {
         </div>
 
         {/* ===== DESKTOP (xl+): vertical tabs left + content right ===== */}
-        <div className="hidden xl:flex items-center gap-6">
+        <div className="hidden xl:flex items-start gap-6">
           {/* Vertical role selector */}
-          <div className="flex flex-col gap-3 shrink-0" style={{ width: '240px' }}>
+          <div className="flex flex-col gap-5 shrink-0 pt-12 -ml-2" style={{ width: '260px' }}>
             {ROLES.map((role, idx) => renderRoleTab(role, idx, 'vertical'))}
           </div>
 

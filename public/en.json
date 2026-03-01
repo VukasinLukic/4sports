@@ -3,6 +3,7 @@
     "testimonials": "Testimonials",
     "faq": "FAQ",
     "contact": "Contact",
+    "contactUs": "Contact Us",
     "cta": "Go to App"
   },
   "navigation": {
@@ -193,16 +194,17 @@
   "testimonials": {
     "title": "What Clubs Say About Us",
     "subtitle": "See what our customers have to say about 4sports",
-    "testimonial1": {
-      "quote": "4sports transformed how we manage our football club. Everything is so much easier now!",
-      "author": "Milan Jovanović",
-      "club": "FK Partizan Youth"
-    },
-    "testimonial2": {
-      "quote": "The attendance tracking feature alone saved us countless hours every month.",
-      "author": "Ana Petrović",
-      "club": "Tennis Club Novak"
-    }
+    "items": [
+      { "text": "I tracked attendance in a notebook for years. Now I check everyone off on my phone the moment they walk in. It just works.", "role": "Football coach" },
+      { "text": "Parents stopped calling me about every payment. They can see everything themselves in the app. That alone was worth it.", "role": "Basketball club administrator" },
+      { "text": "I was a bit skeptical at first. But the onboarding team was patient with us and within a few weeks everything was running smoothly.", "role": "Football club owner" },
+      { "text": "As a parent, knowing when my son actually showed up to practice — without having to ask the coach — is genuinely useful.", "role": "Parent" },
+      { "text": "I post the schedule once and kids see it in the app. No more messages in five different group chats at midnight.", "role": "Swimming coach" },
+      { "text": "I can track each athlete's development over time. It's made planning training sessions a lot more intentional.", "role": "Gymnastics coach" },
+      { "text": "Finally have income and expenses in one place. Before this I was piecing things together from messages and spreadsheets.", "role": "Sports club owner" },
+      { "text": "Sending a notification to all parents used to take a while. Now it's one tap and done. Simple things matter.", "role": "Volleyball coach" },
+      { "text": "Honestly didn't think an app would change much. Turned out I was wrong. It actually saves me real time every week.", "role": "Tennis coach" }
+    ]
   },
   "mockupShowcase": {
     "hero": {
@@ -232,7 +234,7 @@
     "questions": [
       {
         "question": "How much does 4sports cost?",
-        "answer": "Pricing depends on the number of members in your club. Use our calculator below to get an estimate, or contact us for a custom quote."
+        "answer": "Pricing depends on the number of members in your club. Contact us for a quote."
       },
       {
         "question": "Is there a free trial?",

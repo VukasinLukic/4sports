@@ -3,6 +3,7 @@
     "testimonials": "Iskustva",
     "faq": "Pitanja",
     "contact": "Kontakt",
+    "contactUs": "Kontaktirajte nas",
     "cta": "Idi na Aplikaciju"
   },
   "navigation": {
@@ -162,16 +163,17 @@
   },
   "testimonials": {
     "title": "Šta Klubovi Kažu o Nama",
-    "testimonial1": {
-      "quote": "4sports je potpuno promenio način kako vodimo naš fudbalski klub. Sve je sada mnogo lakše!",
-      "author": "Milan Jovanović",
-      "club": "FK Partizan Omladinci"
-    },
-    "testimonial2": {
-      "quote": "Samo funkcija praćenja prisustva nam je uštedela nebrojano sati svakog meseca.",
-      "author": "Ana Petrović",
-      "club": "Tenis Klub Novak"
-    }
+    "items": [
+      { "text": "Godinama sam prisustvo vodio u beležnici. Sada ih odštiklim na telefonu čim uđu. Funkcioniše savršeno.", "role": "Trener fudbala" },
+      { "text": "Roditelji su prestali da me zovu zbog svake uplate. Sve sami vide u aplikaciji. Samo to je vredelo.", "role": "Administrator košarkaškog kluba" },
+      { "text": "Bio sam malo skeptičan na početku. Ali ekipa je bila strpljiva i za nekoliko nedelja sve je radilo kako treba.", "role": "Vlasnik fudbalskog kluba" },
+      { "text": "Kao roditelj, korisno mi je što mogu da znam da li je sin stvarno bio na treningu — bez pitanja trenera.", "role": "Roditelj" },
+      { "text": "Unesem raspored jednom i deca ga vide u aplikaciji. Nema više poruka po pet različitih grupa u ponoć.", "role": "Trener plivanja" },
+      { "text": "Pratim razvoj svakog sportiste posebno. Planiranje treninga mi je postalo mnogo svrsishodnije.", "role": "Trener gimnastike" },
+      { "text": "Konačno imam prihode i troškove na jednom mestu. Pre sam to slagao iz poruka i tabela.", "role": "Vlasnik sportskog kluba" },
+      { "text": "Slanje obaveštenja svim roditeljima je ranije oduzimalo vremena. Sada je jedan klik i gotovo.", "role": "Trener odbojke" },
+      { "text": "Iskreno, nisam mislio da će aplikacija mnogo promeniti. Pokazalo se da grešim. Stvarno mi štedi vreme svake nedelje.", "role": "Trener tenisa" }
+    ]
   },
   "mockupShowcase": {
     "hero": {
@@ -201,7 +203,7 @@
     "questions": [
       {
         "question": "Koliko košta 4sports?",
-        "answer": "Cena zavisi od broja članova u vašem klubu. Koristite naš kalkulator ispod za procenu, ili nas kontaktirajte za prilagođenu ponudu."
+        "answer": "Cena zavisi od broja članova u vašem klubu. Kontaktirajte nas za ponudu."
       },
       {
         "question": "Da li postoji besplatan probni period?",

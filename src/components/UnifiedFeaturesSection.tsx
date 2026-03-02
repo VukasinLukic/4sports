@@ -5,20 +5,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
   LineChart,
-  CreditCard,
-  FileText,
-  Database,
+  Users,
   ClipboardCheck,
+  Megaphone,
   Calendar,
+  KeyRound,
+  UserCheck,
+  Newspaper,
+  QrCode,
   MessageSquare,
-  TrendingUp,
-  CalendarDays,
-  Wallet,
-  Activity,
-  Bell,
   Building2,
   Dumbbell,
-  Users,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -28,11 +25,11 @@ type Role = (typeof ROLES)[number];
 const AUTO_ROTATE_MS = 15000;
 
 // Phone (Trener / Clan)
-const PHONE_W = 380;
+const PHONE_W = 300;
 const PHONE_H = Math.round(PHONE_W * (19.5 / 9));
 
 // Desktop monitor (Vlasnik)
-const MONITOR_W = 700;
+const MONITOR_W = 820;
 const MONITOR_H = Math.round(MONITOR_W * (9 / 16));
 
 interface FeatureItem {
@@ -66,19 +63,19 @@ const roleConfig: Record<Role, RoleConfig> = {
         mockup: '/assets/mockups/Vlasnik/finansijeVlasnik.png',
       },
       {
-        icon: CreditCard,
+        icon: Users,
         titleKey: 'features.owners.memberships.title',
         descKey: 'features.owners.memberships.desc',
         mockup: '/assets/mockups/Vlasnik/clanoviVlasnik.png',
       },
       {
-        icon: FileText,
+        icon: ClipboardCheck,
         titleKey: 'features.owners.reports.title',
         descKey: 'features.owners.reports.desc',
         mockup: '/assets/mockups/Vlasnik/evidencijaVlasnik.png',
       },
       {
-        icon: Database,
+        icon: Megaphone,
         titleKey: 'features.owners.data.title',
         descKey: 'features.owners.data.desc',
         mockup: '/assets/mockups/Vlasnik/novostiVlasnik.png',
@@ -105,13 +102,13 @@ const roleConfig: Record<Role, RoleConfig> = {
         mockup: '/assets/mockups/Trener/kalendarTrener.png',
       },
       {
-        icon: MessageSquare,
+        icon: KeyRound,
         titleKey: 'features.coaches.communication.title',
         descKey: 'features.coaches.communication.desc',
         mockup: '/assets/mockups/Trener/InviteCodesTrener.png',
       },
       {
-        icon: TrendingUp,
+        icon: UserCheck,
         titleKey: 'features.coaches.progress.title',
         descKey: 'features.coaches.progress.desc',
         mockup: '/assets/mockups/Trener/memberDetailsAttendanceTrener.png',
@@ -126,28 +123,28 @@ const roleConfig: Record<Role, RoleConfig> = {
     defaultMockup: '/assets/mockups/Clan/mojProfilParent.png',
     items: [
       {
-        icon: CalendarDays,
+        icon: Newspaper,
         titleKey: 'features.parents.schedule.title',
         descKey: 'features.parents.schedule.desc',
         mockup: '/assets/mockups/Clan/novostiParent.png',
       },
       {
-        icon: Wallet,
+        icon: QrCode,
         titleKey: 'features.parents.payments.title',
         descKey: 'features.parents.payments.desc',
         mockup: '/assets/mockups/Clan/scanQRCodeparent.png',
       },
       {
-        icon: Activity,
+        icon: MessageSquare,
         titleKey: 'features.parents.tracking.title',
         descKey: 'features.parents.tracking.desc',
         mockup: '/assets/mockups/Clan/chatpageParents.png',
       },
       {
-        icon: Bell,
+        icon: Calendar,
         titleKey: 'features.parents.notifications.title',
         descKey: 'features.parents.notifications.desc',
-        mockup: '/assets/mockups/Clan/chatpageParents.png',
+        mockup: '/assets/mockups/Clan/kalendarClan.png',
       },
     ],
   },
@@ -231,18 +228,16 @@ const UnifiedFeaturesSection = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: index * 0.15, duration: 0.5 }}
-          className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer text-right ${
-            active
-              ? 'bg-neutral-900/80 border-primary/30 shadow-[0_0_20px_rgba(34,197,94,0.08)]'
-              : 'bg-neutral-900/30 border-white/5 hover:border-white/10'
-          }`}
+          className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer text-right ${active
+            ? 'bg-neutral-900/80 border-primary/30 shadow-[0_0_20px_rgba(34,197,94,0.08)]'
+            : 'bg-neutral-900/30 border-white/5 hover:border-white/10'
+            }`}
         >
           <div className="flex items-start gap-4 justify-end">
             <div>
               <h4
-                className={`text-base font-bold mb-1.5 transition-colors duration-300 ${
-                  active ? 'text-primary' : 'text-white'
-                }`}
+                className={`text-base font-bold mb-1.5 transition-colors duration-300 ${active ? 'text-primary' : 'text-white'
+                  }`}
               >
                 {t(item.titleKey)}
               </h4>
@@ -251,14 +246,12 @@ const UnifiedFeaturesSection = () => {
               </p>
             </div>
             <div
-              className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
-                active ? 'bg-primary/20' : 'bg-white/5'
-              }`}
+              className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${active ? 'bg-primary/20' : 'bg-white/5'
+                }`}
             >
               <ItemIcon
-                className={`w-5 h-5 transition-colors duration-300 ${
-                  active ? 'text-primary' : 'text-gray-500'
-                }`}
+                className={`w-5 h-5 transition-colors duration-300 ${active ? 'text-primary' : 'text-gray-500'
+                  }`}
               />
             </div>
           </div>
@@ -269,16 +262,14 @@ const UnifiedFeaturesSection = () => {
           style={{ width: lineWidth }}
         >
           <div
-            className={`flex-1 h-px transition-all duration-500 ${
-              active ? 'bg-gradient-to-r from-primary/30 to-primary' : 'bg-white/10'
-            }`}
+            className={`flex-1 h-px transition-all duration-500 ${active ? 'bg-gradient-to-r from-primary/30 to-primary' : 'bg-white/10'
+              }`}
           />
           <div
-            className={`w-2.5 h-2.5 rounded-full shrink-0 transition-all duration-500 ${
-              active
-                ? 'bg-primary shadow-[0_0_10px_rgba(34,197,94,0.6)] scale-125'
-                : 'bg-white/20 scale-100'
-            }`}
+            className={`w-2.5 h-2.5 rounded-full shrink-0 transition-all duration-500 ${active
+              ? 'bg-primary shadow-[0_0_10px_rgba(34,197,94,0.6)] scale-125'
+              : 'bg-white/20 scale-100'
+              }`}
           />
         </div>
       </div>
@@ -302,45 +293,39 @@ const UnifiedFeaturesSection = () => {
           style={{ width: lineWidth }}
         >
           <div
-            className={`w-2.5 h-2.5 rounded-full shrink-0 transition-all duration-500 ${
-              active
-                ? 'bg-primary shadow-[0_0_10px_rgba(34,197,94,0.6)] scale-125'
-                : 'bg-white/20 scale-100'
-            }`}
+            className={`w-2.5 h-2.5 rounded-full shrink-0 transition-all duration-500 ${active
+              ? 'bg-primary shadow-[0_0_10px_rgba(34,197,94,0.6)] scale-125'
+              : 'bg-white/20 scale-100'
+              }`}
           />
           <div
-            className={`flex-1 h-px transition-all duration-500 ${
-              active ? 'bg-gradient-to-r from-primary to-primary/30' : 'bg-white/10'
-            }`}
+            className={`flex-1 h-px transition-all duration-500 ${active ? 'bg-gradient-to-r from-primary to-primary/30' : 'bg-white/10'
+              }`}
           />
         </div>
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: index * 0.15, duration: 0.5 }}
-          className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer ${
-            active
-              ? 'bg-neutral-900/80 border-primary/30 shadow-[0_0_20px_rgba(34,197,94,0.08)]'
-              : 'bg-neutral-900/30 border-white/5 hover:border-white/10'
-          }`}
+          className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer ${active
+            ? 'bg-neutral-900/80 border-primary/30 shadow-[0_0_20px_rgba(34,197,94,0.08)]'
+            : 'bg-neutral-900/30 border-white/5 hover:border-white/10'
+            }`}
         >
           <div className="flex items-start gap-4">
             <div
-              className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
-                active ? 'bg-primary/20' : 'bg-white/5'
-              }`}
+              className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${active ? 'bg-primary/20' : 'bg-white/5'
+                }`}
             >
               <ItemIcon
-                className={`w-5 h-5 transition-colors duration-300 ${
-                  active ? 'text-primary' : 'text-gray-500'
-                }`}
+                className={`w-5 h-5 transition-colors duration-300 ${active ? 'text-primary' : 'text-gray-500'
+                  }`}
               />
             </div>
             <div>
               <h4
-                className={`text-base font-bold mb-1.5 transition-colors duration-300 ${
-                  active ? 'text-primary' : 'text-white'
-                }`}
+                className={`text-base font-bold mb-1.5 transition-colors duration-300 ${active ? 'text-primary' : 'text-white'
+                  }`}
               >
                 {t(item.titleKey)}
               </h4>
@@ -373,48 +358,40 @@ const UnifiedFeaturesSection = () => {
         transition={isVertical ? { delay: idx * 0.12, duration: 0.5 } : undefined}
         viewport={isVertical ? { once: true } : undefined}
         onClick={() => handleRoleChange(role)}
-        className={`relative overflow-hidden transition-all duration-300 flex items-center ${
-          isVertical
-            ? `w-full gap-4 px-6 py-5 rounded-2xl ${
-                active
-                  ? 'bg-white/[0.07] shadow-[0_0_25px_rgba(34,197,94,0.06)]'
-                  : 'bg-transparent hover:bg-white/[0.03]'
-              }`
-            : `gap-2 px-6 py-3 rounded-2xl ${
-                active
-                  ? 'text-black bg-white shadow-[0_0_20px_rgba(255,255,255,0.3)] scale-105'
-                  : 'text-gray-400 hover:text-white bg-white/5 hover:bg-white/10'
-              }`
-        }`}
+        className={`relative overflow-hidden transition-all duration-300 flex items-center ${isVertical
+          ? `w-full gap-4 px-6 py-5 rounded-2xl ${active
+            ? 'bg-white/[0.07] shadow-[0_0_25px_rgba(34,197,94,0.06)]'
+            : 'bg-transparent hover:bg-white/[0.03]'
+          }`
+          : `gap-2 px-6 py-3 rounded-2xl ${active
+            ? 'text-black bg-white shadow-[0_0_20px_rgba(255,255,255,0.3)] scale-105'
+            : 'text-gray-400 hover:text-white bg-white/5 hover:bg-white/10'
+          }`
+          }`}
       >
         {/* Icon box */}
         <div
-          className={`flex items-center justify-center shrink-0 rounded-xl border transition-all duration-300 ${
-            isVertical
-              ? `w-14 h-14 ${
-                  active
-                    ? 'bg-primary/15 border-primary/30'
-                    : 'bg-white/5 border-white/10'
-                }`
-              : `w-8 h-8 ${
-                  active ? 'bg-white border-white/20' : 'bg-white/5 border-white/10'
-                }`
-          }`}
+          className={`flex items-center justify-center shrink-0 rounded-xl border transition-all duration-300 ${isVertical
+            ? `w-14 h-14 ${active
+              ? 'bg-primary/15 border-primary/30'
+              : 'bg-white/5 border-white/10'
+            }`
+            : `w-8 h-8 ${active ? 'bg-white border-white/20' : 'bg-white/5 border-white/10'
+            }`
+            }`}
         >
           <Icon
-            className={`transition-colors duration-300 ${
-              isVertical
-                ? `w-7 h-7 ${active ? 'text-primary' : 'text-gray-500'}`
-                : `w-4 h-4 ${active ? 'text-black' : 'text-gray-400'}`
-            }`}
+            className={`transition-colors duration-300 ${isVertical
+              ? `w-7 h-7 ${active ? 'text-primary' : 'text-gray-500'}`
+              : `w-4 h-4 ${active ? 'text-black' : 'text-gray-400'}`
+              }`}
           />
         </div>
         <span
-          className={`font-semibold whitespace-nowrap transition-colors duration-300 ${
-            isVertical
-              ? `text-xl ${active ? 'text-white' : 'text-gray-500'}`
-              : `text-base ${active ? 'text-black' : ''}`
-          }`}
+          className={`font-semibold whitespace-nowrap transition-colors duration-300 ${isVertical
+            ? `text-xl ${active ? 'text-white' : 'text-gray-500'}`
+            : `text-base ${active ? 'text-black' : ''}`
+            }`}
         >
           {t(rc.tabKey)}
         </span>
@@ -422,9 +399,8 @@ const UnifiedFeaturesSection = () => {
         {active && (
           <div
             key={timerKey}
-            className={`absolute bottom-0 left-0 h-[3px] rounded-full ${
-              isVertical ? 'bg-primary/50' : 'bg-primary/70'
-            }`}
+            className={`absolute bottom-0 left-0 h-[3px] rounded-full ${isVertical ? 'bg-primary/50' : 'bg-primary/70'
+              }`}
             style={{ animation: `progressFill ${AUTO_ROTATE_MS}ms linear forwards` }}
           />
         )}
@@ -543,7 +519,7 @@ const UnifiedFeaturesSection = () => {
                   </div>
                 ) : (
                   <div
-                    className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+                    className="relative rounded-3xl overflow-hidden"
                     style={{ width: `${PHONE_W}px`, height: `${PHONE_H}px` }}
                   >
                     <AnimatePresence mode="wait">
@@ -597,7 +573,7 @@ const UnifiedFeaturesSection = () => {
                   </div>
                 ) : (
                   <div
-                    className="relative w-[220px] rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+                    className="relative w-[180px] rounded-3xl overflow-hidden"
                     style={{ aspectRatio: '9/19.5' }}
                   >
                     <AnimatePresence mode="wait">
@@ -630,29 +606,25 @@ const UnifiedFeaturesSection = () => {
                       onClick={() =>
                         setHoveredFeature(hoveredFeature === index ? null : index)
                       }
-                      className={`p-4 rounded-2xl border transition-all duration-300 cursor-pointer ${
-                        active
-                          ? 'bg-neutral-900/80 border-primary/30'
-                          : 'bg-neutral-900/30 border-white/5'
-                      }`}
+                      className={`p-4 rounded-2xl border transition-all duration-300 cursor-pointer ${active
+                        ? 'bg-neutral-900/80 border-primary/30'
+                        : 'bg-neutral-900/30 border-white/5'
+                        }`}
                     >
                       <div className="flex items-start gap-3">
                         <div
-                          className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-all ${
-                            active ? 'bg-primary/20' : 'bg-white/5'
-                          }`}
+                          className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-all ${active ? 'bg-primary/20' : 'bg-white/5'
+                            }`}
                         >
                           <ItemIcon
-                            className={`w-4 h-4 transition-colors ${
-                              active ? 'text-primary' : 'text-gray-500'
-                            }`}
+                            className={`w-4 h-4 transition-colors ${active ? 'text-primary' : 'text-gray-500'
+                              }`}
                           />
                         </div>
                         <div>
                           <h4
-                            className={`text-sm font-bold mb-1 transition-colors ${
-                              active ? 'text-primary' : 'text-white'
-                            }`}
+                            className={`text-sm font-bold mb-1 transition-colors ${active ? 'text-primary' : 'text-white'
+                              }`}
                           >
                             {t(item.titleKey)}
                           </h4>

@@ -121,16 +121,16 @@
         "desc": "Complete tracking of club revenue and expenses in one place."
       },
       "memberships": {
-        "title": "Membership Automation",
-        "desc": "Digital payment records and automatic debt tracking."
+        "title": "Members Overview",
+        "desc": "Browse and manage all club members, view profiles, and track membership status."
       },
       "reports": {
-        "title": "Financial Reporting",
-        "desc": "Generate detailed financial reports for better business insights."
+        "title": "Attendance Records",
+        "desc": "Complete attendance tracking across all training sessions and events."
       },
       "data": {
-        "title": "Data Management",
-        "desc": "Centralized database of all members, coaches, and medical records."
+        "title": "News & Announcements",
+        "desc": "Post updates, share important news, and keep the entire club informed."
       }
     },
     "coaches": {
@@ -146,12 +146,12 @@
         "desc": "Plan and view all training sessions and matches in real-time."
       },
       "communication": {
-        "title": "Communication Hub",
-        "desc": "Centralized channel for communicating with parents and players."
+        "title": "Invite Codes",
+        "desc": "Generate and share invite codes to easily onboard new players and parents."
       },
       "progress": {
-        "title": "Progress Tracking",
-        "desc": "Record athlete results and performance metrics."
+        "title": "Member Details",
+        "desc": "View detailed member profiles with attendance history and activity overview."
       }
     },
     "parents": {
@@ -159,20 +159,20 @@
       "tab": "Parents",
       "subtitle": "Stay informed and connected with your child's sports activities.",
       "schedule": {
-        "title": "Schedule Overview",
-        "desc": "Always-accessible plan of training sessions, matches, and club events."
+        "title": "Club News",
+        "desc": "Stay up to date with the latest news, updates, and announcements from the club."
       },
       "payments": {
-        "title": "Payment Tracking",
-        "desc": "Clear overview of paid and unpaid membership fees."
+        "title": "Training Check-in",
+        "desc": "Children scan a QR code to check in at training and confirm their attendance."
       },
       "tracking": {
-        "title": "Child's Progress",
-        "desc": "Information about attendance, results, and athletic development."
+        "title": "Club Chat",
+        "desc": "Message coaches and club staff directly through the in-app chat."
       },
       "notifications": {
-        "title": "Real-time Notifications",
-        "desc": "Receive important club announcements without information getting lost."
+        "title": "Training Schedule",
+        "desc": "View the full training calendar with upcoming sessions, matches, and events."
       }
     }
   },

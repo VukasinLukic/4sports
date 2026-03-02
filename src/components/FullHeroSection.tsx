@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
 import { GooglePlayButton, AppStoreButton } from '@/components/ui/AppStoreButtons';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -140,26 +139,10 @@ const FullHeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 20, x: -12 }}
           transition={{ duration: 0.8, delay: 2.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 z-20 mb-8"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 z-20 mb-16"
         >
           <GooglePlayButton size="lg" />
           <AppStoreButton size="lg" />
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: showContent ? 1 : 0 }}
-          transition={{ duration: 1, delay: 3.0 }}
-          className="flex flex-col items-center gap-2 text-gray-400 -translate-x-8"
-        >
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ArrowDown className="w-5 h-5" />
-          </motion.div>
         </motion.div>
       </div>
 

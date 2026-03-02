@@ -91,16 +91,16 @@
         "desc": "Kompletno praćenje prihoda i rashoda kluba na jednom mestu."
       },
       "memberships": {
-        "title": "Automatizacija Članarina",
-        "desc": "Digitalna evidencija uplata članarina i automatsko praćenje dugovanja."
+        "title": "Pregled Članova",
+        "desc": "Pregledajte i upravljajte svim članovima kluba, profilima i statusom članstva."
       },
       "reports": {
-        "title": "Finansijsko Izveštavanje",
-        "desc": "Generisanje detaljnih finansijskih izveštaja za bolji uvid u poslovanje."
+        "title": "Evidencija Prisustva",
+        "desc": "Kompletno praćenje prisustva na svim treninzima i događajima."
       },
       "data": {
-        "title": "Upravljanje Podacima",
-        "desc": "Centralizovana baza svih članova, trenera i medicinskih pregleda."
+        "title": "Novosti i Obaveštenja",
+        "desc": "Objavite vesti, podelite važne informacije i držite ceo klub obavešten."
       }
     },
     "coaches": {
@@ -116,12 +116,12 @@
         "desc": "Planiranje i pregled svih termina treninga i utakmica u realnom vremenu."
       },
       "communication": {
-        "title": "Komunikacioni Centar",
-        "desc": "Centralizovan kanal za komunikaciju sa roditeljima i igračima."
+        "title": "Pozivni Kodovi",
+        "desc": "Generišite i podelite pozivne kodove za lako dodavanje novih igrača i roditelja."
       },
       "progress": {
-        "title": "Praćenje Napretka",
-        "desc": "Mogućnost beleženja rezultata i performansi sportista."
+        "title": "Detalji Člana",
+        "desc": "Pregledajte detaljne profile članova sa istorijom prisustva i pregledom aktivnosti."
       }
     },
     "parents": {
@@ -129,20 +129,20 @@
       "tab": "Roditelji",
       "subtitle": "Ostanite informisani i povezani sa sportskim aktivnostima vašeg deteta.",
       "schedule": {
-        "title": "Pregled Rasporeda",
-        "desc": "Uvek dostupan plan treninga, utakmica i drugih klupskih događaja."
+        "title": "Klupske Novosti",
+        "desc": "Budite u toku sa najnovijim vestima, ažuriranjima i obaveštenjima iz kluba."
       },
       "payments": {
-        "title": "Praćenje Uplata",
-        "desc": "Jasan uvid u statuse plaćenih i neplaćenih članarina."
+        "title": "Prijava na Trening",
+        "desc": "Deca skeniraju QR kod da se prijave na treningu i potvrde svoje prisustvo."
       },
       "tracking": {
-        "title": "Napredak Deteta",
-        "desc": "Informacije o prisustvu, rezultatima i sportskom razvoju deteta."
+        "title": "Klupski Chat",
+        "desc": "Pišite trenerima i osoblju kluba direktno kroz chat u aplikaciji."
       },
       "notifications": {
-        "title": "Notifikacije u Realnom Vremenu",
-        "desc": "Primanje važnih obaveštenja od kluba bez gubitka informacija."
+        "title": "Raspored Treninga",
+        "desc": "Pregledajte kompletan kalendar treninga sa predstojećim terminima, utakmicama i događajima."
       }
     }
   },

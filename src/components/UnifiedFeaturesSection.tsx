@@ -488,7 +488,7 @@ const UnifiedFeaturesSection = () => {
             </div>
 
             {/* ===== DESKTOP: left features | device | right features ===== */}
-            <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center md:scale-[0.65] lg:scale-75 xl:scale-90 2xl:scale-100 transition-transform duration-300">
               {/* Left features */}
               <div
                 className={`${featureMaxW} flex flex-col ${isOwner ? 'justify-center gap-8' : 'justify-around'}`}

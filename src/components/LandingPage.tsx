@@ -90,19 +90,25 @@ const LandingPage = () => {
       {/* Logo Loading Animation */}
       {showHero && <MinimalHeroSection onComplete={() => setHeroComplete(true)} />}
 
-      {/* Main Content */}
+      {/* Navigation */}
       <Navigation showNav={showNav} />
+
+      {/* Full Hero Section - NOT scaled */}
+      <FullHeroSection />
+
+      {/* Main Content with responsive scaling */}
       <main>
-        {/* Full Hero Section with rotating text */}
-        <FullHeroSection />
+        <div className="md:scale-[0.65] lg:scale-75 xl:scale-90 2xl:scale-100 origin-top transition-transform duration-300">
+          {/* Unified Features Section - Role-based with phone mockup */}
+          <UnifiedFeaturesSection />
 
-        {/* Unified Features Section - Role-based with phone mockup */}
-        <UnifiedFeaturesSection />
-
-        <TestimonialsAdvancedSection />
-        <FAQSection />
-        <ContactSection />
+          <TestimonialsAdvancedSection />
+          <FAQSection />
+          <ContactSection />
+        </div>
       </main>
+
+      {/* Footer - NOT scaled */}
       <Footer />
     </div>
   );

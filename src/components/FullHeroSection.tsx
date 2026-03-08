@@ -34,20 +34,34 @@ const FullHeroSection = () => {
     return () => clearTimeout(showVideoTimer);
   }, []);
 
-  // Start video playback when text appears
+  // Start video playback when content is shown
   useEffect(() => {
-    if (videoLoaded && showContent && videoRef.current) {
-      // Video počinje da se reprodukuje kada se tekst pojavi
-      // Video fade in: 2s, Tekst delay: 1.5s = tekst se pojavljuje posle 3.5s
-      const playTimer = setTimeout(() => {
-        videoRef.current?.play().catch(err => {
-          console.log('Video autoplay failed:', err);
+    if (showContent && videoRef.current) {
+      const vid = videoRef.current;
+      // Try to play immediately when content shows
+      const tryPlay = () => {
+        vid.play().catch(() => {
+          // Safari may block autoplay - retry on user interaction
+          const handler = () => {
+            vid.play().catch(() => {});
+            document.removeEventListener('touchstart', handler);
+            document.removeEventListener('click', handler);
+          };
+          document.addEventListener('touchstart', handler, { once: true });
+          document.addEventListener('click', handler, { once: true });
         });
-      }, 3500); // Čeka da se tekst pojavi, pa tek onda startuje video
+      };
 
-      return () => clearTimeout(playTimer);
+      if (videoLoaded) {
+        tryPlay();
+      } else {
+        // Wait for video to be ready
+        const onReady = () => tryPlay();
+        vid.addEventListener('canplay', onReady, { once: true });
+        return () => vid.removeEventListener('canplay', onReady);
+      }
     }
-  }, [videoLoaded, showContent]);
+  }, [showContent, videoLoaded]);
 
   // Auto-rotate text every 3 seconds
   useEffect(() => {
@@ -82,7 +96,13 @@ const FullHeroSection = () => {
           muted
           loop
           playsInline
+          preload="auto"
           onLoadedData={() => setVideoLoaded(true)}
+          onCanPlay={() => {
+            if (showContent && videoRef.current) {
+              videoRef.current.play().catch(() => {});
+            }
+          }}
         >
           <source src="/assets/heroSekcija2.mp4" type="video/mp4" />
         </video>

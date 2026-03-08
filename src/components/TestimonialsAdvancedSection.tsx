@@ -3,7 +3,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'motion/react';
 import { TestimonialsColumn } from './ui/testimonials-columns-1';
-import { Sparkles } from 'lucide-react';
 
 const testimonialNames = [
   "Marko Đurić",
@@ -31,7 +30,7 @@ const TestimonialsAdvancedSection = () => {
   const thirdColumn = testimonials.slice(6, 9);
 
   return (
-    <section id="testimonials" className="py-20 lg:py-24 relative overflow-hidden bg-black w-full">
+    <section id="testimonials" className="pt-20 lg:pt-24 pb-0 relative overflow-hidden bg-black w-full">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
@@ -48,11 +47,6 @@ const TestimonialsAdvancedSection = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto px-4 mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-md">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-primary">Testimonials</span>
-          </div>
-
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 text-white">
             {t('testimonials.title')}
           </h2>

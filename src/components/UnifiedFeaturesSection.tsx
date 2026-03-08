@@ -432,9 +432,7 @@ const UnifiedFeaturesSection = () => {
       className="py-24 lg:py-32 bg-black relative overflow-hidden min-h-screen flex flex-col justify-center"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0a0a0a_1px,transparent_1px),linear-gradient(to_bottom,#0a0a0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none opacity-20" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[128px] pointer-events-none opacity-20" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
       <div className="container px-4 mx-auto relative z-10">
         {/* Hero Header */}
@@ -509,6 +507,8 @@ const UnifiedFeaturesSection = () => {
                         key={currentMockup}
                         src={currentMockup}
                         alt="Dashboard"
+                        loading="lazy"
+                        decoding="async"
                         className="absolute inset-0 w-full h-full object-cover"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -527,6 +527,8 @@ const UnifiedFeaturesSection = () => {
                         key={currentMockup}
                         src={currentMockup}
                         alt="App mockup"
+                        loading="lazy"
+                        decoding="async"
                         className="absolute inset-0 w-full h-full object-cover object-top"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -536,8 +538,6 @@ const UnifiedFeaturesSection = () => {
                     </AnimatePresence>
                   </div>
                 )}
-                {/* Glow */}
-                <div className="absolute inset-0 -z-10 bg-primary/10 blur-[80px] scale-150 rounded-full" />
               </div>
 
               {/* Right features */}
@@ -563,6 +563,8 @@ const UnifiedFeaturesSection = () => {
                         key={currentMockup}
                         src={currentMockup}
                         alt="Dashboard"
+                        loading="lazy"
+                        decoding="async"
                         className="absolute inset-0 w-full h-full object-cover"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -581,6 +583,8 @@ const UnifiedFeaturesSection = () => {
                         key={currentMockup}
                         src={currentMockup}
                         alt="App mockup"
+                        loading="lazy"
+                        decoding="async"
                         className="absolute inset-0 w-full h-full object-cover object-top"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

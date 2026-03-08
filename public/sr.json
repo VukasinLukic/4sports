@@ -229,10 +229,10 @@
     "phoneLabel": "Telefon",
     "locationLabel": "Lokacija",
     "locationValue": "Beograd, Srbija",
-    "whyChooseUs": "Zašto Mi?",
-    "support247": "24/7 Podrška",
-    "fastResponse": "Brzo Vreme Odgovora",
-    "freeConsultation": "Besplatna Konsultacija",
+    "ourApproach": "Kako Radimo",
+    "personalSetup": "Personalizovano podešavanje za vaš klub",
+    "continuousSupport": "Kontinuirana podrška od prvog dana",
+    "adaptedToYou": "Prilagođeno vašim potrebama",
     "responseTime": "Odgovorićemo vam u roku od 24 sata",
     "form": {
       "title": "Kontaktiraj Nas",
@@ -245,6 +245,11 @@
       "message": "Poruka",
       "messagePlaceholder": "Recite nam nešto o vašem sportskom klubu i šta tražite...",
       "submit": "Pošalji Poruku",
+      "sending": "Slanje...",
+      "sent": "Poruka je poslata!",
+      "allFieldsRequired": "Sva polja su obavezna.",
+      "invalidEmail": "Unesite validnu email adresu.",
+      "serverError": "Greška pri slanju. Pokušajte ponovo.",
       "successMessage": "Hvala na poruci! Kontaktiraćemo vas uskoro."
     },
     "calculator": {
@@ -326,6 +331,35 @@
     "section5": {
       "title": "Ograničenje Odgovornosti",
       "content": "4sports se pruža 'kakav jeste' bez ikakvih garancija. Nismo odgovorni za bilo kakvu indirektnu, slučajnu ili posledičnu štetu koja proizlazi iz vašeg korišćenja usluge. Naša ukupna odgovornost je ograničena na iznos koji ste platili u poslednjih 12 meseci."
+    }
+  },
+  "support": {
+    "backToHome": "Nazad na Početnu",
+    "title": "Podrška",
+    "description": "Kako vam možemo pomoći? Izaberite tip zahteva i opišite vaš problem.",
+    "generalSupport": "Opšta Podrška",
+    "generalDesc": "Pitanja, povratne informacije ili problemi",
+    "deleteAccount": "Brisanje Naloga",
+    "deleteDesc": "Zahtev za brisanje naloga i podataka",
+    "deleteWarningTitle": "Važna Informacija",
+    "deleteWarningText": "Zahtev za brisanje naloga će trajno ukloniti sve vaše podatke uključujući informacije o profilu, istoriju aktivnosti i sav povezan sadržaj. Ova akcija se ne može poništiti. Molimo unesite email adresu povezanu sa vašim nalogom.",
+    "form": {
+      "name": "Ime i Prezime",
+      "namePlaceholder": "Vaše puno ime",
+      "email": "Email Adresa",
+      "emailPlaceholder": "vas@email.com",
+      "emailPlaceholderDelete": "Email povezan sa vašim nalogom",
+      "message": "Poruka",
+      "messagePlaceholder": "Opišite vaš problem ili pitanje...",
+      "reason": "Razlog za brisanje (opciono)",
+      "reasonPlaceholder": "Recite nam zašto želite da obrišete vaš nalog...",
+      "submit": "Pošalji Poruku",
+      "submitDelete": "Pošalji Zahtev za Brisanje",
+      "sending": "Slanje...",
+      "sent": "Zahtev je poslat!",
+      "allFieldsRequired": "Sva polja su obavezna.",
+      "invalidEmail": "Unesite validnu email adresu.",
+      "serverError": "Greška pri slanju. Pokušajte ponovo."
     }
   }
 }

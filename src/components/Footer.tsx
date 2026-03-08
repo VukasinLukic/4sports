@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { Github, Twitter, Linkedin, Mail, Phone } from 'lucide-react';
+import { Linkedin, Instagram, Mail, Phone } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Link from 'next/link';
@@ -93,11 +93,19 @@ function FooterContent() {
           <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">{t('footer.contact')}</h3>
           <div className="flex items-center gap-3 text-gray-400 text-sm">
             <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+            <span>mihajlo4sports@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-3 text-gray-400 text-sm">
+            <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+            <span>nemanja4sports@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-3 text-gray-400 text-sm">
+            <Mail className="w-4 h-4 text-primary flex-shrink-0" />
             <span>vukasin4sports@gmail.com</span>
           </div>
           <div className="flex items-center gap-3 text-gray-400 text-sm">
             <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-            <span>+381 11 123 4567</span>
+            <span>+381 66 493 368</span>
           </div>
         </div>
 
@@ -106,9 +114,8 @@ function FooterContent() {
           <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">{t('footer.followUs')}</h3>
           <div className="flex gap-3">
             {[
-              { icon: Github, href: '#', label: 'GitHub' },
-              { icon: Twitter, href: '#', label: 'Twitter' },
-              { icon: Linkedin, href: '#', label: 'LinkedIn' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/company/4sports-app/', label: 'LinkedIn' },
+              { icon: Instagram, href: '#', label: 'Instagram' },
             ].map((social, index) => {
               const Icon = social.icon;
               return (

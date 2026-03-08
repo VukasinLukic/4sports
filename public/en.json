@@ -260,10 +260,10 @@
     "phoneLabel": "Phone",
     "locationLabel": "Location",
     "locationValue": "Belgrade, Serbia",
-    "whyChooseUs": "Why Choose Us?",
-    "support247": "24/7 Support",
-    "fastResponse": "Fast Response Time",
-    "freeConsultation": "Free Consultation",
+    "ourApproach": "How We Work",
+    "personalSetup": "Personalized setup for your club",
+    "continuousSupport": "Continuous support from day one",
+    "adaptedToYou": "Adapted to your needs",
     "responseTime": "We'll get back to you within 24 hours",
     "form": {
       "title": "Contact Us",
@@ -276,6 +276,11 @@
       "message": "Message",
       "messagePlaceholder": "Tell us about your sports club and what you're looking for...",
       "submit": "Send Message",
+      "sending": "Sending...",
+      "sent": "Message sent!",
+      "allFieldsRequired": "All fields are required.",
+      "invalidEmail": "Please enter a valid email address.",
+      "serverError": "Failed to send. Please try again later.",
       "successMessage": "Thank you for your message! We will contact you soon."
     },
     "calculator": {
@@ -357,6 +362,35 @@
     "section5": {
       "title": "Limitation of Liability",
       "content": "4sports is provided 'as is' without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from your use of the service. Our total liability is limited to the amount you paid in the last 12 months."
+    }
+  },
+  "support": {
+    "backToHome": "Back to Home",
+    "title": "Support",
+    "description": "How can we help you? Choose a request type and describe your issue.",
+    "generalSupport": "General Support",
+    "generalDesc": "Questions, feedback, or issues",
+    "deleteAccount": "Delete Account",
+    "deleteDesc": "Request account and data deletion",
+    "deleteWarningTitle": "Important Information",
+    "deleteWarningText": "Requesting account deletion will permanently remove all your data including profile information, activity history, and any associated content. This action cannot be undone. Please make sure to include the email address associated with your account.",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "emailPlaceholderDelete": "Email associated with your account",
+      "message": "Message",
+      "messagePlaceholder": "Describe your issue or question...",
+      "reason": "Reason for Deletion (Optional)",
+      "reasonPlaceholder": "Please tell us why you want to delete your account...",
+      "submit": "Send Message",
+      "submitDelete": "Submit Deletion Request",
+      "sending": "Sending...",
+      "sent": "Request sent!",
+      "allFieldsRequired": "All fields are required.",
+      "invalidEmail": "Please enter a valid email address.",
+      "serverError": "Failed to send. Please try again later."
     }
   }
 }

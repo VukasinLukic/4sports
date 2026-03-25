@@ -134,13 +134,13 @@ function FooterContent() {
       </div>
 
       {/* Bottom Section */}
-      <div className="relative z-10 flex justify-between flex-col gap-6 sm:flex-row items-end mt-12 pt-8">
-        <div className="flex items-center">
-          <h1 className="text-[16vw] sm:text-[12vw] lg:text-[10vw] font-black leading-[0.85] text-white">
+      <div className="relative z-10 flex flex-col items-center text-center gap-6 sm:flex-row sm:justify-between sm:items-end sm:text-left mt-12 pt-8">
+        <div className="flex items-center justify-center">
+          <h1 className="text-[20vw] sm:text-[12vw] lg:text-[10vw] font-black leading-[0.85] text-white">
             4sports
           </h1>
         </div>
-        <div className="flex flex-col sm:items-end gap-2">
+        <div className="flex flex-col items-center sm:items-end gap-2">
           <div className="flex gap-4 text-xs text-gray-500">
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">{t('footer.privacy')}</Link>
             <Link href="/terms" className="hover:text-primary transition-colors">{t('footer.terms')}</Link>
@@ -155,12 +155,21 @@ function FooterContent() {
 
 const Footer = () => {
   return (
-    <StickyFooter
-      heightValue="70dvh"
-      className="text-white"
-    >
-      <FooterContent />
-    </StickyFooter>
+    <div>
+      {/* Mobile: normal flow (no sticky effect) so all content is visible */}
+      <div className="block md:hidden bg-black text-white">
+        <FooterContent />
+      </div>
+      {/* Desktop: sticky reveal effect */}
+      <div className="hidden md:block">
+        <StickyFooter
+          heightValue="70dvh"
+          className="text-white"
+        >
+          <FooterContent />
+        </StickyFooter>
+      </div>
+    </div>
   );
 };
 

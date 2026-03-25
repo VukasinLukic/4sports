@@ -49,52 +49,36 @@ const SectionSkeleton = () => (
 
 const LandingPage = () => {
   const { isLoading } = useLanguage();
-  const [showHero, setShowHero] = useState(true);
-  const [heroComplete, setHeroComplete] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
+  const [splashDone, setSplashDone] = useState(false);
   const [showNav, setShowNav] = useState(false);
 
-  // TEMPORARY: Disable session storage to always show hero (for testing)
-  // TODO: Re-enable session storage when ready for production
-  // useEffect(() => {
-  //   const heroSeen = sessionStorage.getItem('heroSeen');
-  //   if (heroSeen === 'true') {
-  //     setShowHero(false);
-  //     setHeroComplete(true);
-  //     setShowNav(true);
-  //   }
-  // }, []);
+  // Page is ready when translations are loaded
+  const isPageReady = !isLoading;
 
-  // When hero completes, hide it and show navigation
+  // When splash completes, show the page
   useEffect(() => {
-    if (heroComplete) {
-      // sessionStorage.setItem('heroSeen', 'true'); // Disabled for testing
-      setShowHero(false);
-      // Navbar se pojavljuje ZAJEDNO sa video-om (odmah nakon logo fade out)
+    if (splashDone) {
+      setShowSplash(false);
       setShowNav(true);
     }
-  }, [heroComplete]);
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-black">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-gray-400">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+  }, [splashDone]);
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Logo Loading Animation */}
-      {showHero && <MinimalHeroSection onComplete={() => setHeroComplete(true)} />}
+      {/* Logo Splash = actual loader */}
+      {showSplash && (
+        <MinimalHeroSection
+          isPageReady={isPageReady}
+          onComplete={() => setSplashDone(true)}
+        />
+      )}
 
       {/* Navigation */}
       <Navigation showNav={showNav} />
 
       {/* Full Hero Section - NOT scaled */}
-      <FullHeroSection />
+      <FullHeroSection splashDone={splashDone} />
 
       {/* Main Content with responsive scaling */}
       <main>

@@ -5,12 +5,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GooglePlayButton, AppStoreButton } from '@/components/ui/AppStoreButtons';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const FullHeroSection = () => {
+interface FullHeroSectionProps {
+  splashDone?: boolean;
+}
+
+const FullHeroSection = ({ splashDone = false }: FullHeroSectionProps) => {
   const { t } = useLanguage();
   const [showContent, setShowContent] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
   // Rotating texts - like the old loading screen
   const rotatingTexts = [
@@ -23,45 +28,46 @@ const FullHeroSection = () => {
     t('hero.minimal.outro2'),      // "Too little clarity."
   ];
 
-  // Animation sequence: video fades in → navbar appears → text appears → video starts playing
+  // Show content when splash screen is done
   useEffect(() => {
-    // Wait for MinimalHeroSection to COMPLETELY finish (logo fade out completed)
-    // Total MinimalHero time: 800 + 2500 + 800 = 4100ms
-    const showVideoTimer = setTimeout(() => {
+    if (splashDone) {
       setShowContent(true);
-    }, 4100);
+    }
+  }, [splashDone]);
 
-    return () => clearTimeout(showVideoTimer);
-  }, []);
+  // Try to play a video, with Safari fallback
+  const tryPlayVideo = (vid: HTMLVideoElement) => {
+    const attempt = () => {
+      vid.play().catch(() => {
+        const handler = () => {
+          vid.play().catch(() => {});
+          document.removeEventListener('touchstart', handler);
+          document.removeEventListener('click', handler);
+        };
+        document.addEventListener('touchstart', handler, { once: true });
+        document.addEventListener('click', handler, { once: true });
+      });
+    };
+    if (vid.readyState >= 3) {
+      attempt();
+    } else {
+      vid.addEventListener('canplay', attempt, { once: true });
+    }
+  };
 
-  // Start video playback when content is shown
+  // Start desktop video when content is shown
   useEffect(() => {
     if (showContent && videoRef.current) {
-      const vid = videoRef.current;
-      // Try to play immediately when content shows
-      const tryPlay = () => {
-        vid.play().catch(() => {
-          // Safari may block autoplay - retry on user interaction
-          const handler = () => {
-            vid.play().catch(() => {});
-            document.removeEventListener('touchstart', handler);
-            document.removeEventListener('click', handler);
-          };
-          document.addEventListener('touchstart', handler, { once: true });
-          document.addEventListener('click', handler, { once: true });
-        });
-      };
-
-      if (videoLoaded) {
-        tryPlay();
-      } else {
-        // Wait for video to be ready
-        const onReady = () => tryPlay();
-        vid.addEventListener('canplay', onReady, { once: true });
-        return () => vid.removeEventListener('canplay', onReady);
-      }
+      tryPlayVideo(videoRef.current);
     }
   }, [showContent, videoLoaded]);
+
+  // Start mobile video immediately
+  useEffect(() => {
+    if (mobileVideoRef.current) {
+      tryPlayVideo(mobileVideoRef.current);
+    }
+  }, []);
 
   // Auto-rotate text every 3 seconds
   useEffect(() => {
@@ -108,12 +114,14 @@ const FullHeroSection = () => {
           <source src="/assets/heroSekcija2-desktop.mp4" type="video/mp4" />
         </video>
         <video
+          ref={mobileVideoRef}
           className="absolute inset-0 w-full h-full object-cover block md:hidden"
           muted
           loop
           playsInline
           autoPlay
-          preload="metadata"
+          preload="auto"
+          poster="/assets/hero-poster.webp"
         >
           <source src="/assets/rotated.mp4" type="video/mp4" />
         </video>

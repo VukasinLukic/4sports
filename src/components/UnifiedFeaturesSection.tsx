@@ -10,10 +10,10 @@ import {
   Megaphone,
   Calendar,
   KeyRound,
-  UserCheck,
+  Wallet,
   Newspaper,
   QrCode,
-  MessageSquare,
+  CreditCard,
   Building2,
   Dumbbell,
   type LucideIcon,
@@ -25,7 +25,7 @@ type Role = (typeof ROLES)[number];
 const AUTO_ROTATE_MS = 15000;
 
 // Phone (Trener / Clan)
-const PHONE_W = 300;
+const PHONE_W = 345;
 const PHONE_H = Math.round(PHONE_W * (19.5 / 9));
 
 // Desktop monitor (Vlasnik)
@@ -87,13 +87,13 @@ const roleConfig: Record<Role, RoleConfig> = {
     tabKey: 'features.coaches.tab',
     titleKey: 'features.coaches.title',
     subtitleKey: 'features.coaches.subtitle',
-    defaultMockup: '/assets/mockups/Trener/memberProfileTrener.png',
+    defaultMockup: '/assets/mockups/Trener/memberDetailsTrener.png',
     items: [
       {
         icon: ClipboardCheck,
         titleKey: 'features.coaches.attendance.title',
         descKey: 'features.coaches.attendance.desc',
-        mockup: '/assets/mockups/Trener/evidencijaPrisustvaTrener.png',
+        mockup: '/assets/mockups/Trener/clanDolazciTrener.png',
       },
       {
         icon: Calendar,
@@ -105,13 +105,13 @@ const roleConfig: Record<Role, RoleConfig> = {
         icon: KeyRound,
         titleKey: 'features.coaches.communication.title',
         descKey: 'features.coaches.communication.desc',
-        mockup: '/assets/mockups/Trener/InviteCodesTrener.png',
+        mockup: '/assets/mockups/Trener/inviteTrener.png',
       },
       {
-        icon: UserCheck,
+        icon: Wallet,
         titleKey: 'features.coaches.progress.title',
         descKey: 'features.coaches.progress.desc',
-        mockup: '/assets/mockups/Trener/memberDetailsAttendanceTrener.png',
+        mockup: '/assets/mockups/Trener/evidencijaPlacanjaTrener.png',
       },
     ],
   },
@@ -120,25 +120,25 @@ const roleConfig: Record<Role, RoleConfig> = {
     tabKey: 'features.parents.tab',
     titleKey: 'features.parents.title',
     subtitleKey: 'features.parents.subtitle',
-    defaultMockup: '/assets/mockups/Clan/mojProfilParent.png',
+    defaultMockup: '/assets/mockups/Clan/profilClana.png',
     items: [
       {
         icon: Newspaper,
         titleKey: 'features.parents.schedule.title',
         descKey: 'features.parents.schedule.desc',
-        mockup: '/assets/mockups/Clan/novostiParent.png',
+        mockup: '/assets/mockups/Clan/homeClan.png',
       },
       {
         icon: QrCode,
         titleKey: 'features.parents.payments.title',
         descKey: 'features.parents.payments.desc',
-        mockup: '/assets/mockups/Clan/scanQRCodeparent.png',
+        mockup: '/assets/mockups/Clan/skeniranjeKodaClan.png',
       },
       {
-        icon: MessageSquare,
+        icon: CreditCard,
         titleKey: 'features.parents.tracking.title',
         descKey: 'features.parents.tracking.desc',
-        mockup: '/assets/mockups/Clan/chatpageParents.png',
+        mockup: '/assets/mockups/Clan/mojaPlacanjaCLan.png',
       },
       {
         icon: Calendar,

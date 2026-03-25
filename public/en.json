@@ -150,8 +150,8 @@
         "desc": "Generate and share invite codes to easily onboard new players and parents."
       },
       "progress": {
-        "title": "Member Details",
-        "desc": "View detailed member profiles with attendance history and activity overview."
+        "title": "Payment Tracking",
+        "desc": "Track and manage member payment records and membership fees at a glance."
       }
     },
     "parents": {
@@ -167,8 +167,8 @@
         "desc": "Children scan a QR code to check in at training and confirm their attendance."
       },
       "tracking": {
-        "title": "Club Chat",
-        "desc": "Message coaches and club staff directly through the in-app chat."
+        "title": "My Payments",
+        "desc": "View payment history, track membership fees, and stay on top of financial obligations."
       },
       "notifications": {
         "title": "Training Schedule",

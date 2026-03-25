@@ -37,7 +37,17 @@
       "Bash(cmd /c:*)",
       "Bash(npx next build:*)",
       "Bash(npx next dev --port 3001)",
-      "Bash(git -C d:4sports status)"
+      "Bash(git -C d:4sports status)",
+      "Bash(forfiles:*)",
+      "Bash(wmic datafile where \"name=''d:\\\\4sports\\\\public\\\\assets\\\\heroSekcija2.mp4''\" get filesize)",
+      "Bash(ffmpeg:*)",
+      "Bash(winget install:*)",
+      "Bash(npx ffmpeg-static:*)",
+      "Bash(node -e:*)",
+      "Bash(\"C:\\\\Users\\\\INSOMNIA\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\ffmpeg-static\\\\ffmpeg.exe\" -i \"d:\\\\4sports\\\\public\\\\assets\\\\heroSekcija2.mp4\" -vframes 1 -q:v 2 -vf \"scale=1280:-1\" \"d:\\\\4sports\\\\public\\\\assets\\\\hero-poster.webp\" -y)",
+      "Bash(\"C:\\\\Users\\\\INSOMNIA\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\ffmpeg-static\\\\ffmpeg.exe\" -i \"d:\\\\4sports\\\\public\\\\assets\\\\heroSekcija2.mp4\" -vf \"scale=854:480:force_original_aspect_ratio=decrease\" -c:v libx264 -crf 30 -preset slow -an -movflags +faststart \"d:\\\\4sports\\\\public\\\\assets\\\\heroSekcija2-mobile.mp4\" -y)",
+      "Bash(\"C:\\\\Users\\\\INSOMNIA\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\ffmpeg-static\\\\ffmpeg.exe\" -i \"d:\\\\4sports\\\\public\\\\assets\\\\heroSekcija2.mp4\" -vf \"scale=1280:720:force_original_aspect_ratio=decrease\" -c:v libx264 -crf 26 -preset slow -an -movflags +faststart \"d:\\\\4sports\\\\public\\\\assets\\\\heroSekcija2-desktop.mp4\" -y)",
+      "Bash(\"C:\\\\Users\\\\INSOMNIA\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\ffmpeg-static\\\\ffmpeg.exe\" -i \"d:\\\\4sports\\\\public\\\\assets\\\\heroSekcija2.mp4\" -vf \"scale=854:480\" -c:v libx264 -crf 30 -preset slow -an -movflags +faststart \"d:\\\\4sports\\\\public\\\\assets\\\\heroSekcija2-mobile.mp4\" -y)"
     ],
     "deny": [],
     "ask": []

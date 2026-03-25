@@ -92,11 +92,12 @@ const FullHeroSection = () => {
       >
         <video
           ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
+          poster="/assets/hero-poster.webp"
           onLoadedData={() => setVideoLoaded(true)}
           onCanPlay={() => {
             if (showContent && videoRef.current) {
@@ -104,7 +105,17 @@ const FullHeroSection = () => {
             }
           }}
         >
-          <source src="/assets/heroSekcija2.mp4" type="video/mp4" />
+          <source src="/assets/heroSekcija2-desktop.mp4" type="video/mp4" />
+        </video>
+        <video
+          className="absolute inset-0 w-full h-full object-cover block md:hidden"
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="metadata"
+        >
+          <source src="/assets/rotated.mp4" type="video/mp4" />
         </video>
 
         {/* Dark overlay */}
@@ -147,7 +158,7 @@ const FullHeroSection = () => {
                 ease: [0.25, 0.1, 0.25, 1],
               }}
             >
-              <p className="text-3xl md:text-5xl lg:text-6xl font-light text-white/90 tracking-tight leading-relaxed">
+              <p className="text-4xl md:text-5xl lg:text-6xl font-light text-white/90 tracking-tight leading-relaxed">
                 {rotatingTexts[currentIndex]}
               </p>
             </motion.div>

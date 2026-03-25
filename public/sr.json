@@ -120,8 +120,8 @@
         "desc": "Generišite i podelite pozivne kodove za lako dodavanje novih igrača i roditelja."
       },
       "progress": {
-        "title": "Detalji Člana",
-        "desc": "Pregledajte detaljne profile članova sa istorijom prisustva i pregledom aktivnosti."
+        "title": "Evidencija Plaćanja",
+        "desc": "Pratite i upravljajte evidencijom plaćanja članova i članarina na jednom mestu."
       }
     },
     "parents": {
@@ -137,8 +137,8 @@
         "desc": "Deca skeniraju QR kod da se prijave na treningu i potvrde svoje prisustvo."
       },
       "tracking": {
-        "title": "Klupski Chat",
-        "desc": "Pišite trenerima i osoblju kluba direktno kroz chat u aplikaciji."
+        "title": "Moja Plaćanja",
+        "desc": "Pregledajte istoriju plaćanja, pratite članarine i budite u toku sa finansijskim obavezama."
       },
       "notifications": {
         "title": "Raspored Treninga",

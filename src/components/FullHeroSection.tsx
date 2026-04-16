@@ -17,15 +17,14 @@ const FullHeroSection = ({ splashDone = false }: FullHeroSectionProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
-  // Rotating texts - like the old loading screen
   const rotatingTexts = [
-    t('hero.minimal.intro'),      // "Sports clubs are complex."
-    t('hero.minimal.word1'),       // "Players."
-    t('hero.minimal.word2'),       // "Schedules."
-    t('hero.minimal.word3'),       // "Memberships."
-    t('hero.minimal.word4'),       // "Payments."
-    t('hero.minimal.outro1'),      // "Too many tools."
-    t('hero.minimal.outro2'),      // "Too little clarity."
+    t('hero.minimal.intro'),
+    t('hero.minimal.word1'),
+    t('hero.minimal.word2'),
+    t('hero.minimal.word3'),
+    t('hero.minimal.word4'),
+    t('hero.minimal.outro1'),
+    t('hero.minimal.outro2'),
   ];
 
   // Show content when splash screen is done
@@ -69,23 +68,15 @@ const FullHeroSection = ({ splashDone = false }: FullHeroSectionProps) => {
     }
   }, []);
 
-  // Auto-rotate text every 3 seconds
   useEffect(() => {
-    if (showContent) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % rotatingTexts.length);
-      }, 3000);
+    if (!showContent) return;
 
-      return () => clearInterval(interval);
-    }
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % rotatingTexts.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, [showContent, rotatingTexts.length]);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
@@ -111,7 +102,7 @@ const FullHeroSection = ({ splashDone = false }: FullHeroSectionProps) => {
             }
           }}
         >
-          <source src="/assets/heroSekcija2-desktop.mp4" type="video/mp4" />
+          <source src="/assets/videoNovi.mp4" type="video/mp4" />
         </video>
         <video
           ref={mobileVideoRef}
@@ -127,61 +118,50 @@ const FullHeroSection = ({ splashDone = false }: FullHeroSectionProps) => {
         </video>
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/50" />
       </motion.div>
 
-      {/* Subtle film grain overlay */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-[5]">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: '200px 200px',
-          }}
-        />
-      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.22),transparent_24%,transparent_76%,rgba(0,0,0,0.38))] pointer-events-none z-[5]" />
 
-      {/* Main content - Rotating text */}
-      <div className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center justify-end min-h-screen pb-12">
-        {/* Rotating text - just above store buttons */}
+      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 pt-28 pb-10 text-center md:pt-32 md:pb-14">
         <motion.div
-          className="h-32 md:h-36 flex items-center justify-center mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 20 }}
-          transition={{
-            duration: 0.8,
-            ease: [0.25, 0.1, 0.25, 1],
-            delay: 1.5,
-          }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 24 }}
+          transition={{ duration: 0.9, delay: 1.1, ease: 'easeOut' }}
+          className="mx-auto flex min-h-[72vh] w-full max-w-5xl flex-col items-center justify-center"
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{
-                duration: 0.8,
-                ease: [0.25, 0.1, 0.25, 1],
-              }}
-            >
-              <p className="text-4xl md:text-5xl lg:text-6xl font-light text-white/90 tracking-tight leading-relaxed">
+          <div className="flex flex-1 flex-col items-center justify-center">
+            <h1 className="max-w-4xl text-balance text-[3rem] font-semibold tracking-[-0.04em] text-white sm:text-[4.2rem] lg:text-[4.8rem]">
+              {t('mockupShowcase.hero.title')}
+            </h1>
+            <p className="mt-5 max-w-2xl text-balance text-base font-light leading-relaxed text-white/72 sm:text-lg lg:mt-6 lg:text-[1.25rem]">
+              {t('mockupShowcase.hero.subtitle')}
+            </p>
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <AppStoreButton size="lg" />
+              <GooglePlayButton size="lg" />
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 18 }}
+            transition={{ duration: 0.8, delay: 1.6, ease: 'easeOut' }}
+            className="flex min-h-[7rem] items-end justify-center pb-2 md:min-h-[9rem] md:pb-4"
+          >
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={currentIndex}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -14 }}
+                transition={{ duration: 0.55, ease: 'easeOut' }}
+                className="max-w-3xl text-balance text-2xl font-light tracking-tight text-white/88 sm:text-3xl lg:text-4xl"
+              >
                 {rotatingTexts[currentIndex]}
-              </p>
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
-
-        {/* App Store Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 20, x: -12 }}
-          transition={{ duration: 0.8, delay: 2.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 z-20 mb-16"
-        >
-          <GooglePlayButton size="lg" />
-          <AppStoreButton size="lg" />
+              </motion.p>
+            </AnimatePresence>
+          </motion.div>
         </motion.div>
       </div>
 

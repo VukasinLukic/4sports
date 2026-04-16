@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: 'https://4sports.rs/',
     title: '4sports - Complete Sports Club Management Platform',
     description: 'Manage your sports club without obstacles. Streamline operations, track attendance, handle payments, and communicate with parents - all in one place.',
-    images: ['https://4sports.rs/assets/logo.jpg'],
+    images: ['https://4sports.rs/assets/Transparent/4sports.png'],
     siteName: '4sports',
     locale: 'en_US',
   },
@@ -24,11 +24,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '4sports - Complete Sports Club Management Platform',
     description: 'Manage your sports club without obstacles. Streamline operations, track attendance, handle payments, and communicate with parents - all in one place.',
-    images: ['https://4sports.rs/assets/logo.jpg'],
+    images: ['https://4sports.rs/assets/Transparent/4sports.png'],
   },
   icons: {
-    icon: '/assets/logo.jpg',
-    apple: '/assets/logo.jpg',
+    icon: [
+      { url: '/assets/Transparent/4sports.svg', type: 'image/svg+xml' },
+      { url: '/assets/Transparent/4sports.png', type: 'image/png' },
+    ],
+    apple: '/assets/Transparent/4sports.png',
   },
 };
 

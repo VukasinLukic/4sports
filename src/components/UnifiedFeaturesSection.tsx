@@ -446,7 +446,7 @@ const UnifiedFeaturesSection = () => {
           {/* Logo */}
           <div className="flex justify-center items-center gap-3 mb-5">
             <img
-              src="/assets/logo.jpg"
+              src="/assets/Transparent/4sports.svg"
               alt="4sports"
               className="h-12 w-auto object-contain"
             />

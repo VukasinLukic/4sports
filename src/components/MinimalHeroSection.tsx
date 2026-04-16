@@ -69,7 +69,7 @@ const MinimalHeroSection = ({ isPageReady = false, onComplete }: MinimalHeroSect
         className="relative z-10 flex flex-col items-center gap-6"
       >
         <motion.img
-          src="/assets/logo.jpg"
+          src="/assets/Transparent/4sports.svg"
           alt="4sports Logo"
           className="w-32 h-auto md:w-40 lg:w-48 object-contain"
           animate={phase === 'visible' && !isPageReady ? { scale: [1, 1.05, 1] } : {}}

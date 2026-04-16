@@ -135,8 +135,8 @@ function FooterContent() {
 
       {/* Bottom Section */}
       <div className="relative z-10 flex flex-col items-center text-center gap-6 sm:flex-row sm:justify-between sm:items-end sm:text-left mt-12 pt-8">
-        <div className="flex items-center justify-center">
-          <h1 className="text-[20vw] sm:text-[12vw] lg:text-[10vw] font-black leading-[0.85] text-white">
+        <div className="flex items-center justify-center sm:justify-start">
+          <h1 className="text-[18vw] sm:text-[12vw] lg:text-[9vw] font-black leading-[0.85] text-white/12">
             4sports
           </h1>
         </div>

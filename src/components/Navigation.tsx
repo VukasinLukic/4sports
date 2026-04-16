@@ -39,12 +39,6 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
     }
   };
 
-  const navItems = [
-    { id: 'testimonials', label: t('nav.testimonials') },
-    { id: 'faq', label: t('nav.faq') },
-    { id: 'contact', label: t('nav.contact') },
-  ];
-
   const handleNavClick = (id: string) => {
     setMenuOpen(false);
     setTimeout(() => scrollToSection(id), 300);
@@ -67,8 +61,8 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
         }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-black/30 backdrop-blur-2xl border-b border-white/5 shadow-2xl shadow-black/50'
-            : 'bg-transparent backdrop-blur-sm'
+            ? 'bg-black/24 backdrop-blur-xl border-b border-white/10'
+            : 'bg-transparent'
         } ${!showNav ? 'pointer-events-none' : ''}`}
       >
         <div className="container mx-auto px-6 lg:px-12">
@@ -79,35 +73,23 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <img
-                src="/assets/logo.jpg"
+                src="/assets/Transparent/4sports.svg"
                 alt="4sports"
-                className="h-12 w-auto object-contain transition-all group-hover:scale-105"
+                className="h-10 w-auto object-contain transition-all group-hover:opacity-85"
               />
-              <span className="text-2xl font-black text-white group-hover:text-primary transition-colors">
+              <span className="text-2xl font-semibold tracking-tight text-white/95 transition-colors group-hover:text-white">
                 4sports
               </span>
             </div>
 
-            {/* Navigation Links - Center */}
-            <div className="hidden md:flex items-center gap-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-white font-medium transition-colors relative group"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-emerald-400 group-hover:w-full transition-all duration-300" />
-                </button>
-              ))}
-            </div>
+            <div className="hidden md:block" />
 
             {/* CTA + Language Switcher - Right */}
             <div className="flex items-center gap-4">
               {/* Language Toggle */}
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/30 rounded-lg transition-all"
+                className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/76 transition-all hover:border-white/30 hover:bg-white/10 hover:text-white"
               >
                 <Globe className="w-4 h-4" />
                 <span>{language === 'en' ? 'SR' : 'EN'}</span>
@@ -116,12 +98,9 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
               {/* Contact Us Button */}
               <button
                 onClick={() => scrollToSection('contact')}
-                className="hidden md:block relative px-6 py-2.5 border-2 border-white/20 text-white font-bold rounded-lg transition-all duration-300 overflow-hidden group hover:border-white/40"
+                className="hidden md:block rounded-full border border-white/18 bg-transparent px-5 py-2.5 text-sm font-medium text-white/88 transition-all duration-300 hover:border-white/35 hover:bg-white/8"
               >
-                <span className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
-                <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-                  {t('nav.contactUs')}
-                </span>
+                {t('nav.contactUs')}
               </button>
 
               {/* Go to App Button */}
@@ -129,12 +108,9 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
                 href="https://app.4sports.rs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:block relative px-6 py-2.5 border-2 border-white/20 text-white font-bold rounded-lg transition-all duration-300 overflow-hidden group hover:border-white/40"
+                className="hidden md:block rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition-all duration-300 hover:bg-white/90"
               >
-                <span className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
-                <span className="relative z-10 group-hover:text-black transition-colors duration-300">
-                  {t('nav.cta')}
-                </span>
+                {t('nav.cta')}
               </a>
 
               {/* Mobile Menu Button */}
@@ -183,17 +159,20 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
 
             {/* Nav items centered */}
             <div className="flex-1 flex flex-col items-center justify-center gap-8">
-              {navItems.map((item, i) => (
+              {[
+                { id: 'contact', label: t('nav.contact') },
+                { id: 'faq', label: t('nav.faq') },
+              ].map((item, i) => (
                 <motion.button
                   key={item.id}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.08, duration: 0.4, ease: 'easeOut' }}
-                  onClick={() => handleNavClick(item.id)}
-                  className="text-4xl font-bold text-white/80 hover:text-white transition-colors tracking-tight"
-                >
-                  {item.label}
-                </motion.button>
+                transition={{ delay: 0.1 + i * 0.08, duration: 0.4, ease: 'easeOut' }}
+                onClick={() => handleNavClick(item.id)}
+                className="text-4xl font-semibold tracking-tight text-white/80 transition-colors hover:text-white"
+              >
+                {item.label}
+              </motion.button>
               ))}
 
               {/* Divider */}
@@ -210,7 +189,7 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.4 }}
                 onClick={() => handleNavClick('contact')}
-                className="px-10 py-4 border-2 border-white/30 text-white font-bold text-lg rounded-xl hover:bg-white hover:text-black transition-all duration-300"
+                className="rounded-full border border-white/30 px-10 py-4 text-lg font-medium text-white transition-all duration-300 hover:bg-white hover:text-black"
               >
                 {t('nav.contactUs')}
               </motion.button>
@@ -222,7 +201,7 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
                 href="https://app.4sports.rs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-10 py-4 bg-[#22c55e] text-black font-bold text-lg rounded-xl hover:bg-[#1ea84e] transition-all duration-300"
+                className="rounded-full bg-white px-10 py-4 text-lg font-medium text-black transition-all duration-300 hover:bg-white/90"
               >
                 {t('nav.cta')}
               </motion.a>
@@ -232,9 +211,9 @@ const Navigation = ({ showNav = true }: NavigationProps) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.55, duration: 0.5 }}
-                src="/assets/logo.jpg"
+                src="/assets/Transparent/4sports.svg"
                 alt="4sports"
-                className="h-24 w-auto object-contain mt-4"
+                className="mt-4 h-24 w-auto object-contain"
               />
             </div>
           </motion.div>

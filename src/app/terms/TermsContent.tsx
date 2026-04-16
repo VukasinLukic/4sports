@@ -6,14 +6,14 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 const TermsContent = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Back Navigation */}
       <div className="container mx-auto px-4 pt-8">
         <Link
-          href="/"
+          href={`/${language}`}
           className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
         >
           <ArrowLeft size={20} />

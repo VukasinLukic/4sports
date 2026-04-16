@@ -1,10 +1,5 @@
-import type { Metadata } from 'next';
-import SupportContent from './SupportContent';
-
-export const metadata: Metadata = {
-  title: 'Support',
-};
+import { redirect } from 'next/navigation';
 
 export default function SupportPage() {
-  return <SupportContent />;
+  redirect('/en/support');
 }

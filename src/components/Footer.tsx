@@ -36,7 +36,7 @@ function StickyFooter({
 }
 
 function FooterContent() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -142,8 +142,8 @@ function FooterContent() {
         </div>
         <div className="flex flex-col items-center sm:items-end gap-2">
           <div className="flex gap-4 text-xs text-gray-500">
-            <Link href="/privacy-policy" className="hover:text-primary transition-colors">{t('footer.privacy')}</Link>
-            <Link href="/terms" className="hover:text-primary transition-colors">{t('footer.terms')}</Link>
+            <Link href={`/${language}/privacy-policy`} className="hover:text-primary transition-colors">{t('footer.privacy')}</Link>
+            <Link href={`/${language}/terms`} className="hover:text-primary transition-colors">{t('footer.terms')}</Link>
             <a href="#" className="hover:text-primary transition-colors">{t('footer.cookies')}</a>
           </div>
           <p className="text-gray-500 text-sm">{t('footer.copyright')}</p>

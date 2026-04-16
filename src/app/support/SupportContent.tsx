@@ -11,7 +11,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 type RequestType = 'account_deletion' | 'general';
 
 const SupportContent = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [requestType, setRequestType] = useState<RequestType>('general');
   const [formData, setFormData] = useState({
     name: '',
@@ -108,7 +108,7 @@ const SupportContent = () => {
       {/* Back Navigation */}
       <div className="container mx-auto px-4 pt-8 relative z-10">
         <Link
-          href="/"
+          href={`/${language}`}
           className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
         >
           <ArrowLeft size={20} />

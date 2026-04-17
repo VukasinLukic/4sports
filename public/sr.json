@@ -1,18 +1,17 @@
-
 {
   "nav": {
-    "pricing": "Cene",
     "testimonials": "Iskustva",
     "faq": "Pitanja",
     "contact": "Kontakt",
-    "cta": "Počni Sada"
+    "contactUs": "Kontaktirajte nas",
+    "cta": "Idi na Aplikaciju"
   },
   "navigation": {
     "home": "Početna",
     "purpose": "Svrha i Prednosti",
     "experiences": "Iskustva Klubova",
     "faq": "Česta Pitanja",
-    "contact": "Kontakt i Cene",
+    "contact": "Kontakt",
     "tryFree": "Probaj Besplatno",
     "learnMore": "Saznaj Više"
   },
@@ -85,26 +84,28 @@
     },
     "owners": {
       "title": "Za Vlasnike Klubova",
+      "tab": "Vlasnici Klubova",
       "subtitle": "Pretvorite haos u red. Zamenite Excel tabele kompletnim digitalnim sistemom.",
       "dashboard": {
         "title": "Finansijski Dashboard",
         "desc": "Kompletno praćenje prihoda i rashoda kluba na jednom mestu."
       },
       "memberships": {
-        "title": "Automatizacija Članarina",
-        "desc": "Digitalna evidencija uplata članarina i automatsko praćenje dugovanja."
+        "title": "Pregled Članova",
+        "desc": "Pregledajte i upravljajte svim članovima kluba, profilima i statusom članstva."
       },
       "reports": {
-        "title": "Finansijsko Izveštavanje",
-        "desc": "Generisanje detaljnih finansijskih izveštaja za bolji uvid u poslovanje."
+        "title": "Evidencija Prisustva",
+        "desc": "Kompletno praćenje prisustva na svim treninzima i događajima."
       },
       "data": {
-        "title": "Upravljanje Podacima",
-        "desc": "Centralizovana baza svih članova, trenera i medicinskih pregleda."
+        "title": "Novosti i Obaveštenja",
+        "desc": "Objavite vesti, podelite važne informacije i držite ceo klub obavešten."
       }
     },
     "coaches": {
       "title": "Za Trenere",
+      "tab": "Treneri",
       "subtitle": "Uštedite vreme na administraciji i fokusirajte se na ono što je bitno - trening.",
       "attendance": {
         "title": "Digitalna Evidencija Prisustva",
@@ -115,32 +116,33 @@
         "desc": "Planiranje i pregled svih termina treninga i utakmica u realnom vremenu."
       },
       "communication": {
-        "title": "Komunikacioni Centar",
-        "desc": "Centralizovan kanal za komunikaciju sa roditeljima i igračima."
+        "title": "Pozivni Kodovi",
+        "desc": "Generišite i podelite pozivne kodove za lako dodavanje novih igrača i roditelja."
       },
       "progress": {
-        "title": "Praćenje Napretka",
-        "desc": "Mogućnost beleženja rezultata i performansi sportista."
+        "title": "Evidencija Plaćanja",
+        "desc": "Pratite i upravljajte evidencijom plaćanja članova i članarina na jednom mestu."
       }
     },
     "parents": {
       "title": "Za Roditelje",
+      "tab": "Roditelji",
       "subtitle": "Ostanite informisani i povezani sa sportskim aktivnostima vašeg deteta.",
       "schedule": {
-        "title": "Pregled Rasporeda",
-        "desc": "Uvek dostupan plan treninga, utakmica i drugih klupskih događaja."
+        "title": "Klupske Novosti",
+        "desc": "Budite u toku sa najnovijim vestima, ažuriranjima i obaveštenjima iz kluba."
       },
       "payments": {
-        "title": "Praćenje Uplata",
-        "desc": "Jasan uvid u statuse plaćenih i neplaćenih članarina."
+        "title": "Prijava na Trening",
+        "desc": "Deca skeniraju QR kod da se prijave na treningu i potvrde svoje prisustvo."
       },
       "tracking": {
-        "title": "Napredak Deteta",
-        "desc": "Informacije o prisustvu, rezultatima i sportskom razvoju deteta."
+        "title": "Moja Plaćanja",
+        "desc": "Pregledajte istoriju plaćanja, pratite članarine i budite u toku sa finansijskim obavezama."
       },
       "notifications": {
-        "title": "Notifikacije u Realnom Vremenu",
-        "desc": "Primanje važnih obaveštenja od kluba bez gubitka informacija."
+        "title": "Raspored Treninga",
+        "desc": "Pregledajte kompletan kalendar treninga sa predstojećim terminima, utakmicama i događajima."
       }
     }
   },
@@ -161,16 +163,17 @@
   },
   "testimonials": {
     "title": "Šta Klubovi Kažu o Nama",
-    "testimonial1": {
-      "quote": "4sports je potpuno promenio način kako vodimo naš fudbalski klub. Sve je sada mnogo lakše!",
-      "author": "Milan Jovanović",
-      "club": "FK Partizan Omladinci"
-    },
-    "testimonial2": {
-      "quote": "Samo funkcija praćenja prisustva nam je uštedela nebrojano sati svakog meseca.",
-      "author": "Ana Petrović",
-      "club": "Tenis Klub Novak"
-    }
+    "items": [
+      { "text": "Godinama sam prisustvo vodio u beležnici. Sada ih odštiklim na telefonu čim uđu. Funkcioniše savršeno.", "role": "Trener fudbala" },
+      { "text": "Roditelji su prestali da me zovu zbog svake uplate. Sve sami vide u aplikaciji. Samo to je vredelo.", "role": "Administrator košarkaškog kluba" },
+      { "text": "Bio sam malo skeptičan na početku. Ali ekipa je bila strpljiva i za nekoliko nedelja sve je radilo kako treba.", "role": "Vlasnik fudbalskog kluba" },
+      { "text": "Kao roditelj, korisno mi je što mogu da znam da li je sin stvarno bio na treningu — bez pitanja trenera.", "role": "Roditelj" },
+      { "text": "Unesem raspored jednom i deca ga vide u aplikaciji. Nema više poruka po pet različitih grupa u ponoć.", "role": "Trener plivanja" },
+      { "text": "Pratim razvoj svakog sportiste posebno. Planiranje treninga mi je postalo mnogo svrsishodnije.", "role": "Trener gimnastike" },
+      { "text": "Konačno imam prihode i troškove na jednom mestu. Pre sam to slagao iz poruka i tabela.", "role": "Vlasnik sportskog kluba" },
+      { "text": "Slanje obaveštenja svim roditeljima je ranije oduzimalo vremena. Sada je jedan klik i gotovo.", "role": "Trener odbojke" },
+      { "text": "Iskreno, nisam mislio da će aplikacija mnogo promeniti. Pokazalo se da grešim. Stvarno mi štedi vreme svake nedelje.", "role": "Trener tenisa" }
+    ]
   },
   "mockupShowcase": {
     "hero": {
@@ -195,49 +198,12 @@
       "cta": "Pogledaj Analitiku"
     }
   },
-  "pricing": {
-    "title": "Cene i Planovi",
-    "subtitle": "Izaberite savršen plan za vaš sportski klub",
-    "solo": {
-      "title": "Solo",
-      "price": "Od €29/mesečno",
-      "description": "Savršeno za male klubove i individualne trenere",
-      "features": {
-        "members": "Do 50 Članova",
-        "attendance": "Praćenje Prisustva",
-        "calendar": "Pametni Kalendar",
-        "notifications": "Push Notifikacije",
-        "support": "Email Podrška"
-      },
-      "cta": "Probaj 14 Dana Besplatno"
-    },
-    "startup": {
-      "title": "Startup",
-      "price": "Od €99/mesečno",
-      "description": "Idealno za klubove u razvoju sa naprednim potrebama",
-      "features": {
-        "members": "Do 200 Članova",
-        "projects": "Neograničeni Projekti",
-        "calendar": "Napredni Kalendar",
-        "integrations": "150+ Integracija",
-        "support": "Prioritetna Podrška",
-        "analytics": "Analitika i Izveštaji"
-      },
-      "cta": "Probaj 14 Dana Besplatno"
-    },
-    "custom": {
-      "title": "Prilagođeno",
-      "price": "Od €399/mesečno",
-      "description": "Možemo prilagoditi plan koji odgovara potrebama vašeg kluba",
-      "cta": "Kontaktiraj Prodaju"
-    }
-  },
   "faq": {
     "title": "Često Postavljena Pitanja",
     "questions": [
       {
         "question": "Koliko košta 4sports?",
-        "answer": "Cena zavisi od broja članova u vašem klubu. Koristite naš kalkulator ispod za procenu, ili nas kontaktirajte za prilagođenu ponudu."
+        "answer": "Cena zavisi od broja članova u vašem klubu. Kontaktirajte nas za ponudu."
       },
       {
         "question": "Da li postoji besplatan probni period?",
@@ -256,13 +222,34 @@
   "contact": {
     "title": "Počni Danas",
     "subtitle": "Kontaktiraj nas ili izračunaj cenu",
+    "badge": "Kontaktiraj Nas",
+    "heading": "Razgovarajmo",
+    "description": "Spremni da transformišete upravljanje sportskim klubom? Javite nam se i krenimo.",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefon",
+    "locationLabel": "Lokacija",
+    "locationValue": "Beograd, Srbija",
+    "ourApproach": "Kako Radimo",
+    "personalSetup": "Personalizovano podešavanje za vaš klub",
+    "continuousSupport": "Kontinuirana podrška od prvog dana",
+    "adaptedToYou": "Prilagođeno vašim potrebama",
+    "responseTime": "Odgovorićemo vam u roku od 24 sata",
     "form": {
       "title": "Kontaktiraj Nas",
       "name": "Ime i Prezime",
+      "namePlaceholder": "Petar Petrović",
       "email": "Email Adresa",
+      "emailPlaceholder": "petar@primer.com",
       "phone": "Broj Telefona",
+      "phonePlaceholder": "+381 11 123 4567",
       "message": "Poruka",
+      "messagePlaceholder": "Recite nam nešto o vašem sportskom klubu i šta tražite...",
       "submit": "Pošalji Poruku",
+      "sending": "Slanje...",
+      "sent": "Poruka je poslata!",
+      "allFieldsRequired": "Sva polja su obavezna.",
+      "invalidEmail": "Unesite validnu email adresu.",
+      "serverError": "Greška pri slanju. Pokušajte ponovo.",
       "successMessage": "Hvala na poruci! Kontaktiraćemo vas uskoro."
     },
     "calculator": {
@@ -280,15 +267,99 @@
     }
   },
   "footer": {
-    "contact": "Kontaktiraj Nas",
-    "email": "info@4sports.com",
-    "phone": "+381 11 123 4567",
     "quickLinks": "Brzi Linkovi",
+    "home": "Početna",
+    "features": "Funkcije",
+    "testimonials": "Iskustva",
     "support": "Podrška",
     "helpCenter": "Centar za Pomoć",
-    "privacy": "Politika Privatnosti",
-    "terms": "Uslovi Korišćenja",
+    "documentation": "Dokumentacija",
+    "community": "Zajednica",
     "contactSupport": "Kontaktiraj Podršku",
+    "contact": "Kontakt",
+    "followUs": "Pratite Nas",
+    "privacy": "Politika Privatnosti",
+    "terms": "Uslovi",
+    "cookies": "Kolačići",
     "copyright": "© 2024 4sports. Sva prava zadržana."
+  },
+  "privacy": {
+    "title": "Politika Privatnosti",
+    "lastUpdated": "Poslednja izmena: 26. januar 2026.",
+    "backToHome": "Nazad na Početnu",
+    "section1": {
+      "title": "Informacije Koje Prikupljamo",
+      "content": "Prikupljamo informacije koje nam direktno pružite prilikom korišćenja 4sports platforme, uključujući vaše ime, email adresu, broj telefona i podatke vezane za klub. Ove informacije su neophodne za pružanje naših usluga upravljanja sportskim klubovima i efikasnu komunikaciju sa vama."
+    },
+    "section2": {
+      "title": "Kako Koristimo Vaše Informacije",
+      "content": "Koristimo prikupljene informacije za rad i unapređenje 4sports platforme, pružanje korisničke podrške, slanje obaveštenja o našim uslugama i osiguravanje bezbednosti vaših podataka. Nikada ne prodajemo vaše lične podatke trećim stranama."
+    },
+    "section3": {
+      "title": "Bezbednost Podataka",
+      "content": "Primenjujemo bezbednosne mere koje odgovaraju industrijskim standardima kako bismo zaštitili vaše podatke. Svi podaci su šifrovani tokom prenosa i skladištenja. Redovno ažuriramo naše bezbednosne prakse kako bismo osigurali da vaše informacije ostanu bezbedne."
+    },
+    "section4": {
+      "title": "Vaša Prava",
+      "content": "Imate pravo da pristupite, ispravite ili obrišete svoje lične podatke u bilo kom trenutku. Takođe možete zatražiti kopiju svojih podataka ili ograničiti njihovu obradu. Kontaktirajte naš tim podrške kako biste ostvarili ova prava."
+    },
+    "section5": {
+      "title": "Kontaktirajte Nas",
+      "content": "Ako imate bilo kakva pitanja o ovoj Politici Privatnosti ili o tome kako rukujemo vašim podacima, molimo vas da nas kontaktirate na privacy@4sports.com ili putem našeg kontakt formulara."
+    }
+  },
+  "terms": {
+    "title": "Uslovi Korišćenja",
+    "lastUpdated": "Poslednja izmena: 26. januar 2026.",
+    "backToHome": "Nazad na Početnu",
+    "section1": {
+      "title": "Prihvatanje Uslova",
+      "content": "Pristupanjem i korišćenjem 4sports platforme, prihvatate da budete vezani ovim Uslovima Korišćenja. Ako se ne slažete sa ovim uslovima, molimo vas da ne koristite našu uslugu. Zadržavamo pravo da izmenimo ove uslove u bilo kom trenutku."
+    },
+    "section2": {
+      "title": "Opis Usluge",
+      "content": "4sports pruža sveobuhvatnu platformu za upravljanje sportskim klubovima koja uključuje upravljanje članovima, praćenje prisustva, obradu plaćanja i komunikacione alate. Trudimo se da održimo dostupnost usluge, ali ne garantujemo neprekidan pristup."
+    },
+    "section3": {
+      "title": "Odgovornosti Korisnika",
+      "content": "Vi ste odgovorni za održavanje poverljivosti akreditiva vašeg naloga i za sve aktivnosti koje se dešavaju pod vašim nalogom. Slažete se da koristite 4sports samo u zakonite svrhe i u skladu sa ovim uslovima."
+    },
+    "section4": {
+      "title": "Uslovi Plaćanja",
+      "content": "Pretplatnički troškovi se naplaćuju mesečno ili godišnje prema vašem izboru. Svi troškovi su nepovratni osim ako to nije zakonom propisano. Zadržavamo pravo da izmenimo cene uz obaveštenje postojećim korisnicima 30 dana unapred."
+    },
+    "section5": {
+      "title": "Ograničenje Odgovornosti",
+      "content": "4sports se pruža 'kakav jeste' bez ikakvih garancija. Nismo odgovorni za bilo kakvu indirektnu, slučajnu ili posledičnu štetu koja proizlazi iz vašeg korišćenja usluge. Naša ukupna odgovornost je ograničena na iznos koji ste platili u poslednjih 12 meseci."
+    }
+  },
+  "support": {
+    "backToHome": "Nazad na Početnu",
+    "title": "Podrška",
+    "description": "Kako vam možemo pomoći? Izaberite tip zahteva i opišite vaš problem.",
+    "generalSupport": "Opšta Podrška",
+    "generalDesc": "Pitanja, povratne informacije ili problemi",
+    "deleteAccount": "Brisanje Naloga",
+    "deleteDesc": "Zahtev za brisanje naloga i podataka",
+    "deleteWarningTitle": "Važna Informacija",
+    "deleteWarningText": "Zahtev za brisanje naloga će trajno ukloniti sve vaše podatke uključujući informacije o profilu, istoriju aktivnosti i sav povezan sadržaj. Ova akcija se ne može poništiti. Molimo unesite email adresu povezanu sa vašim nalogom.",
+    "form": {
+      "name": "Ime i Prezime",
+      "namePlaceholder": "Vaše puno ime",
+      "email": "Email Adresa",
+      "emailPlaceholder": "vas@email.com",
+      "emailPlaceholderDelete": "Email povezan sa vašim nalogom",
+      "message": "Poruka",
+      "messagePlaceholder": "Opišite vaš problem ili pitanje...",
+      "reason": "Razlog za brisanje (opciono)",
+      "reasonPlaceholder": "Recite nam zašto želite da obrišete vaš nalog...",
+      "submit": "Pošalji Poruku",
+      "submitDelete": "Pošalji Zahtev za Brisanje",
+      "sending": "Slanje...",
+      "sent": "Zahtev je poslat!",
+      "allFieldsRequired": "Sva polja su obavezna.",
+      "invalidEmail": "Unesite validnu email adresu.",
+      "serverError": "Greška pri slanju. Pokušajte ponovo."
+    }
   }
 }

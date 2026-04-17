@@ -384,3 +384,9 @@ h3 {
   background: radial-gradient(circle, rgba(34, 197, 94, 0.8) 0%, rgba(34, 197, 94, 0.4) 30%, transparent 70%);
   filter: blur(40px);
 }
+
+/* Auto-rotate progress bar for unified features section */
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: 100%; }
+}

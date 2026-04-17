@@ -1,74 +1,36 @@
+'use client';
+
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'motion/react';
 import { TestimonialsColumn } from './ui/testimonials-columns-1';
-import { Sparkles } from 'lucide-react';
 
-const testimonials = [
-  {
-    text: "4sports transformed how we manage our football club. Everything is so much easier now!",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    name: "Milan Jovanović",
-    role: "Coach, FK Partizan Youth",
-  },
-  {
-    text: "The attendance tracking feature alone saved us countless hours every month.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
-    name: "Ana Petrović",
-    role: "Manager, Tennis Club Novak",
-  },
-  {
-    text: "Implementation was smooth and fast. The support team is exceptional!",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    name: "Stefan Miličić",
-    role: "Director, KK Crvena Zvezda",
-  },
-  {
-    text: "The seamless integration enhanced our business operations and efficiency significantly.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-    name: "Milica Stojanović",
-    role: "Admin, Volleyball Club Vojvodina",
-  },
-  {
-    text: "Robust features and quick support have transformed our workflow completely.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-    name: "Nikola Radović",
-    role: "Owner, Football Academy Belgrade",
-  },
-  {
-    text: "Our club functions improved dramatically with this user-friendly design.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
-    name: "Jelena Marković",
-    role: "Parent, Swimming Club Tasmajdan",
-  },
-  {
-    text: "They delivered a solution that exceeded expectations and enhanced our operations.",
-    image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face",
-    name: "Sanja Đorđević",
-    role: "Manager, Basketball Academy",
-  },
-  {
-    text: "Using 4sports, our communication with parents significantly improved.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-    name: "Aleksandar Ilić",
-    role: "Coach, Handball Club Partizan",
-  },
-  {
-    text: "The best investment we made for our sports club management.",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face",
-    name: "Tijana Nikolić",
-    role: "Owner, Gymnastics Studio",
-  },
+const testimonialNames = [
+  "Marko Đurić",
+  "Ivana Lazović",
+  "Dragan Kovač",
+  "Sandra Milić",
+  "Nemanja Stojić",
+  "Katarina Peić",
+  "Bojan Ristić",
+  "Maja Đorđević",
+  "Filip Stanković",
 ];
-
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
 
 const TestimonialsAdvancedSection = () => {
   const { t } = useLanguage();
 
+  const testimonials = testimonialNames.map((name, i) => ({
+    text: t(`testimonials.items.${i}.text`),
+    name,
+    role: t(`testimonials.items.${i}.role`),
+  }));
+
+  const firstColumn = testimonials.slice(0, 3);
+  const secondColumn = testimonials.slice(3, 6);
+  const thirdColumn = testimonials.slice(6, 9);
+
   return (
-    <section id="testimonials" className="py-20 lg:py-24 relative overflow-hidden bg-black w-full">
+    <section id="testimonials" className="pt-20 lg:pt-24 pb-0 relative overflow-hidden bg-black w-full">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
 
@@ -85,17 +47,9 @@ const TestimonialsAdvancedSection = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto px-4 mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-md">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-primary">Testimonials</span>
-          </div>
-
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 text-white">
             {t('testimonials.title')}
           </h2>
-          <p className="text-xl text-gray-400">
-            {t('testimonials.subtitle')}
-          </p>
         </motion.div>
 
         {/* Testimonials Columns - FULL WIDTH */}

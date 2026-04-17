@@ -1,7 +1,8 @@
+'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-
-type Language = 'en' | 'sr';
+import { usePathname, useRouter } from 'next/navigation';
+import { getTranslation, isLocale, localizePath, stripLocaleFromPath, type Dictionary, type Locale } from '@/lib/i18n';
 
 interface LanguageContextType {
   language: Language;
@@ -20,52 +21,46 @@ export const useLanguage = () => {
   return context;
 };
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
-  const [translations, setTranslations] = useState<any>({});
-  const [isLoading, setIsLoading] = useState(true);
+type Language = Locale;
 
-  const loadTranslations = async (lang: Language) => {
-    try {
-      // Ne pokazuj loading stanje za promenu jezika
-      if (Object.keys(translations).length > 0) {
-        setIsLoading(false);
-      } else {
-        setIsLoading(true);
-      }
-      
-      const response = await fetch(`/${lang}.json`);
-      const data = await response.json();
-      setTranslations(data);
-    } catch (error) {
-      console.error('Failed to load translations:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+export const LanguageProvider: React.FC<{
+  children: React.ReactNode;
+  initialLanguage: Language;
+  initialTranslations: Dictionary;
+}> = ({ children, initialLanguage, initialTranslations }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const currentPathLocale = pathname?.split('/')[1];
+  const derivedLanguage = currentPathLocale && isLocale(currentPathLocale) ? currentPathLocale : initialLanguage;
+
+  const [language, setLanguage] = useState<Language>(derivedLanguage);
+  const [translations, setTranslations] = useState<Dictionary>(initialTranslations);
+  const [isLoading] = useState(false);
 
   useEffect(() => {
-    loadTranslations(language);
+    setLanguage(derivedLanguage);
+  }, [derivedLanguage]);
+
+  useEffect(() => {
+    setTranslations(initialTranslations);
+  }, [initialTranslations]);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    localStorage.setItem('language', language);
   }, [language]);
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'sr' : 'en');
+    const nextLanguage: Language = language === 'en' ? 'sr' : 'en';
+    const currentPath = pathname || '/';
+    const normalizedPath = stripLocaleFromPath(currentPath);
+
+    localStorage.setItem('language', nextLanguage);
+    setLanguage(nextLanguage);
+    router.push(localizePath(nextLanguage, normalizedPath));
   };
 
-  const t = (key: string): string => {
-    const keys = key.split('.');
-    let value = translations;
-    
-    for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        value = value[k];
-      } else {
-        return key; // Return key if translation not found
-      }
-    }
-    
-    return typeof value === 'string' ? value : key;
-  };
+  const t = (key: string): string => getTranslation(translations, key);
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t, isLoading }}>

@@ -1,6 +1,10 @@
+'use client';
+
 import { cn } from '@/lib/utils';
-import { Github, Twitter, Linkedin, Mail, Phone } from 'lucide-react';
+import { Linkedin, Instagram, Mail, Phone } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import Link from 'next/link';
 
 function StickyFooter({
   children,
@@ -32,6 +36,8 @@ function StickyFooter({
 }
 
 function FooterContent() {
+  const { t, language } = useLanguage();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -57,12 +63,11 @@ function FooterContent() {
       <div className="relative z-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* About Section */}
         <div className="flex flex-col gap-3">
-          <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">Quick Links</h3>
+          <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">{t('footer.quickLinks')}</h3>
           {[
-            { id: 'home', label: 'Home' },
-            { id: 'features', label: 'Features' },
-            { id: 'pricing', label: 'Pricing' },
-            { id: 'testimonials', label: 'Testimonials' },
+            { id: 'home', label: t('footer.home') },
+            { id: 'features', label: t('footer.features') },
+            { id: 'testimonials', label: t('footer.testimonials') },
           ].map((link) => (
             <button
               key={link.id}
@@ -76,34 +81,41 @@ function FooterContent() {
 
         {/* Support Section */}
         <div className="flex flex-col gap-3">
-          <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">Support</h3>
-          <p className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">Help Center</p>
-          <p className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">Documentation</p>
-          <p className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">Community</p>
-          <p className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">Contact Support</p>
+          <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">{t('footer.support')}</h3>
+          <p className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">{t('footer.helpCenter')}</p>
+          <p className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">{t('footer.documentation')}</p>
+          <p className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">{t('footer.community')}</p>
+          <p className="text-gray-400 hover:text-white transition-colors cursor-pointer text-sm">{t('footer.contactSupport')}</p>
         </div>
 
         {/* Contact Section */}
         <div className="flex flex-col gap-3">
-          <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">Contact</h3>
+          <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">{t('footer.contact')}</h3>
+          <div className="flex items-center gap-3 text-gray-400 text-sm">
+            <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+            <span>mihajlo4sports@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-3 text-gray-400 text-sm">
+            <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+            <span>nemanja4sports@gmail.com</span>
+          </div>
           <div className="flex items-center gap-3 text-gray-400 text-sm">
             <Mail className="w-4 h-4 text-primary flex-shrink-0" />
             <span>vukasin4sports@gmail.com</span>
           </div>
           <div className="flex items-center gap-3 text-gray-400 text-sm">
             <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-            <span>+381 11 123 4567</span>
+            <span>+381 66 493 368</span>
           </div>
         </div>
 
         {/* Social Section */}
         <div className="flex flex-col gap-3">
-          <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">Follow Us</h3>
+          <h3 className="mb-2 uppercase text-primary font-bold tracking-wider text-sm">{t('footer.followUs')}</h3>
           <div className="flex gap-3">
             {[
-              { icon: Github, href: '#', label: 'GitHub' },
-              { icon: Twitter, href: '#', label: 'Twitter' },
-              { icon: Linkedin, href: '#', label: 'LinkedIn' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/company/4sports-app/', label: 'LinkedIn' },
+              { icon: Instagram, href: '#', label: 'Instagram' },
             ].map((social, index) => {
               const Icon = social.icon;
               return (
@@ -122,19 +134,19 @@ function FooterContent() {
       </div>
 
       {/* Bottom Section */}
-      <div className="relative z-10 flex justify-between flex-col gap-6 sm:flex-row items-end mt-12 pt-8">
-        <div className="flex items-center">
-          <h1 className="text-[16vw] sm:text-[12vw] lg:text-[10vw] font-black leading-[0.85] text-white">
+      <div className="relative z-10 flex flex-col items-center text-center gap-6 sm:flex-row sm:justify-between sm:items-end sm:text-left mt-12 pt-8">
+        <div className="flex items-center justify-center sm:justify-start">
+          <h1 className="text-[18vw] sm:text-[12vw] lg:text-[9vw] font-black leading-[0.85] text-white/12">
             4sports
           </h1>
         </div>
-        <div className="flex flex-col sm:items-end gap-2">
+        <div className="flex flex-col items-center sm:items-end gap-2">
           <div className="flex gap-4 text-xs text-gray-500">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms</a>
-            <a href="#" className="hover:text-primary transition-colors">Cookies</a>
+            <Link href={`/${language}/privacy-policy`} className="hover:text-primary transition-colors">{t('footer.privacy')}</Link>
+            <Link href={`/${language}/terms`} className="hover:text-primary transition-colors">{t('footer.terms')}</Link>
+            <a href="#" className="hover:text-primary transition-colors">{t('footer.cookies')}</a>
           </div>
-          <p className="text-gray-500 text-sm">© 2024 4sports. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">{t('footer.copyright')}</p>
         </div>
       </div>
     </div>
@@ -143,12 +155,21 @@ function FooterContent() {
 
 const Footer = () => {
   return (
-    <StickyFooter
-      heightValue="70dvh"
-      className="text-white"
-    >
-      <FooterContent />
-    </StickyFooter>
+    <div>
+      {/* Mobile: normal flow (no sticky effect) so all content is visible */}
+      <div className="block md:hidden bg-black text-white">
+        <FooterContent />
+      </div>
+      {/* Desktop: sticky reveal effect */}
+      <div className="hidden md:block">
+        <StickyFooter
+          heightValue="70dvh"
+          className="text-white"
+        >
+          <FooterContent />
+        </StickyFooter>
+      </div>
+    </div>
   );
 };
 

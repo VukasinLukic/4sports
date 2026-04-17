@@ -1,69 +1,82 @@
+'use client';
+
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { GooglePlayButton, AppStoreButton } from '@/components/ui/AppStoreButtons';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const FullHeroSection = () => {
+interface FullHeroSectionProps {
+  splashDone?: boolean;
+}
+
+const FullHeroSection = ({ splashDone = false }: FullHeroSectionProps) => {
   const { t } = useLanguage();
   const [showContent, setShowContent] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
-  // Rotating texts - like the old loading screen
   const rotatingTexts = [
-    t('hero.minimal.intro'),      // "Sports clubs are complex."
-    t('hero.minimal.word1'),       // "Players."
-    t('hero.minimal.word2'),       // "Schedules."
-    t('hero.minimal.word3'),       // "Memberships."
-    t('hero.minimal.word4'),       // "Payments."
-    t('hero.minimal.outro1'),      // "Too many tools."
-    t('hero.minimal.outro2'),      // "Too little clarity."
+    t('hero.minimal.intro'),
+    t('hero.minimal.word1'),
+    t('hero.minimal.word2'),
+    t('hero.minimal.word3'),
+    t('hero.minimal.word4'),
+    t('hero.minimal.outro1'),
+    t('hero.minimal.outro2'),
   ];
 
-  // Animation sequence: video fades in → navbar appears → text appears → video starts playing
+  // Show content when splash screen is done
   useEffect(() => {
-    // Wait for MinimalHeroSection to COMPLETELY finish (logo fade out completed)
-    // Total MinimalHero time: 800 + 2500 + 800 = 4100ms
-    const showVideoTimer = setTimeout(() => {
+    if (splashDone) {
       setShowContent(true);
-    }, 4100);
-
-    return () => clearTimeout(showVideoTimer);
-  }, []);
-
-  // Start video playback when text appears
-  useEffect(() => {
-    if (videoLoaded && showContent && videoRef.current) {
-      // Video počinje da se reprodukuje kada se tekst pojavi
-      // Video fade in: 2s, Tekst delay: 1.5s = tekst se pojavljuje posle 3.5s
-      const playTimer = setTimeout(() => {
-        videoRef.current?.play().catch(err => {
-          console.log('Video autoplay failed:', err);
-        });
-      }, 3500); // Čeka da se tekst pojavi, pa tek onda startuje video
-
-      return () => clearTimeout(playTimer);
     }
-  }, [videoLoaded, showContent]);
+  }, [splashDone]);
 
-  // Auto-rotate text every 3 seconds
-  useEffect(() => {
-    if (showContent) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % rotatingTexts.length);
-      }, 3000);
-
-      return () => clearInterval(interval);
-    }
-  }, [showContent, rotatingTexts.length]);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  // Try to play a video, with Safari fallback
+  const tryPlayVideo = (vid: HTMLVideoElement) => {
+    const attempt = () => {
+      vid.play().catch(() => {
+        const handler = () => {
+          vid.play().catch(() => {});
+          document.removeEventListener('touchstart', handler);
+          document.removeEventListener('click', handler);
+        };
+        document.addEventListener('touchstart', handler, { once: true });
+        document.addEventListener('click', handler, { once: true });
+      });
+    };
+    if (vid.readyState >= 3) {
+      attempt();
+    } else {
+      vid.addEventListener('canplay', attempt, { once: true });
     }
   };
+
+  // Start desktop video when content is shown
+  useEffect(() => {
+    if (showContent && videoRef.current) {
+      tryPlayVideo(videoRef.current);
+    }
+  }, [showContent, videoLoaded]);
+
+  // Start mobile video immediately
+  useEffect(() => {
+    if (mobileVideoRef.current) {
+      tryPlayVideo(mobileVideoRef.current);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!showContent) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % rotatingTexts.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [showContent, rotatingTexts.length]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
@@ -76,74 +89,80 @@ const FullHeroSection = () => {
       >
         <video
           ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
           muted
           loop
           playsInline
+          preload="metadata"
+          poster="/assets/hero-poster.webp"
           onLoadedData={() => setVideoLoaded(true)}
+          onCanPlay={() => {
+            if (showContent && videoRef.current) {
+              videoRef.current.play().catch(() => {});
+            }
+          }}
         >
-          <source src="/assets/heroSekcija2.mp4" type="video/mp4" />
+          <source src="/assets/videoNovi.mp4" type="video/mp4" />
+        </video>
+        <video
+          ref={mobileVideoRef}
+          className="absolute inset-0 w-full h-full object-cover block md:hidden"
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="auto"
+          poster="/assets/hero-poster.webp"
+        >
+          <source src="/assets/rotated.mp4" type="video/mp4" />
         </video>
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/50" />
       </motion.div>
 
-      {/* Subtle film grain overlay */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-[5]">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: '200px 200px',
-          }}
-        />
-      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.22),transparent_24%,transparent_76%,rgba(0,0,0,0.38))] pointer-events-none z-[5]" />
 
-      {/* Main content - Rotating text */}
-      <div className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center justify-center min-h-screen">
+      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-5 pt-24 pb-8 text-center sm:px-6 md:pt-32 md:pb-14">
         <motion.div
-          className="h-40 md:h-48 flex items-center justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 20 }}
-          transition={{
-            duration: 0.8,
-            ease: [0.25, 0.1, 0.25, 1],
-            delay: 1.5, // Container se pojavljuje 1.5s nakon što video krene
-          }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 24 }}
+          transition={{ duration: 0.9, delay: 1.1, ease: 'easeOut' }}
+          className="mx-auto flex min-h-[78vh] w-full max-w-5xl flex-col items-center justify-between md:min-h-[72vh] md:justify-center"
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{
-                duration: 0.8,
-                ease: [0.25, 0.1, 0.25, 1],
-              }}
-            >
-              <p className="text-3xl md:text-5xl lg:text-6xl font-light text-white/90 tracking-tight leading-relaxed">
-                {rotatingTexts[currentIndex]}
-              </p>
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
+          <div className="flex flex-1 flex-col items-center justify-center pt-8 md:pt-0">
+            <h1 className="max-w-4xl text-balance text-[2.6rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white sm:text-[4.2rem] lg:text-[4.8rem]">
+              {t('mockupShowcase.hero.title')}
+            </h1>
+            <p className="mt-4 max-w-[18.5rem] text-balance text-[0.98rem] font-light leading-relaxed text-white/78 sm:max-w-2xl sm:text-lg lg:mt-6 lg:text-[1.25rem]">
+              {t('mockupShowcase.hero.subtitle')}
+            </p>
+            <div className="mt-7 w-full max-w-[19.5rem] rounded-[1.75rem] border border-white/10 bg-black/22 px-3 py-3 backdrop-blur-md sm:mt-10 sm:max-w-none sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-0">
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+                <AppStoreButton size="lg" />
+                <GooglePlayButton size="lg" />
+              </div>
+            </div>
+          </div>
 
-        {/* Scroll indicator - positioned at bottom */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: showContent ? 1 : 0 }}
-          transition={{ duration: 1, delay: 3.0 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400"
-        >
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 18 }}
+            transition={{ duration: 0.8, delay: 1.6, ease: 'easeOut' }}
+            className="flex min-h-[10rem] w-full items-end justify-center pb-1 md:min-h-[9rem] md:pb-4"
           >
-            <ArrowDown className="w-5 h-5" />
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={currentIndex}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -14 }}
+                transition={{ duration: 0.55, ease: 'easeOut' }}
+                className="max-w-[16rem] rounded-full border border-white/10 bg-black/28 px-5 py-3 text-balance text-[1.05rem] font-light tracking-tight text-white/90 backdrop-blur-md sm:max-w-3xl sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:text-3xl lg:text-4xl"
+              >
+                {rotatingTexts[currentIndex]}
+              </motion.p>
+            </AnimatePresence>
           </motion.div>
         </motion.div>
       </div>
